@@ -1,0 +1,138 @@
+@import '../../global.scss';
+
+.intro {
+  // width: 100%;
+  // height: 100vh;
+  .bgc {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      transition: 1s;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100vh;
+      // background-color: #080808d5;
+      background: linear-gradient(to bottom, #00000044, $body-bg);
+    }
+  }
+  &-container {
+    @include container;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    .text {
+      span {
+      }
+      h1 {
+        font-size: 6rem;
+        line-height: 100px;
+        @include font-oswald;
+        // text-transform: uppercase;
+        .t1 {
+          color: transparent;
+          -webkit-text-stroke: 1px white;
+        }
+        .t2 {
+          // color: transparent;
+          // -webkit-text-stroke: 1px white;
+          background-color: $red;
+          padding: 0 2rem;
+          font-family: 'Roboto', sans-serif;
+          // color: $red;
+        }
+      }
+      .btn-txt {
+        @include flex();
+        gap: 40px;
+        .readmore-btn {
+          @include flex();
+          flex-direction: column;
+          gap: 10px;
+          border: 1px solid gray;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          font-size: 1.2rem;
+          position: relative;
+          svg {
+            font-size: 2.5rem;
+          }
+          &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 1px solid gray;
+            border-radius: 50%;
+            animation: zoom 3s infinite;
+            @keyframes zoom {
+              0%{
+                width: 100%;
+                height: 100%;
+              }
+              50%{
+                width: 110%;
+                height: 110%;
+              }
+              100%{
+                opacity: 0;
+                width: 110%;
+                height: 110%;
+              }
+            }
+          }
+          &::after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 1px solid gray;
+            border-radius: 50%;
+            animation: zooms 2s infinite;
+            @keyframes zooms {
+              0%{
+                width: 100%;
+                height: 100%;
+              }
+              50%{
+                width: 120%;
+                height: 120%;
+              }
+              100%{
+                opacity: 0;
+                width: 120%;
+                height: 120%;
+              }
+            }
+          }
+        }
+        p {
+          max-width: 500px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .icons {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      color: rgb(184, 184, 184);
+      svg {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

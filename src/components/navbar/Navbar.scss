@@ -1,0 +1,50 @@
+@import '../../global.scss';
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid rgb(107, 107, 107);
+  user-select: none;
+  background: linear-gradient(to top, #00000000, $body-bg);
+  .left{
+    font-size: 2rem;
+    font-weight:900;
+    cursor: pointer;
+    span{
+      color: $red;
+    }
+  }
+  .middle{
+    @include flex();
+    gap: 30px;
+    text-transform: uppercase;
+    span{
+      cursor: pointer;
+    }
+  }
+  .right{
+    @include flex();
+    gap: 50px;
+    .icons{
+      @include flex();
+      gap: 15px;
+      svg{
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+    .btn{
+      border: 1px solid gray;
+      padding: 10px 20px;
+      cursor: pointer;
+      @include flex();
+      gap: 20px;
+      transition: .5s;
+      &:hover{
+        background-color: $red;
+      }
+    }
+  }
+}
