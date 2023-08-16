@@ -1,0 +1,68 @@
+@import '../../global.scss';
+
+.skills {
+  display: flex;
+  align-items: center;
+  @include container;
+  padding: 4rem;
+  gap: 30px;
+  .left {
+    flex: 1;
+    background-color: $deep-gray;
+    &-container {
+      margin: 2rem;
+      padding: 3rem 2rem;
+      border: 1px solid $dark-gray;
+      
+      color: $gray;
+      .h4 {
+        @include font-oswald;
+        font-size: 19px;
+        margin-bottom: 1rem;
+      }
+      .skills-h1 {
+        color: #fff;
+        @include font-oswald;
+        font-weight: 500;
+        font-size: 2.3rem;
+      }
+      p {
+        margin-bottom: 3rem;
+        line-height: 30px;
+        
+      }
+      .skills-score {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include font-oswald;
+          .score {
+            text-align: center;
+            
+            @include flex();
+            font-size: 1.6rem;
+            border: 1px solid $red;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+            span {
+            }
+          }
+          .score-title{
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    img{
+    }
+  }
+}

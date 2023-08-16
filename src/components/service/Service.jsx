@@ -15,8 +15,8 @@ const Service = () => {
       <div className="bottom">
         <div className="service-card">
           <div className="card-top">
-            <BusinessCenterIcon />
             <span>01</span>
+            <BusinessCenterIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Online Business <br /> Create</span>
@@ -25,8 +25,8 @@ const Service = () => {
         </div>
         <div className="service-card">
           <div className="card-top">
-            <DifferenceIcon />
             <span>02</span>
+            <DifferenceIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Content Create and <br /> Designing</span>
@@ -35,8 +35,8 @@ const Service = () => {
         </div>
         <div className="service-card">
           <div className="card-top">
-            <WebIcon />
             <span>03</span>
+            <WebIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Website Design and <br /> Development</span>
@@ -45,8 +45,8 @@ const Service = () => {
         </div>
         <div className="service-card">
           <div className="card-top">
-            <AddBusinessIcon />
             <span>04</span>
+            <AddBusinessIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Online Marketing and <br /> SEO</span>
@@ -55,8 +55,8 @@ const Service = () => {
         </div>
         <div className="service-card">
           <div className="card-top">
-            <AppShortcutIcon />
             <span>05</span>
+            <AppShortcutIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Softwere Design and <br /> Development</span>
@@ -65,8 +65,8 @@ const Service = () => {
         </div>
         <div className="service-card">
           <div className="card-top">
-            <BubbleChartIcon />
             <span>06</span>
+            <BubbleChartIcon />
           </div>
           <div className="card-bottom">
             <span className='card-title'>Graphic Design and <br /> Branding</span>

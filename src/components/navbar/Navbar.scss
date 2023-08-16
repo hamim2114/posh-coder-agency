@@ -1,6 +1,6 @@
 @import '../../global.scss';
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,42 +8,106 @@
   border-bottom: 1px solid rgb(107, 107, 107);
   user-select: none;
   background: linear-gradient(to top, #00000000, $body-bg);
-  .left{
+  @include mobile {
+    padding: 10px 1rem;
+  }
+  .left {
     font-size: 2rem;
-    font-weight:900;
+    font-weight: 900;
     cursor: pointer;
-    span{
+    span {
       color: $red;
     }
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
-  .middle{
+  .middle {
     @include flex();
     gap: 30px;
     text-transform: uppercase;
-    span{
+    transition: 0.5s;
+    span {
       cursor: pointer;
     }
+    @include tablet {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      background-color: #0e0b0b;
+      height: 100vh;
+      width: 200px;
+      z-index: 10;
+      align-items: flex-start;
+      padding-left: 2rem;
+      transform: translateX(-100%);
+    }
+    &.active {
+      @include tablet {
+        transform: translateX(0);
+      }
+    }
   }
-  .right{
+  .right {
     @include flex();
     gap: 50px;
-    .icons{
+    .icons {
       @include flex();
       gap: 15px;
-      svg{
+      svg {
         cursor: pointer;
         font-size: 20px;
       }
     }
-    .btn{
+    .btn {
       border: 1px solid gray;
       padding: 10px 20px;
       cursor: pointer;
       @include flex();
       gap: 20px;
-      transition: .5s;
-      &:hover{
+      transition: 0.5s;
+      &:hover {
         background-color: $red;
+      }
+      @include tablet {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        transform: translateX(-100%);
+        z-index: 11;
+        opacity: 0;
+      }
+      &.active {
+        @include tablet {
+          left: 30px;
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .nav-btn {
+    display: none;
+    cursor: pointer;
+    z-index: 111;
+    @include tablet {
+      display: block;
+    }
+  }
+  .nav-btn-x {
+    position: absolute;
+    z-index: 11;
+    top: 30px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: .5s;
+    cursor: pointer;
+    &.active {
+      @include tablet{
+        left: 180px;
+        transform: translateX(0);
       }
     }
   }
