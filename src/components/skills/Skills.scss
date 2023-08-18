@@ -4,8 +4,11 @@
   display: flex;
   align-items: center;
   @include container;
-  padding: 4rem;
+  padding: 4rem 1rem;
   gap: 30px;
+  @include tablet {
+    flex-direction: column-reverse;
+  }
   .left {
     flex: 1;
     background-color: $deep-gray;
@@ -13,7 +16,7 @@
       margin: 2rem;
       padding: 3rem 2rem;
       border: 1px solid $dark-gray;
-      
+
       color: $gray;
       .h4 {
         @include font-oswald;
@@ -25,24 +28,33 @@
         @include font-oswald;
         font-weight: 500;
         font-size: 2.3rem;
+        @include mobile {
+          line-height: 40px;
+        }
       }
       p {
         margin-bottom: 3rem;
         line-height: 30px;
-        
+        @include mobile {
+          line-height: 20px;
+          padding-top: 1rem;
+        }
       }
       .skills-score {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include mobile {
+          gap: 20px;
+        }
         &-item {
           display: flex;
           flex-direction: column;
           align-items: center;
           @include font-oswald;
+
           .score {
             text-align: center;
-            
             @include flex();
             font-size: 1.6rem;
             border: 1px solid $red;
@@ -50,11 +62,20 @@
             width: 100px;
             height: 100px;
             margin-bottom: 1rem;
+            @include mobile {
+              width: 80px;
+              height: 80px;
+              font-size: 1.3rem;
+            }
             span {
             }
           }
-          .score-title{
+          .score-title {
+            text-align: center;
             font-size: 1.2rem;
+            @include mobile {
+              line-height: 25px;
+            }
           }
         }
       }
@@ -62,7 +83,7 @@
   }
   .right {
     flex: 1;
-    img{
+    img {
     }
   }
 }

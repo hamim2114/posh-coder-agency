@@ -2,13 +2,26 @@ import './Navbar.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import SegmentIcon from '@mui/icons-material/Segment';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+
+  const navbarRef = useRef(null);
+  const handleClickOutside = (event) => {
+    if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+      setNav(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
   
   return (
-    <div className="navbar">
+    <div ref={navbarRef} className="navbar">
       <div className="left">POSH CODER<span>.</span></div>
       <div className={`middle ${nav && 'active'}`}>
         <span style={{color: 'red'}}>Home</span>

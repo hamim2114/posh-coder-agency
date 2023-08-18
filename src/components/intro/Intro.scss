@@ -39,7 +39,16 @@
         font-size: 6rem;
         line-height: 100px;
         @include font-oswald;
-        // text-transform: uppercase;
+        @include tablet {
+          font-size: 5rem;
+          line-height: 83px;
+          padding-top: 10rem;
+        }
+        @include mobile {
+          font-size: 3rem;
+          line-height: 53px;
+          padding-top: 5rem;
+        }
         .t1 {
           color: transparent;
           -webkit-text-stroke: 1px white;
@@ -56,6 +65,12 @@
       .btn-txt {
         @include flex();
         gap: 40px;
+        @include tablet {
+         flex-direction: column;
+         gap: 0;
+         padding-top: 2rem;
+        //  align-items: flex-start;
+        }
         .readmore-btn {
           @include flex();
           flex-direction: column;
@@ -68,6 +83,14 @@
           position: relative;
           svg {
             font-size: 2.5rem;
+            @include mobile {
+              font-size: 1.5rem;
+            }
+          }
+          @include mobile {
+            font-size: 1rem;
+            width: 120px;
+            height: 120px;
           }
           &::before{
             position: absolute;
@@ -121,6 +144,10 @@
         p {
           max-width: 500px;
           font-size: 1.2rem;
+          @include mobile {
+          font-size: 1rem;
+          text-align: center;
+          }
         }
       }
     }
@@ -139,6 +166,10 @@
         font-size: 2rem;
         cursor: pointer;
         transition:  .5s;
+        @include mobile {
+         padding: 5px;
+         font-size: 1.5rem;
+        }
         &:hover{
           transform: scale(1.1);
           color: $red;

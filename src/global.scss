@@ -23,13 +23,13 @@ $tab-w: 1100px;
   font-family: 'Ysabeau', sans-serif;
 }
 
-@mixin tablet {
-  @media screen and (max-width: $tab-w) {
+@mixin mobile {
+  @media screen and (max-width: $mbl-w) {
     @content;
   }
 }
-@mixin mobile {
-  @media screen and (max-width: $mbl-w) {
+@mixin tablet {
+  @media screen and (max-width: $tab-w) {
     @content;
   }
 }

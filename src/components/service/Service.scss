@@ -2,20 +2,34 @@
 
 .service {
   @include container;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
+  @include mobile {
+    padding: 2rem 1rem;
+  }
   .top {
     h1 {
       font-size: 6rem;
       @include font-oswald;
       -webkit-text-stroke: 1px $gray;
       color: transparent;
-      opacity: .6;
+      opacity: 0.6;
+      @include mobile {
+        font-size: 4rem;
+      }
     }
   }
   .bottom {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     gap: 40px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
     .service-card {
       background-color: $deep-gray;
       border: 1px solid $dark-gray;
