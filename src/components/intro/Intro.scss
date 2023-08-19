@@ -59,7 +59,9 @@
           background-color: $red;
           padding: 0 2rem;
           font-family: 'Roboto', sans-serif;
-          // color: $red;
+          @include mobile {
+            padding: 0 10px;
+          }
         }
       }
       .btn-txt {
@@ -160,19 +162,19 @@
       color: rgb(184, 184, 184);
       svg {
         background-color: #444444;
-        border-radius: 5px ;
+        border-radius: 50% ;
         // border-radius: 5px 0px 0px 5px ;
         padding: 10px ;
         font-size: 2rem;
         cursor: pointer;
         transition:  .5s;
         @include mobile {
-         padding: 5px;
+         padding: 8px;
          font-size: 1.5rem;
         }
         &:hover{
           transform: scale(1.1);
-          color: $red;
+          color: #fff;
         }
       }
     }

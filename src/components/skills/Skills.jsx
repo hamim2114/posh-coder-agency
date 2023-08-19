@@ -33,7 +33,7 @@ const Skills = () => {
         </div>
       </div>
       <div className="right">
-        <img src="/laptop.jpg" alt="" />
+        <img src="/abt2.jpg" alt="" />
       </div>
     </div>
   )

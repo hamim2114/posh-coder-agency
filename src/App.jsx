@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar'
 import Service from './components/service/Service'
 import { useEffect } from 'react';
 import Skills from './components/skills/Skills';
+import Experience from './components/experience/Experience';
 
 function App() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -34,6 +35,7 @@ function App() {
         <Intro />
         <Service />
         <Skills/>
+        <Experience/>
       </div>
     </>
   )
