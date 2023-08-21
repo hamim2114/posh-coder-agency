@@ -6,6 +6,8 @@ import Service from './components/service/Service'
 import { useEffect } from 'react';
 import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
+import Slidetext from './components/slideText/Slidetext';
+import Achive from './components/achive/Achive';
 
 function App() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -36,6 +38,8 @@ function App() {
         <Service />
         <Skills/>
         <Experience/>
+        {/* <Slidetext/> */}
+        <Achive/>
       </div>
     </>
   )

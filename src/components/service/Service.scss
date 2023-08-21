@@ -38,6 +38,7 @@
       padding: 1rem 2rem;
       color: #fff;
       position: relative;
+      transition: .5s;
       &::before {
         content: '';
         position: absolute;
@@ -53,8 +54,8 @@
         width: 0%;
       }
       &:hover {
-        border: 1px solid transparent;
-        color: #fff;
+        border: 1px solid $dark-gray;
+        transform: scale(1.05);
       }
       .card-top {
         display: flex;
