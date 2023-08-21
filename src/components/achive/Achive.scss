@@ -1,6 +1,7 @@
 @import '../../global.scss';
 
 .achive {
+  overflow: hidden;
   margin: 5rem 0;
   @include mobile {
    margin: 2rem 0;   
