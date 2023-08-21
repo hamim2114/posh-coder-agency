@@ -20,10 +20,10 @@
     position: relative;
     video{
       margin: auto;
-      width: 70%;
+      width: 50%;
       max-width: 100%;
       display: block;
-      @include mobile{
+      @include tablet{
         width: 90%;
       }
     }
