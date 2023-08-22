@@ -8,6 +8,8 @@ import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
 import Slidetext from './components/slideText/Slidetext';
 import Achive from './components/achive/Achive';
+import Team from './components/team/Team';
+import Testimonial from './components/testimonial/Testimonial';
 
 function App() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -38,8 +40,10 @@ function App() {
         <Service />
         <Skills/>
         <Experience/>
-        {/* <Slidetext/> */}
+        <Slidetext/>
         <Achive/>
+        <Team/>
+        <Testimonial/>
       </div>
     </>
   )
