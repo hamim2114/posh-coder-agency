@@ -10,6 +10,8 @@ import Slidetext from './components/slideText/Slidetext';
 import Achive from './components/achive/Achive';
 import Team from './components/team/Team';
 import Testimonial from './components/testimonial/Testimonial';
+import AskedQ from './components/askedQ/AskedQ';
+import JoinUs from './components/joinUs/JoinUs';
 
 function App() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -44,6 +46,8 @@ function App() {
         <Achive/>
         <Team/>
         <Testimonial/>
+        <AskedQ/>
+        <JoinUs/>
       </div>
     </>
   )

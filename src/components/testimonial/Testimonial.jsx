@@ -14,7 +14,7 @@ const Testimonial = () => {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     swipeToSlide: true,
     autoplay: true,
@@ -46,7 +46,7 @@ const Testimonial = () => {
   }
   return (
     <div className="testimonial">
-      <h1>Client Feedback</h1>
+      <h1>Clients <span>Feedback</span></h1>
       <Slider {...settings}>
         {
           testimonialData.map(d => (

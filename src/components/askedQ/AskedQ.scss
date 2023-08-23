@@ -1,0 +1,35 @@
+@import '../../global.scss';
+
+.askedq{
+  @include container;
+  display: flex;
+  align-items: center;
+  @include tablet{
+    flex-direction: column;
+  }
+  .left{
+    flex: 1;
+    h1{
+      @include font-oswald;
+      font-size: 8rem;
+      line-height: 120px;
+      font-weight: 500;
+      opacity: .6;
+      @include tablet{
+        font-size: 6rem;
+      }
+      @include mobile {
+        font-size: 4rem;
+        line-height: 60px;
+        text-align: center;
+      }
+      span{
+        -webkit-text-stroke: 1px $gray;
+        color: transparent;
+      }
+    }
+  }
+  .right{
+    flex: 1;
+  }
+}
