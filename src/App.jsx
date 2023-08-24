@@ -12,6 +12,7 @@ import Team from './components/team/Team';
 import Testimonial from './components/testimonial/Testimonial';
 import AskedQ from './components/askedQ/AskedQ';
 import JoinUs from './components/joinUs/JoinUs';
+import Footer from './components/footer/Footer';
 
 function App() {
   // const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -48,6 +49,7 @@ function App() {
         <Testimonial/>
         <AskedQ/>
         <JoinUs/>
+        <Footer/>
       </div>
     </>
   )

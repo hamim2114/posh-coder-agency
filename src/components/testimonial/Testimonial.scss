@@ -35,6 +35,9 @@
       border-radius: 50%;
       background-color: $red;
       padding: 20px;
+      @include mobile{
+        padding: 10px;
+      }
     }
   }
   .t-text {
@@ -69,7 +72,7 @@
 
 .testimonial {
   max-width: 1100px;
-  margin: 7rem auto;
+  margin: 10rem auto;
   padding: 0 1rem;
   @include mobile {
     margin: 4rem auto;
@@ -78,6 +81,7 @@
     font-size: 4rem;
     text-align: center;
     opacity: 0.6;
+    margin-bottom: 6rem;
     @include font-oswald;
     span {
       -webkit-text-stroke: 1px $gray;

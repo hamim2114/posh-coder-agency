@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 const Slidetext = () => {
   return (
     <div
-    style={{fontSize: '12rem', fontWeight: 'bold'}}
+    style={{fontSize: '12rem', fontWeight: 'bold',marginTop: '5rem'}}
     >
       <Marquee
       style={{opacity: '.2'}}

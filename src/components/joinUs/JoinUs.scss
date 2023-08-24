@@ -7,6 +7,9 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  @include mobile {
+    margin: 5rem auto;
+  }
   .wrapper {
     display: flex;
     align-items: center;
@@ -15,7 +18,7 @@
     @include tablet {
       flex-direction: column;
     }
-    @include mobile{
+    @include mobile {
       padding: 2rem 1rem;
     }
     .left {
@@ -44,13 +47,41 @@
         @include flex();
         gap: 20px;
         transition: 0.5s;
-        @include mobile{
+        @include mobile {
           margin-top: 2rem;
         }
         &:hover {
           background-color: #fff;
           color: #303030;
         }
+      }
+    }
+  }
+}
+.client-logo {
+  @include container;
+  h3{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid $dark-gray;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    opacity: .6;
+  }
+  &-container {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-between;
+    @include tablet {
+    gap: 50px;
+    flex-direction: column;
+    }
+    img {
+      width: 200px;
+      @include mobile {
+        width: 100px;
+
       }
     }
   }

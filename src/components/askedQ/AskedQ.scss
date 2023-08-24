@@ -2,10 +2,14 @@
 
 .askedq{
   @include container;
+  margin: 15rem auto;
   display: flex;
   align-items: center;
   @include tablet{
     flex-direction: column;
+  }
+  @include mobile {
+    margin: 5rem auto;
   }
   .left{
     flex: 1;
