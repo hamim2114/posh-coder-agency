@@ -94,8 +94,16 @@
     display: none;
     cursor: pointer;
     z-index: 111;
+    svg{
+      font-size: 2rem;
+      // border: 1px solid gray;
+      padding: 5px;
+    }
     @include tablet {
       display: block;
+      position: fixed;
+      top: .5rem;
+      right: 1rem;
     }
   }
   .nav-btn-x {

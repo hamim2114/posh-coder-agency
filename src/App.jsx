@@ -13,15 +13,24 @@ import Testimonial from './components/testimonial/Testimonial';
 import AskedQ from './components/askedQ/AskedQ';
 import JoinUs from './components/joinUs/JoinUs';
 import Footer from './components/footer/Footer';
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Contact from './pages/contact/Contact';
 
 function App() {
 
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+  };
+
   const Layout = () => {
     return (
       <div>
+        <ScrollToTop/>
         <Navbar/>
         <Outlet/>
         <Footer/>
