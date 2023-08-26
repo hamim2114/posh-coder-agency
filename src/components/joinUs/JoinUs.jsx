@@ -1,6 +1,7 @@
 import './JoinUs.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import Marquee from 'react-fast-marquee';
+import { Link } from 'react-router-dom';
 
 const JoinUs = () => {
   return (
@@ -12,10 +13,10 @@ const JoinUs = () => {
             <p>Explore Select, Our Premimum Solution For Branding & Business.</p>
           </div>
           <div className="right">
-            <div className="contact-btn">
+            <Link to='/contact' className="contact-btn link">
               Contact Now
               <TrendingFlatIcon />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

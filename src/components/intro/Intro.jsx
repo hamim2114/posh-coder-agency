@@ -5,6 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
+import { Link } from 'react-router-dom';
 
 const Intro = () => {
   return (
@@ -17,7 +18,7 @@ const Intro = () => {
         <div className="text">
           <h1><span className='t1'>We Are</span> <br />CREATIVE BRANDING <br /><span className='t2'>AGENCY.</span> </h1>
           <div className="btn-txt">
-            <div className="readmore-btn"> <NorthEastIcon />Contact Us</div>
+            <Link to='/contact' className="readmore-btn link"> <NorthEastIcon />Contact Us</Link>
             <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
           </div>
         </div>

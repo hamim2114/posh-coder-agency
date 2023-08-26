@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div ref={navbarRef} className="navbar">
-      <div className="left">POSH CODER<span>.</span></div>
+      <Link to='/' className="left link">POSH CODER<span>.</span></Link>
       <div className={`middle ${nav && 'active'}`}>
         <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
         <span>About Us</span>
