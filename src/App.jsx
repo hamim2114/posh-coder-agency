@@ -13,46 +13,39 @@ import Testimonial from './components/testimonial/Testimonial';
 import AskedQ from './components/askedQ/AskedQ';
 import JoinUs from './components/joinUs/JoinUs';
 import Footer from './components/footer/Footer';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Contact from './pages/contact/Contact';
 
 function App() {
-  // const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  // const handleMouseMove = (event) => {
-  //   setPosition({ x: event.clientX, y: event.clientY });
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('mousemove', handleMouseMove);
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMove);
-  //   };
-  // }, []);
-  return (
-    <>
-      {/* <div className="circle-container">
-      <div
-        className="circle"
-        style={{
-          transform: `translate(${position.x}px, ${position.y}px)`,
-        }}
-      ></div>
-    </div> */}
-      <div className="App">
-        <Navbar />
-        <Intro />
-        <Service />
-        <Skills/>
-        <Experience/>
-        <Slidetext/>
-        <Achive/>
-        <Team/>
-        <Testimonial/>
-        <AskedQ/>
-        <JoinUs/>
+  const Layout = () => {
+    return (
+      <div>
+        <Navbar/>
+        <Outlet/>
         <Footer/>
       </div>
-    </>
-  )
+    )
+  }
+  
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout/>,
+      children: [
+        {
+          path: '/',
+          element: <HomePage/>
+        },
+        {
+          path: 'contact',
+          element: <Contact/>
+        },
+      ]
+    }
+  ])
+  return <RouterProvider router={router} />
 }
 
 export default App

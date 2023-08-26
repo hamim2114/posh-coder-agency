@@ -27,6 +27,8 @@
     gap: 30px;
     text-transform: uppercase;
     transition: 0.5s;
+    // font-weight: 300;
+    @include font-oswald;
     span {
       cursor: pointer;
     }
