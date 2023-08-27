@@ -19,8 +19,8 @@ const Intro = () => {
       <div className="intro-container">
         <div className="text">
           <Fade cascade triggerOnce className="heading">
-            <span className='t1'><Fade cascade damping={.1}>We Are</Fade></span>
-            <span className='t2'><Zoom>CREATIVE BRANDING</Zoom></span>
+            <span className='t1'><Fade cascade triggerOnce damping={.1}>We Are</Fade></span>
+            <span className='t2'><Zoom triggerOnce>CREATIVE BRANDING</Zoom></span>
             <Fade cascade triggerOnce damping={.3} className='t3'>AGENCY.</Fade>
           </Fade>
           <div className="btn-txt">
