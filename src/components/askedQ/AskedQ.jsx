@@ -6,6 +6,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { Fade } from 'react-awesome-reveal';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -52,7 +53,7 @@ const AskedQ = () => {
   return (
     <div className="askedq">
       <div className="left">
-        <h1>ASKED <span>QUESTIONS</span></h1>
+        <h1>ASKED <span><Fade cascade damping={0.1} triggerOnce>QUESTIONS</Fade> </span></h1>
       </div>
       <div className="right">
         <div>

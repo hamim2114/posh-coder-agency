@@ -6,6 +6,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
 import { Link } from 'react-router-dom';
+import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+
 
 const Intro = () => {
   return (
@@ -16,18 +18,26 @@ const Intro = () => {
       </div>
       <div className="intro-container">
         <div className="text">
-          <h1><span className='t1'>We Are</span> <br />CREATIVE BRANDING <br /><span className='t2'>AGENCY.</span> </h1>
+          <Fade cascade triggerOnce className="heading">
+            <span className='t1'><Fade cascade damping={.1}>We Are</Fade></span>
+            <span className='t2'><Zoom>CREATIVE BRANDING</Zoom></span>
+            <Fade cascade triggerOnce damping={.3} className='t3'>AGENCY.</Fade>
+          </Fade>
           <div className="btn-txt">
-            <Link to='/contact' className="readmore-btn link"> <NorthEastIcon />Contact Us</Link>
-            <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
+            <Slide cascade triggerOnce direction='up'>
+              <Link to='/contact' className="readmore-btn link"> <NorthEastIcon />Contact Us</Link>
+              <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
+            </Slide>
           </div>
         </div>
         <div className="icons">
-          <FacebookIcon />
-          <LinkedInIcon />
-          <TwitterIcon />
-          <EmailIcon />
-          <PhoneIcon />
+          <Fade cascade triggerOnce damping={.2}>
+            <FacebookIcon />
+            <LinkedInIcon />
+            <TwitterIcon />
+            <EmailIcon />
+            <PhoneIcon />
+          </Fade>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { testimonialData } from '../../data/testimonialData';
+import { Fade } from 'react-awesome-reveal';
 
 const Testimonial = () => {
   const settings = {
@@ -46,7 +47,7 @@ const Testimonial = () => {
   }
   return (
     <div className="testimonial">
-      <h1>Clients <span>Feedback</span></h1>
+      <h1>Clients <span><Fade cascade triggerOnce damping={.1}>Feedback</Fade> </span></h1>
       <Slider {...settings}>
         {
           testimonialData.map(d => (

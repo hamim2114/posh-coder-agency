@@ -2,19 +2,21 @@
 
 .service {
   @include container;
-  padding: 4rem 1rem;
+  padding: 10rem 1rem 5rem;
   @include mobile {
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
   }
   .top {
-    h1 {
+    .our-service {
       font-size: 6rem;
       @include font-oswald;
       -webkit-text-stroke: 1px $gray;
+      font-weight: bold;
       color: transparent;
       opacity: 0.6;
+      margin-bottom: 2rem;
       @include mobile {
-        font-size: 4rem;
+        font-size: 3rem;
       }
     }
   }
