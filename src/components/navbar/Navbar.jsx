@@ -30,9 +30,8 @@ const Navbar = () => {
       <div className={`middle ${nav && 'active'}`}>
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
-          <span>About Us</span>
-          <span>Projects</span>
-          <span>Services</span>
+          <a className='link' href='#service' onClick={() => setNav(false)}>Services</a>
+          <a className='link' href='#experience' onClick={() => setNav(false)}>About Us</a>
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
         </Slide>
       </div>

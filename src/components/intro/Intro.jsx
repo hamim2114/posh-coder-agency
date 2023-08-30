@@ -31,7 +31,7 @@ const Intro = () => {
           </div>
         </div>
         <div className="icons">
-          <Fade cascade triggerOnce damping={.2}>
+          <Fade cascade triggerOnce>
             <FacebookIcon />
             <LinkedInIcon />
             <TwitterIcon />

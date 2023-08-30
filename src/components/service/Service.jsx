@@ -9,11 +9,11 @@ import { Fade, Slide } from 'react-awesome-reveal'
 
 const Service = () => {
   return (
-    <div className="service">
-      <div className="top">
+    <div className="service" >
+      <div className="top" id='service'>
         <Fade damping={0.1} className='our-service' cascade triggerOnce>Our Services</Fade>
       </div>
-      <div className="bottom">
+      <div className="bottom" >
         <Slide cascade damping={0.1} triggerOnce>
           <div className="service-card">
             <div className="card-top">

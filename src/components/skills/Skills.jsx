@@ -5,7 +5,7 @@ const Skills = () => {
   return (
     <>
       <h1 className='experience-title'><Fade cascade damping={0.1} triggerOnce>Experience</Fade></h1>
-      <div className="skills">
+      <div className="skills" id='experience'>
         <div className="left">
           <div className="left-container">
             <Slide triggerOnce direction='up'>
