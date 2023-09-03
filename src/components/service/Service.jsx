@@ -5,24 +5,27 @@ import WebIcon from '@mui/icons-material/Web';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import BubbleChartIcon from '@mui/icons-material/BubbleChart';
-import { Fade, Slide } from 'react-awesome-reveal'
+import { Fade, Slide } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
+import { ArrowRightAlt, TrendingFlat } from '@mui/icons-material';
 
 const Service = () => {
   return (
-    <div className="service" >
+    <div className="service">
       <div className="top" id='service'>
         <Fade damping={0.1} className='our-service' cascade triggerOnce>Our Services</Fade>
       </div>
-      <div className="bottom" >
-        <Slide cascade damping={0.1} triggerOnce>
+      <div className="bottom">
+        <Fade cascade damping={0.1} triggerOnce>
           <div className="service-card">
             <div className="card-top">
               <span>01</span>
               <BusinessCenterIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Online Business <br /> Create</span>
-              <p>We create online platforms account as per your business requirements.</p>
+              <span className='card-title'>Online Business<br />Creation</span>
+              <p>We create online platforms according to your business requirements.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -31,8 +34,9 @@ const Service = () => {
               <DifferenceIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Content Create and <br /> Designing</span>
-              <p>We creates contents for your website of other social media accounts.</p>
+              <span className='card-title'>Content Creation and<br />Design</span>
+              <p>We create content for your website and other social media accounts.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -41,8 +45,9 @@ const Service = () => {
               <WebIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Website Design and <br /> Development</span>
-              <p>We developed website for your business. You can customize as you want.</p>
+              <span className='card-title'>Website Design and<br />Development</span>
+              <p>We develop websites for your business that you can customize as you want.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -51,8 +56,9 @@ const Service = () => {
               <AddBusinessIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Online Marketing and <br /> SEO</span>
+              <span className='card-title'>Online Marketing and<br />SEO</span>
               <p>We provide online marketing and SEO services.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -61,8 +67,9 @@ const Service = () => {
               <AppShortcutIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Softwere Design and <br /> Development</span>
-              <p>We develops softwares to make your business more easier and faster to handle.</p>
+              <span className='card-title'>Software Design and<br />Development</span>
+              <p>We develop software to make your business easier and faster to manage.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -71,14 +78,16 @@ const Service = () => {
               <BubbleChartIcon />
             </div>
             <div className="card-bottom">
-              <span className='card-title'>Graphic Design and <br /> Branding</span>
-              <p>We Design brand identity like company logo, Business card, Banner, Poster etc</p>
+              <span className='card-title'>Graphic Design and<br />Branding</span>
+              <p>We design brand identity elements like company logos, business cards, etc.</p>
+              <Link className='details-btn link'>Read Details </Link>
             </div>
           </div>
-        </Slide>
+          <Link to='service' className='read-more link'>Service Details <TrendingFlat/></Link>
+        </Fade>
       </div>
     </div>
   )
 }
 
-export default Service
+export default Service;

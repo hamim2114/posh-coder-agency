@@ -9,7 +9,7 @@ const Skills = () => {
         <div className="left">
           <div className="left-container">
             <Slide triggerOnce direction='up'>
-              <div className='h4'>Proffessional Skills</div>
+              <div className='h4'>Professional Skills</div>
               <div className='skills-h1'>We are disitally led, full-service creative agency</div>
               <p>Our long experience at the top of the events business means we have expertise which reaches across a number of sectors, as well as knowledge of specific protocol and local.</p>
               <div className="skills-score">

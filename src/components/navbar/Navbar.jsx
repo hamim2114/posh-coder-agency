@@ -30,13 +30,13 @@ const Navbar = () => {
       <div className={`middle ${nav && 'active'}`}>
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
-          <a className='link' href='#service' onClick={() => setNav(false)}>Services</a>
+          <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link>
           <a className='link' href='#experience' onClick={() => setNav(false)}>About Us</a>
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
         </Slide>
       </div>
       <div className="right">
-        <div className={`btn ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></div>
+        <Link to='contact' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
       </div>
       <div className="nav-btn" onClick={() => setNav(p => !p)}><SegmentIcon /></div>
       <div className={`nav-btn-x ${nav && 'active'}`} onClick={() => setNav(p => !p)}><Slide><ArrowBackIosIcon /></Slide></div>

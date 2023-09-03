@@ -6,11 +6,11 @@
   ::-webkit-scrollbar {
     width: 10px;
   }
-
+  
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
-
+  
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
@@ -23,6 +23,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   background-color: $body-bg;
   /* background-color: #0C0C21; */
   color: #ffffff;
