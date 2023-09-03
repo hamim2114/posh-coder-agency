@@ -150,10 +150,13 @@
    }
    .right{
     flex: 1;
+    width: 100%;
     img{
       filter: grayscale(1);
       width: 600px;
+      max-width: 100%;
       @include mobile{
+        // width: 100%;
         margin-bottom: 2rem;
       }
     }
