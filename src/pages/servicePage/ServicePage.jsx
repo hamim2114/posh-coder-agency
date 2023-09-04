@@ -34,7 +34,7 @@ const ServicePage = () => {
       <div className="middle">
         <span className='h1'>What we’re offering <br />to our customers</span>
         <div className="service-card">
-          <Link className='card-box link'>
+          <Link to='/service/webdev' className='card-box link'>
             <WebSharp />
             <span>Website solutions</span>
             <TrendingFlatSharp className='arrow' />
@@ -98,13 +98,11 @@ const ServicePage = () => {
       <div className="clients-logo">
         <h3>Trusted By</h3>
         <div className="client-logo-container">
-          <Slide direction='up' triggerOnce>
             <img src="/Client-Logo-02.svg" alt="" />
             <img src="/Client-Logo-03.svg" alt="" />
             <img src="/Client-Logo-04.svg" alt="" />
             <img src="/Client-Logo-05.svg" alt="" />
             <img src="/Client-Logo-03.svg" alt="" />
-          </Slide>
         </div>
       </div>
     </div>

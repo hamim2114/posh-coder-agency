@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
 import ServicePage from './pages/servicePage/ServicePage';
+import WebsiteDev from './pages/servicePage/websiteDev/WebsiteDev';
 
 function App() {
 
@@ -20,31 +21,23 @@ function App() {
   const Layout = () => {
     return (
       <div>
-        <ScrollToTop/>
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
+        <ScrollToTop />
+        <Navbar />
+        <Outlet />
+        <Footer />
       </div>
     )
   }
-  
+
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout/>,
+      element: <Layout />,
       children: [
-        {
-          path: '/',
-          element: <HomePage/>
-        },
-        {
-          path: 'service',
-          element: <ServicePage/>
-        },
-        {
-          path: 'contact',
-          element: <Contact/>
-        },
+        { path: '/', element: <HomePage /> },
+        { path: 'service', element: <ServicePage /> },
+        { path: 'service/webdev', element: <WebsiteDev /> },
+        { path: 'contact', element: <Contact /> },
       ]
     }
   ])

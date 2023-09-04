@@ -2,12 +2,16 @@
 
 .navbar {
   display: flex;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
   border-bottom: 1px solid rgb(107, 107, 107);
   user-select: none;
   background: linear-gradient(to top, #00000000, $body-bg);
+  z-index: 111;
+  backdrop-filter: blur(10px);
   @include mobile {
     padding: 10px 1rem;
   }
@@ -65,13 +69,14 @@
     }
     .btn {
       border: 1px solid gray;
-      padding: 10px 20px;
+      padding: 5px 20px;
       cursor: pointer;
       @include flex();
       gap: 20px;
       transition: 0.5s;
       &:hover {
-        background-color: $red;
+        background-color: #fff;
+        color: gray;
       }
       @include tablet {
         position: fixed;
