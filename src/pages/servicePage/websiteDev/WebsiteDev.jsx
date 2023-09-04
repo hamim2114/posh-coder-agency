@@ -1,47 +1,22 @@
 import './WebsiteDev.scss';
 import {
-  Box,
-  Card,
-  CardContent,
   Stack,
   Typography
 } from '@mui/material';
 import {
-  AddBusinessSharp,
-  AppShortcutSharp,
   ArrowRightAltOutlined,
   AutoAwesomeOutlined,
-  BubbleChartSharp,
-  BusinessCenter,
-  BusinessCenterSharp,
   CampaignOutlined,
   CheckCircle,
   DoneAllOutlined,
   EngineeringSharp,
-  PlayArrow,
-  SourceSharp,
-  TrendingFlatSharp,
-  WebSharp,
   WebhookSharp
 } from '@mui/icons-material';
-import WebIcon from '@mui/icons-material/Web';
-import BubbleChartIcon from '@mui/icons-material/BubbleChart';
-import AppShortcutIcon from '@mui/icons-material/AppShortcut';
-import AddBusinessIcon from '@mui/icons-material/AddBusiness';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const WebsiteDev = () => {
-  const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
+const {pathname} = useLocation()
   return (
     <div className="website-dev">
       <div className="top">
@@ -49,9 +24,9 @@ const WebsiteDev = () => {
       </div>
       <div className="middle">
         <div className="left">
-          <div className="service-link">
+          <div className="service-link" style={{backgroundColor: pathname === '/service/webdev' ? 'red' : ''}}>
             <span>Website Development</span>
-            <ArrowRightAltOutlined />
+            <ArrowRightAltOutlined  />
           </div>
           <div className="service-link">
             <span>App Development</span>
