@@ -80,7 +80,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Graphic Design and<br />Branding</span>
               <p>We design brand identity elements like company logos, business cards, etc.</p>
-              <Link className='details-btn link'>Read Details </Link>
+              <Link to='/service/graphic' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <Link to='service' className='read-more link'>Service Details <TrendingFlat/></Link>

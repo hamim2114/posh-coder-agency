@@ -53,7 +53,7 @@ const Graphic = () => {
       <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">
           <div className="left">
-            <span>Are you looking for Graphic Design services?</span>
+            <span>Are you looking for Web Development services?</span>
             <Link to='/contact' className="btn link">CONTACT</Link>
           </div>
           <div className="right">
