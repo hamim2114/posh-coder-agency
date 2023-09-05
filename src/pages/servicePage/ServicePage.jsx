@@ -39,7 +39,7 @@ const ServicePage = () => {
             <span>Website solutions</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
-          <Link className='card-box link'>
+          <Link to='/service/graphic' className='card-box link'>
             <BubbleChartSharp />
             <span>Graphic solutions</span>
             <TrendingFlatSharp className='arrow' />

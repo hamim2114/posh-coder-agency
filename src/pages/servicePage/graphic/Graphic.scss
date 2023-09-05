@@ -1,6 +1,6 @@
 @import '../../../global.scss';
 
-.website-dev {
+.graphic {
   overflow-x: hidden;
   .top {
     display: flex;
@@ -88,7 +88,7 @@
     @include container;
     margin-bottom: 10rem;
     @include mobile{
-     margin-bottom: 5rem;
+     margin-bottom: 5rem;   
     }
     .card{
       display: flex;

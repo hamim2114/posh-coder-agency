@@ -1,4 +1,4 @@
-import './WebsiteDev.scss';
+import './Graphic.scss';
 import {
   Stack,
   Typography
@@ -14,20 +14,20 @@ import {
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 
-const WebsiteDev = () => {
-
-const {pathname} = useLocation()
+const Graphic = () => {
+  const { pathname } = useLocation();
+  
   return (
-    <div className="website-dev">
+    <div className="graphic">
       <div className="top">
-        <span className='top-title'>Website Development</span>
+        <span className='top-title'>Graphic Design</span>
       </div>
       <div className="middle">
         <div className="left">
-          <div className="service-link" style={{backgroundColor: pathname === '/service/webdev' ? 'red' : ''}}>
+          <Link to='/service/webdev' className="service-link link" >
             <span>Website Development</span>
-            <ArrowRightAltOutlined  />
-          </div>
+            <ArrowRightAltOutlined />
+          </Link>
           <div className="service-link">
             <span>App Development</span>
             <ArrowRightAltOutlined />
@@ -36,46 +36,48 @@ const {pathname} = useLocation()
             <span>Digital Marketing</span>
             <ArrowRightAltOutlined />
           </div>
-          <Link to='/service/graphic' className="service-link link">
+          <div className="service-link" style={{ backgroundColor: pathname === '/service/graphic' ? 'red' : '' }}>
             <span>Graphic Designing</span>
             <ArrowRightAltOutlined />
-          </Link>
+          </div>
           <div className="service-link">
             <span>Content Writing</span>
             <ArrowRightAltOutlined />
           </div>
         </div>
         <div className="right">
-          <img src="/services-details-img1.jpg" alt="Website Development" />
+          <img src="/graphic-design-image.jpg" alt="Graphic Design" />
         </div>
       </div>
 
-      <Stack className='middle2' direction={{xs: 'column-reverse',md: 'row'}} gap={12} alignItems='center'>
+      <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">
           <div className="left">
-            <span>Are you looking for digital marketing services?</span>
+            <span>Are you looking for Graphic Design services?</span>
             <Link to='/contact' className="btn link">CONTACT</Link>
           </div>
           <div className="right">
-            <img src="/banner-one-img.png" alt="Digital Marketing" />
+            <img src="/banner-one-img.png" alt="Graphic Design" />
           </div>
         </div>
         <Stack gap={3}>
-          <Typography variant='h4'>Website Development</Typography>
-          <Typography variant='body' sx={{color: 'rgb(199, 199, 199)', fontWeight: '300'}}>
-            Our website development services are designed to create outstanding online experiences. We specialize in crafting websites that not only look great but also perform exceptionally well, meeting the unique needs of our clients.
+          <Typography variant='h4'>Graphic Designing</Typography>
+          <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
+            Our graphic design services are tailored to bring your creative ideas to life. We specialize in creating visually stunning designs that captivate and engage your audience.
           </Typography>
-          <Typography variant='h5' color='red'>Helping clients solve application development problems</Typography>
-          <Typography variant='body' sx={{color: 'rgb(199, 199, 199)',fontWeight: '300'}}>We take pride in solving complex application development challenges. Our team is dedicated to delivering solutions that drive growth and success for your business.</Typography>
+          <Typography variant='h5' color='red'>Transforming your ideas into beautiful visuals</Typography>
+          <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
+            We take pride in turning your concepts into eye-catching graphics that leave a lasting impression. Our designs are crafted with precision and creativity.
+          </Typography>
           <Typography variant='h4' mt={6}>Why Choose Us?</Typography>
-          <Stack direction={{xm:'column', md: 'row'}} gap={3} justifyContent='space-between'>
+          <Stack direction={{ xm: 'column', md: 'row' }} gap={3} justifyContent='space-between'>
             <Stack direction='row' alignItems='center' gap={2}>
               <AutoAwesomeOutlined sx={{
                 bgcolor: 'red',
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{color: 'rgb(199, 199, 199)'}}>Best Creative <br /> Agency</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Creative Graphic <br /> Designs</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <DoneAllOutlined sx={{
@@ -83,7 +85,7 @@ const {pathname} = useLocation()
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{color: 'rgb(199, 199, 199)'}}>99% Success <br />Rate</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Quality <br /> Designs</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <CampaignOutlined sx={{
@@ -91,7 +93,7 @@ const {pathname} = useLocation()
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{color: 'rgb(199, 199, 199)'}}>Quality <br />Marketing</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely <br /> Delivery</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -100,31 +102,31 @@ const {pathname} = useLocation()
       <div className="bottom">
         <div className="left">
           <span className='h1'>Our Benefits</span>
-          <span className='span'>Get the best web development from Posh Coder Agency</span>
+          <span className='span'>Experience the best in Graphic Design from Posh Coder Agency</span>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Cost-Effective Solutions</Typography>
+            <Typography>Creative and Unique Designs</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Equal Opportunities for Growth</Typography>
+            <Typography>Customized Solutions</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>High Brand Awareness</Typography>
+            <Typography>Effective Visual Communication</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Higher ROI (Return on Investment)</Typography>
+            <Typography>Client-Centric Approach</Typography>
           </Stack>
           <div className="info">
             <div className="info-details">
               <EngineeringSharp />
-              <span >Leaders in Creative Agency</span>
+              <span >Leaders in Creative Design</span>
             </div>
             <div className="info-details">
               <WebhookSharp />
-              <span>Highest Quality Development</span>
+              <span>Top-Quality Design Solutions</span>
             </div>
           </div>
         </div>
@@ -136,4 +138,4 @@ const {pathname} = useLocation()
   )
 }
 
-export default WebsiteDev;
+export default Graphic;

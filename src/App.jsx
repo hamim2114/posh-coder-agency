@@ -7,6 +7,7 @@ import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
 import ServicePage from './pages/servicePage/ServicePage';
 import WebsiteDev from './pages/servicePage/websiteDev/WebsiteDev';
+import Graphic from './pages/servicePage/graphic/Graphic';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         { path: '/', element: <HomePage /> },
         { path: 'service', element: <ServicePage /> },
         { path: 'service/webdev', element: <WebsiteDev /> },
+        { path: 'service/graphic', element: <Graphic /> },
         { path: 'contact', element: <Contact /> },
       ]
     }

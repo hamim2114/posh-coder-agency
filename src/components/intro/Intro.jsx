@@ -7,6 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
 import { Link } from 'react-router-dom';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import { PermPhoneMsg } from '@mui/icons-material';
 
 
 const Intro = () => {
@@ -25,7 +26,7 @@ const Intro = () => {
           </Fade>
           <div className="btn-txt">
             <Slide cascade triggerOnce direction='up'>
-              <Link to='/contact' className="readmore-btn link"> <NorthEastIcon />Contact Us</Link>
+              <Link to='/contact' className="readmore-btn link"> <PermPhoneMsg />Contact Us</Link>
               <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
             </Slide>
           </div>
