@@ -26,7 +26,10 @@ const Navbar = () => {
 
   return (
     <div ref={navbarRef} className="navbar">
-      <Link to='/' className="left link">POSH CODER<span>.</span></Link>
+      <Link to='/' className="left link">
+        <img src="/logo.png" alt="" />
+        
+      </Link>
       <div className={`middle ${nav && 'active'}`}>
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>

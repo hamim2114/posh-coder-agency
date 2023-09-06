@@ -1,6 +1,7 @@
 import { Slide } from 'react-awesome-reveal';
 import './Experience.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import { Link } from 'react-router-dom';
 
 const Experience = () => {
   return (
@@ -25,7 +26,7 @@ const Experience = () => {
                 <span>Possessing Special Skill or Knowledge</span>
               </div>
             </div>
-            <div className="read-more">Read More<TrendingFlatIcon /></div>
+            <Link to='/service' className="read-more link">Read More<TrendingFlatIcon /></Link>
           </Slide>
         </div>
       </div>

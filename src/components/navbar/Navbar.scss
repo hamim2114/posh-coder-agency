@@ -15,11 +15,11 @@
     font-size: 2rem;
     font-weight: 900;
     cursor: pointer;
-    span {
-      color: $red;
-    }
-    @include mobile {
-      font-size: 1.5rem;
+    img{
+      width: 250px;
+      @include mobile {
+        width: 200px;
+      }
     }
   }
   .middle {
