@@ -33,11 +33,11 @@ const Intro = () => {
         </div>
         <div className="icons">
           <Fade cascade triggerOnce>
-            <FacebookIcon />
-            <LinkedInIcon />
-            <TwitterIcon />
-            <EmailIcon />
-            <PhoneIcon />
+            <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
+            {/* <LinkedInIcon />
+            <TwitterIcon /> */}
+            <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
+            <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
           </Fade>
         </div>
       </div>

@@ -13,11 +13,11 @@ const Footer = () => {
         <div className="top">
           <div className="logo"><Fade cascade damping={.1} triggerOnce>POSH CODER.</Fade> </div>
           <div className="icons">
-            <FacebookIcon />
-            <LinkedInIcon />
-            <TwitterIcon />
-            <EmailIcon />
-            <PhoneIcon />
+          <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
+            {/* <LinkedInIcon />
+            <TwitterIcon /> */}
+            <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
+            <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
           </div>
         </div>
         <div className="bottom">

@@ -31,7 +31,7 @@ const Navbar = () => {
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
           <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link>
-          <a className='link' href='#experience' onClick={() => setNav(false)}>About Us</a>
+          {/* <a className='link' href='#experience' onClick={() => setNav(false)}>About Us</a> */}
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
         </Slide>
       </div>

@@ -8,6 +8,9 @@ import Footer from './components/footer/Footer';
 import ServicePage from './pages/servicePage/ServicePage';
 import WebsiteDev from './pages/servicePage/websiteDev/WebsiteDev';
 import Graphic from './pages/servicePage/graphic/Graphic';
+import Marketing from './pages/servicePage/marketing/Markating';
+import AppDevelop from './pages/servicePage/appDevelop/AppDevelop';
+import Content from './pages/servicePage/content/Content';
 
 function App() {
 
@@ -39,6 +42,9 @@ function App() {
         { path: 'service', element: <ServicePage /> },
         { path: 'service/webdev', element: <WebsiteDev /> },
         { path: 'service/graphic', element: <Graphic /> },
+        { path: 'service/marketing', element: <Marketing /> },
+        { path: 'service/appdevelop', element: <AppDevelop /> },
+        { path: 'service/content', element: <Content /> },
         { path: 'contact', element: <Contact /> },
       ]
     }

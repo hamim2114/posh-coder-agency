@@ -1,4 +1,4 @@
-import './Graphic.scss';
+import './Marketing.scss';
 import {
   Stack,
   Typography
@@ -14,13 +14,13 @@ import {
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 
-const Graphic = () => {
+const Marketing = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="graphic">
+    <div className="marketing">
       <div className="top">
-        <span className='top-title'>Graphic Solutions</span>
+        <span className='top-title'>Digital Marketing Solutions</span>
       </div>
       <div className="middle">
         <div className="left">
@@ -28,20 +28,24 @@ const Graphic = () => {
             <span>Website Development</span>
             <ArrowRightAltOutlined />
           </Link>
-          <div className="service-link">
-            <span>App Development</span>
-            <ArrowRightAltOutlined />
-          </div>
+          <Link to='/service/appdevelop' className='link'>
+            <div className="service-link">
+              <span>App Development</span>
+              <ArrowRightAltOutlined />
+            </div>
+          </Link>
           <Link to='/service/marketing' className='link'>
             <div className="service-link" style={{ backgroundColor: pathname === '/service/marketing' ? 'red' : '' }}>
               <span>Digital Marketing</span>
               <ArrowRightAltOutlined />
             </div>
           </Link>
-          <div className="service-link" style={{ backgroundColor: pathname === '/service/graphic' ? 'red' : '' }}>
-            <span>Graphic Designing</span>
-            <ArrowRightAltOutlined />
-          </div>
+          <Link to='/service/graphic' className='link'>
+            <div className="service-link" style={{ backgroundColor: pathname === '/service/graphic' ? 'red' : '' }}>
+              <span>Graphic Designing</span>
+              <ArrowRightAltOutlined />
+            </div>
+          </Link>
           <Link to='/service/content' className='link'>
             <div className="service-link">
               <span>Content Writing</span>
@@ -50,28 +54,28 @@ const Graphic = () => {
           </Link>
         </div>
         <div className="right">
-          <img src="/graphic-design-image.jpg" alt="Graphic Design" />
+          <img src="/services-details-marketing.jpg" alt="Digital Marketing" />
         </div>
       </div>
 
       <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">
           <div className="left">
-            <span>Are you looking for Web Development services?</span>
+            <span>Are you looking for Graphic Designing services?</span>
             <Link to='/contact' className="btn link">CONTACT</Link>
           </div>
           <div className="right">
-            <img src="/banner-one-img.png" alt="Graphic Design" />
+            <img src="/banner-one-img.png" alt="Digital Marketing" />
           </div>
         </div>
         <Stack gap={3}>
-          <Typography variant='h4'>Graphic Designing</Typography>
+          <Typography variant='h4'>Digital Marketing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
-            Our graphic design services are tailored to bring your creative ideas to life. We specialize in creating visually stunning designs that captivate and engage your audience.
+            Our digital marketing services are designed to boost your online presence and drive business growth. We specialize in creating and implementing effective marketing strategies that reach your target audience.
           </Typography>
-          <Typography variant='h5' color='red'>Transforming your ideas into beautiful visuals</Typography>
+          <Typography variant='h5' color='red'>Maximizing your online reach and impact</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
-            We take pride in turning your concepts into eye-catching graphics that leave a lasting impression. Our designs are crafted with precision and creativity.
+            We use the latest digital marketing techniques to help you achieve your business goals. Our team is dedicated to delivering results and maximizing your return on investment.
           </Typography>
           <Typography variant='h4' mt={6}>Why Choose Us?</Typography>
           <Stack direction={{ xm: 'column', md: 'row' }} gap={3} justifyContent='space-between'>
@@ -81,7 +85,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Creative Graphic <br /> Designs</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Creative Marketing <br /> Strategies</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <DoneAllOutlined sx={{
@@ -89,7 +93,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Quality <br /> Designs</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Proven Results <br /> Record</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <CampaignOutlined sx={{
@@ -97,7 +101,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely <br /> Delivery</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely <br /> Campaigns</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -106,31 +110,31 @@ const Graphic = () => {
       <div className="bottom">
         <div className="left">
           <span className='h1'>Our Benefits</span>
-          <span className='span'>Experience the best in Graphic Design from Posh Coder Agency</span>
+          <span className='span'>Experience the best in Digital Marketing from Posh Coder Agency</span>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Creative and Unique Designs</Typography>
+            <Typography>Creative and Targeted Campaigns</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Customized Solutions</Typography>
+            <Typography>Customized Marketing Solutions</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Effective Visual Communication</Typography>
+            <Typography>Increased Brand Visibility</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Client-Centric Approach</Typography>
+            <Typography>Measurable ROI (Return on Investment)</Typography>
           </Stack>
           <div className="info">
             <div className="info-details">
               <EngineeringSharp />
-              <span >Leaders in Creative Design</span>
+              <span >Leaders in Digital Marketing</span>
             </div>
             <div className="info-details">
               <WebhookSharp />
-              <span>Top-Quality Design Solutions</span>
+              <span>Proven Marketing Strategies</span>
             </div>
           </div>
         </div>
@@ -142,4 +146,4 @@ const Graphic = () => {
   )
 }
 
-export default Graphic;
+export default Marketing;

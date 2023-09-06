@@ -1,4 +1,4 @@
-import './Graphic.scss';
+import './AppDevelop.scss';
 import {
   Stack,
   Typography
@@ -14,13 +14,13 @@ import {
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 
-const Graphic = () => {
+const AppDevelop = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="graphic">
+    <div className="appDevelop">
       <div className="top">
-        <span className='top-title'>Graphic Solutions</span>
+        <span className='top-title'>App Development Solutions</span>
       </div>
       <div className="middle">
         <div className="left">
@@ -28,7 +28,7 @@ const Graphic = () => {
             <span>Website Development</span>
             <ArrowRightAltOutlined />
           </Link>
-          <div className="service-link">
+          <div className="service-link" style={{ backgroundColor: pathname === '/service/appdevelop' ? 'red' : '' }}>
             <span>App Development</span>
             <ArrowRightAltOutlined />
           </div>
@@ -38,10 +38,12 @@ const Graphic = () => {
               <ArrowRightAltOutlined />
             </div>
           </Link>
-          <div className="service-link" style={{ backgroundColor: pathname === '/service/graphic' ? 'red' : '' }}>
-            <span>Graphic Designing</span>
-            <ArrowRightAltOutlined />
-          </div>
+          <Link to='/service/graphic' className='link'>
+            <div className="service-link" style={{ backgroundColor: pathname === '/service/graphic' ? 'red' : '' }}>
+              <span>Graphic Designing</span>
+              <ArrowRightAltOutlined />
+            </div>
+          </Link>
           <Link to='/service/content' className='link'>
             <div className="service-link">
               <span>Content Writing</span>
@@ -50,7 +52,7 @@ const Graphic = () => {
           </Link>
         </div>
         <div className="right">
-          <img src="/graphic-design-image.jpg" alt="Graphic Design" />
+          <img src="/app-development-image.jpg" alt="App Development" />
         </div>
       </div>
 
@@ -61,17 +63,17 @@ const Graphic = () => {
             <Link to='/contact' className="btn link">CONTACT</Link>
           </div>
           <div className="right">
-            <img src="/banner-one-img.png" alt="Graphic Design" />
+            <img src="/banner-one-img.png" alt="App Development" />
           </div>
         </div>
         <Stack gap={3}>
-          <Typography variant='h4'>Graphic Designing</Typography>
+          <Typography variant='h4'>App Development</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
-            Our graphic design services are tailored to bring your creative ideas to life. We specialize in creating visually stunning designs that captivate and engage your audience.
+            We specialize in creating cutting-edge mobile and web applications tailored to your business needs. Our team of experts ensures top-notch quality and performance.
           </Typography>
-          <Typography variant='h5' color='red'>Transforming your ideas into beautiful visuals</Typography>
+          <Typography variant='h5' color='red'>Turning your app ideas into reality</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
-            We take pride in turning your concepts into eye-catching graphics that leave a lasting impression. Our designs are crafted with precision and creativity.
+            Whether you need a native mobile app or a web-based application, we have the skills and experience to bring your vision to life.
           </Typography>
           <Typography variant='h4' mt={6}>Why Choose Us?</Typography>
           <Stack direction={{ xm: 'column', md: 'row' }} gap={3} justifyContent='space-between'>
@@ -81,7 +83,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Creative Graphic <br /> Designs</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Creative App <br /> Development</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <DoneAllOutlined sx={{
@@ -89,7 +91,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Quality <br /> Designs</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Proven Track <br /> Record</Typography>
             </Stack>
             <Stack direction='row' alignItems='center' gap={2}>
               <CampaignOutlined sx={{
@@ -97,7 +99,7 @@ const Graphic = () => {
                 p: 1.5,
                 borderRadius: '50%'
               }} fontSize='large' />
-              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely <br /> Delivery</Typography>
+              <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely Delivery</Typography>
             </Stack>
           </Stack>
         </Stack>
@@ -106,31 +108,31 @@ const Graphic = () => {
       <div className="bottom">
         <div className="left">
           <span className='h1'>Our Benefits</span>
-          <span className='span'>Experience the best in Graphic Design from Posh Coder Agency</span>
+          <span className='span'>Experience the best in App Development from Posh Coder Agency</span>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Creative and Unique Designs</Typography>
+            <Typography>Customized App Solutions</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Customized Solutions</Typography>
+            <Typography>User-Centric Design</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Effective Visual Communication</Typography>
+            <Typography>Scalable and Secure Apps</Typography>
           </Stack>
           <Stack direction='row' alignItems='center' gap={2}>
             <CheckCircle sx={{ color: 'red' }} />
-            <Typography>Client-Centric Approach</Typography>
+            <Typography>Continuous Support and Updates</Typography>
           </Stack>
           <div className="info">
             <div className="info-details">
               <EngineeringSharp />
-              <span >Leaders in Creative Design</span>
+              <span >Leaders in App Development</span>
             </div>
             <div className="info-details">
               <WebhookSharp />
-              <span>Top-Quality Design Solutions</span>
+              <span>Proven App Solutions</span>
             </div>
           </div>
         </div>
@@ -142,4 +144,4 @@ const Graphic = () => {
   )
 }
 
-export default Graphic;
+export default AppDevelop;

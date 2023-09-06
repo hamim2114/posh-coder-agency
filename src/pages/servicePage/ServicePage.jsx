@@ -32,7 +32,7 @@ const ServicePage = () => {
         </div>
       </div>
       <div className="middle">
-        <span className='h1'>What we’re offering <br />to our customers</span>
+        <span className='h1'> What we’re offering <br />to our customers</span>
         <div className="service-card">
           <Link to='/service/webdev' className='card-box link'>
             <WebSharp />
@@ -44,17 +44,17 @@ const ServicePage = () => {
             <span>Graphic solutions</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
-          <Link className='card-box link'>
+          <Link to='/service/marketing' className='card-box link'>
             <AddBusinessSharp />
             <span>Marketing Solutions</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
-          <Link className='card-box link'>
+          <Link to='/service/content' className='card-box link'>
             <SourceSharp />
             <span>Content Solutions</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
-          <Link className='card-box link'>
+          <Link to='/service/appdevelop' className='card-box link'>
             <AppShortcutSharp />
             <span>Application Solutions</span>
             <TrendingFlatSharp className='arrow' />
@@ -63,19 +63,22 @@ const ServicePage = () => {
       </div>
       <div className="bottom">
         <div className="left">
-          <span className='h1'>Why you should choose our agency</span>
-          <span className='span'>Proin est lacus, sagittis lobortis iaculise get.</span>
-          <p>There are many variations of passages of available but the majority have suffered. Alteration in some form, lipsum is simply free text by injected humou or randomised words even believable.</p>
-          <div className="info">
-            <div className="info-details">
-              <EngineeringSharp />
-              <span >Leader of creative agency</span>
+          <Slide direction='up' triggerOnce>
+
+            <span className='h1'>Why you should choose our agency</span>
+            <span className='span'>Proin est lacus, sagittis lobortis iaculise get.</span>
+            <p>There are many variations of passages of available but the majority have suffered. Alteration in some form, lipsum is simply free text by injected humou or randomised words even believable.</p>
+            <div className="info">
+              <div className="info-details">
+                <EngineeringSharp />
+                <span >Leader of creative agency</span>
+              </div>
+              <div className="info-details">
+                <WebhookSharp />
+                <span>Highest quality development</span>
+              </div>
             </div>
-            <div className="info-details">
-              <WebhookSharp />
-              <span>Highest quality development</span>
-            </div>
-          </div>
+          </Slide>
         </div>
         <div className="right">
           <img src="/why-choose.jpg" alt="" />
@@ -98,11 +101,11 @@ const ServicePage = () => {
       <div className="clients-logo">
         <h3>Trusted By</h3>
         <div className="client-logo-container">
-            <img src="/Client-Logo-02.svg" alt="" />
-            <img src="/Client-Logo-03.svg" alt="" />
-            <img src="/Client-Logo-04.svg" alt="" />
-            <img src="/Client-Logo-05.svg" alt="" />
-            <img src="/Client-Logo-03.svg" alt="" />
+          <img src="/Client-Logo-02.svg" alt="" />
+          <img src="/Client-Logo-03.svg" alt="" />
+          <img src="/Client-Logo-04.svg" alt="" />
+          <img src="/Client-Logo-05.svg" alt="" />
+          <img src="/Client-Logo-03.svg" alt="" />
         </div>
       </div>
     </div>

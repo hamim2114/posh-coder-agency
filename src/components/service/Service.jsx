@@ -25,7 +25,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Online Business<br />Creation</span>
               <p>We create online platforms according to your business requirements.</p>
-              <Link className='details-btn link'>Read Details </Link>
+              <Link to='/service' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -36,7 +36,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Content Creation and<br />Design</span>
               <p>We create content for your website and other social media accounts.</p>
-              <Link className='details-btn link'>Read Details </Link>
+              <Link to='/service/content' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -58,7 +58,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Online Marketing and<br />SEO</span>
               <p>We provide online marketing and SEO services.</p>
-              <Link className='details-btn link'>Read Details </Link>
+              <Link to='/service/marketing' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
@@ -69,7 +69,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Software Design and<br />Development</span>
               <p>We develop software to make your business easier and faster to manage.</p>
-              <Link className='details-btn link'>Read Details </Link>
+              <Link to='/service/appdevelop' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">
