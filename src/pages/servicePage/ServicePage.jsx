@@ -36,27 +36,27 @@ const ServicePage = () => {
         <div className="service-card">
           <Link to='/service/webdev' className='card-box link'>
             <WebSharp />
-            <span>Website solutions</span>
+            <span>Website Design and<br />Development</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
           <Link to='/service/graphic' className='card-box link'>
             <BubbleChartSharp />
-            <span>Graphic solutions</span>
+            <span>Graphic Design and<br />Branding</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
           <Link to='/service/marketing' className='card-box link'>
             <AddBusinessSharp />
-            <span>Marketing Solutions</span>
+            <span>Online Marketing and SEO</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
           <Link to='/service/content' className='card-box link'>
             <SourceSharp />
-            <span>Content Solutions</span>
+            <span>Content Creation and<br />Design</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
           <Link to='/service/appdevelop' className='card-box link'>
             <AppShortcutSharp />
-            <span>Application Solutions</span>
+            <span>Software Design and<br />Development</span>
             <TrendingFlatSharp className='arrow' />
           </Link>
         </div>
@@ -64,22 +64,22 @@ const ServicePage = () => {
       <div className="bottom">
         <div className="left">
           <Slide direction='up' triggerOnce>
-
             <span className='h1'>Why you should choose our agency</span>
-            <span className='span'>Proin est lacus, sagittis lobortis iaculise get.</span>
-            <p>There are many variations of passages of available but the majority have suffered. Alteration in some form, lipsum is simply free text by injected humou or randomised words even believable.</p>
+            <span className='span'>At Our Agency, We Deliver Exceptional Results</span>
+            <p>When it comes to choosing a creative agency, you want the best. Our agency stands out from the rest. We are committed to providing top-notch services that exceed your expectations.</p>
             <div className="info">
               <div className="info-details">
                 <EngineeringSharp />
-                <span >Leader of creative agency</span>
+                <span>Leaders in Creative Solutions</span>
               </div>
               <div className="info-details">
                 <WebhookSharp />
-                <span>Highest quality development</span>
+                <span>Unparalleled Development Quality</span>
               </div>
             </div>
           </Slide>
         </div>
+
         <div className="right">
           <img src="/why-choose.jpg" alt="" />
         </div>
