@@ -18,8 +18,8 @@ const Footer = () => {
             </div>
             <div className="icons">
               <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
-              {/* <LinkedInIcon />
-            <TwitterIcon /> */}
+              <LinkedInIcon />
+            <TwitterIcon />
               <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
               <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
             </div>
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <span className='copyright'>© Copyrights 2023 Posh Coder All rights reserved.</span>
+          <span className='copyright'>© Copyrights 2023 Posh Coder All rights reserved. Developed and Maintained by Posh Coder.</span>
         </div>
       </div>
     </>

@@ -11,6 +11,8 @@ import Graphic from './pages/servicePage/graphic/Graphic';
 import Marketing from './pages/servicePage/marketing/Markating';
 import AppDevelop from './pages/servicePage/appDevelop/AppDevelop';
 import Content from './pages/servicePage/content/Content';
+import Business from './pages/servicePage/business/Business';
+import AboutPage from './pages/aboutPage/AboutPage';
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
       children: [
         { path: '/', element: <HomePage /> },
         { path: 'service', element: <ServicePage /> },
+        { path: 'about', element: <AboutPage /> },
+        { path: 'service/business', element: <Business /> },
         { path: 'service/webdev', element: <WebsiteDev /> },
         { path: 'service/graphic', element: <Graphic /> },
         { path: 'service/marketing', element: <Marketing /> },

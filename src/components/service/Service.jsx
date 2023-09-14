@@ -25,7 +25,7 @@ const Service = () => {
             <div className="card-bottom">
               <span className='card-title'>Online Business<br />Creation</span>
               <p>We create online platforms according to your business requirements.</p>
-              <Link to='/service' className='details-btn link'>Read Details </Link>
+              <Link to='/service/business' className='details-btn link'>Read Details </Link>
             </div>
           </div>
           <div className="service-card">

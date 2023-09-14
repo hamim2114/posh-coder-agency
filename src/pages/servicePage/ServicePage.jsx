@@ -1,10 +1,5 @@
 import './ServicePage.scss';
-import { Box, Card, CardContent, Typography } from '@mui/material';
-import { AddBusinessSharp, AppShortcutSharp, BubbleChartSharp, BusinessCenter, BusinessCenterSharp, EngineeringSharp, PlayArrow, SourceSharp, TrendingFlatSharp, WebSharp, WebhookSharp } from '@mui/icons-material';
-import WebIcon from '@mui/icons-material/Web';
-import BubbleChartIcon from '@mui/icons-material/BubbleChart';
-import AppShortcutIcon from '@mui/icons-material/AppShortcut';
-import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import { AddBusinessSharp, AppShortcutSharp, BubbleChartSharp, BusinessCenter, BusinessCenterOutlined, BusinessCenterSharp, EngineeringSharp, PlayArrow, SourceSharp, TrendingFlatSharp, WebSharp, WebhookSharp } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { Slide, Zoom } from 'react-awesome-reveal';
 import VideoModal from '../../components/videoModal/VideoModal';
@@ -34,6 +29,11 @@ const ServicePage = () => {
       <div className="middle">
         <span className='h1'> What we’re offering <br />to our customers</span>
         <div className="service-card">
+          <Link to='/service/business' className='card-box link'>
+            <BusinessCenterOutlined />
+            <span>Online Business<br />Creation</span>
+            <TrendingFlatSharp className='arrow' />
+          </Link>
           <Link to='/service/webdev' className='card-box link'>
             <WebSharp />
             <span>Website Design and<br />Development</span>
