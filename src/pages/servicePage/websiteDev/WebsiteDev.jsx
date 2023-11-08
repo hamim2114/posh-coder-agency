@@ -175,7 +175,7 @@ const WebsiteDev = () => {
 
       <Stack className='middle2'>
         <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>We Are Creative Web Development Company</Typography>
-        <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, textAlign: 'center', fontWeight: 200 }} variant='h4'>Focused on Growing Brands Online</Typography>
+        <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' },color: 'red', textAlign: 'center', fontWeight: 200 }} variant='h4'>Focused on Growing Brands Online</Typography>
 
         <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} mt={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
           {
@@ -204,7 +204,7 @@ const WebsiteDev = () => {
 
       <Stack className='middle2'>
         <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>Our Web Development Packages</Typography>
-        <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200 }} variant='h4'>Get Standard Website By Paying Small Budget!</Typography>
+        <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200,color: 'red' }} variant='h4'>Get Standard Website By Paying Small Budget!</Typography>
         <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{xs: 5, md: 10}} mt={10}>
           {
             webPackage.map((data, i) => (
