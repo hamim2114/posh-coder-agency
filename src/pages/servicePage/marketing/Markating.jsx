@@ -18,7 +18,7 @@ const Marketing = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="marketing">
+    <div className="digital-marketing">
       <div className="top">
         <span className='top-title'>Digital Marketing Solutions</span>
       </div>

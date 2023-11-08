@@ -50,8 +50,9 @@
       flex-direction: column;
       gap: 10px;
       padding: 2rem;
-      @include mobile{
+      @include tablet{
         padding: 1rem;
+        display: none;
       }
       .service-link {
         border: 1px solid $dark-gray;
@@ -97,6 +98,9 @@
       background-color: $deep-gray;
       border: 1px solid $dark-gray;
       padding: 1.5rem;
+      @include tablet {
+        display: none;
+      }
       .left{
         display: flex;
         flex-direction: column;

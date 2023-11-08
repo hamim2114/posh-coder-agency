@@ -1,18 +1,135 @@
 import './WebsiteDev.scss';
 import {
+  Box,
   Stack,
   Typography
 } from '@mui/material';
 import {
+  Apartment,
   ArrowRightAltOutlined,
+  Article,
   AutoAwesomeOutlined,
   CampaignOutlined,
   CheckCircle,
   DoneAllOutlined,
   EngineeringSharp,
+  School,
+  ShoppingCart,
+  Web,
   WebhookSharp
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
+import WebPackages from '../../../components/webPackages/WebPackages';
+
+const services = [
+  {
+    icon: <Apartment sx={{ fontSize: { xs: '3rem', md: '4rem' } }} />,
+    title: 'Company'
+  },
+  {
+    icon: <ShoppingCart sx={{ fontSize: { xs: '3rem', md: '4rem' } }} />,
+    title: 'E-commerce'
+  },
+  {
+    icon: <Web sx={{ fontSize: { xs: '3rem', md: '4rem' } }} />,
+    title: 'Newspaper'
+  },
+  {
+    icon: <Article sx={{ fontSize: { xs: '3rem', md: '4rem' } }} />,
+    title: 'Blogging'
+  },
+  {
+    icon: <School sx={{ fontSize: { xs: '3rem', md: '4rem' } }} />,
+    title: 'Educational'
+  },
+]
+
+const webPackage = [
+  {
+    name: 'Company Website',
+    price: 'Start at Tk 20,000',
+    info: [
+      'Responsive Design',
+      'Basic Information Pages',
+      'Contact Form',
+      'Fast Loading',
+      'Social media integration',
+      'Easy to Update',
+      'Affordable to improve',
+      'Security Features'
+    ]
+  },
+  {
+    name: 'E-commerce Website',
+    price: 'Start at Tk 17,000',
+    info: [
+      'Responsive Design',
+      'Modern & Clean Interface',
+      'Customer Relationship',
+      'Shipping Options',
+      'Service/Product Page(s)',
+      'Store Management',
+      'Easy to Update',
+      'Security Features'
+    ]
+  },
+  {
+    name: 'Newspaper Website',
+    price: 'Start at Tk 15,000',
+    info: [
+      'Responsive Design',
+      'Modern & Clean Interface',
+      'Breaking News',
+      'Multi-column Layout',
+      'Functional Sidebar',
+      'Frequent Content Updates',
+      'Social Media Integration',
+      'Security Features'
+    ]
+  },
+  {
+    name: 'Blogging Website',
+    price: 'Start at Tk 15,000',
+    info: [
+      'Responsive Design',
+      'Basic Information Pages',
+      'Contact Form',
+      'Blog Post Archive',
+      'Comment System',
+      'Beginner Friendly',
+      'Social Media Integration',
+      'Security Features'
+    ]
+  },
+  {
+    name: 'Educational Website',
+    price: 'Start at Tk 20,000',
+    info: [
+      'Responsive Design',
+      'Basic Information Pages',
+      'Contact Form',
+      'Powerful CMS',
+      'Powerful Calendar',
+      'Powerful Database',
+      'Dynamic Notice Board',
+      'Security Features'
+    ]
+  },
+  {
+    name: 'Portfolio Website',
+    price: 'Start at Tk 12,000',
+    info: [
+      'Responsive Design',
+      'Basic Information Pages',
+      'Contact Form',
+      'Service Page(s)',
+      'Social media integration',
+      'Project Gallery',
+      'Blog Setup',
+      'Security Features'
+    ]
+  },
+]
 
 const WebsiteDev = () => {
 
@@ -55,6 +172,47 @@ const WebsiteDev = () => {
           <img src="/services-details-img1.jpg" alt="Website Development" />
         </div>
       </div>
+
+      <Stack className='middle2'>
+        <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>We Are Creative Web Development Company</Typography>
+        <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, textAlign: 'center', fontWeight: 200 }} variant='h4'>Focused on Growing Brands Online</Typography>
+
+        <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} mt={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
+          {
+            services.map((s, i) => (
+              <Stack key={i} alignItems='center' sx={{
+                textAlign: 'center',
+                width: { xs: '160px', md: '220px' },
+                height: { xs: '160px', md: '220px' },
+                borderRadius: '50%',
+                border: '1px solid gray',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: '.5s',
+                ":hover": {
+                  bgcolor: 'gray',
+                  transform: 'scale(1.1)'
+                }
+              }}>
+                <Box sx={{ mb: 1, opacity: '.8' }}>{s.icon}</Box>
+                <Typography variant='h5' sx={{ lineHeight: '30px', fontSize: { xs: '22px', md: '28px' }, fontWeight: '200' }}>{s.title} <br /> <Typography variant='h5' sx={{ fontSize: { xs: '22px', md: '28px' }, }}>Website</Typography></Typography>
+              </Stack>
+            ))
+          }
+        </Stack>
+      </Stack>
+
+      <Stack className='middle2'>
+        <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>Our Web Development Packages</Typography>
+        <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200 }} variant='h4'>Get Standard Website By Paying Small Budget!</Typography>
+        <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{xs: 5, md: 10}} mt={10}>
+          {
+            webPackage.map((data, i) => (
+              <WebPackages key={i} data={data} />
+            ))
+          }
+        </Stack>
+      </Stack>
 
       <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">

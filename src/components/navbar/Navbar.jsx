@@ -34,7 +34,8 @@ const Navbar = () => {
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
           <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link>
-          <Link to='/about' className='link' href='#experience' onClick={() => setNav(false)}>About Us</Link>
+          <Link to='/about' style={{ color: pathname === '/about' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>About Us</Link>
+          <Link to='/blog' style={{ color: pathname === '/blog' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Blog</Link>
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
         </Slide>
       </div>

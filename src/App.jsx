@@ -13,6 +13,7 @@ import AppDevelop from './pages/servicePage/appDevelop/AppDevelop';
 import Content from './pages/servicePage/content/Content';
 import Business from './pages/servicePage/business/Business';
 import AboutPage from './pages/aboutPage/AboutPage';
+import BlogPage from './pages/blog/BlogPage';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         { path: '/', element: <HomePage /> },
         { path: 'service', element: <ServicePage /> },
         { path: 'about', element: <AboutPage /> },
+        { path: 'blog', element: <BlogPage /> },
         { path: 'service/business', element: <Business /> },
         { path: 'service/webdev', element: <WebsiteDev /> },
         { path: 'service/graphic', element: <Graphic /> },
