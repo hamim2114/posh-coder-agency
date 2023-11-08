@@ -66,7 +66,7 @@ const AppDevelop = () => {
             <img src="/banner-one-img.png" alt="App Development" />
           </div>
         </div>
-        <Stack gap={3}>
+        <Stack gap={3} mt={{xs: 10, lg:0}}>
           <Typography variant='h4'>App Development</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             We specialize in creating cutting-edge mobile and web applications tailored to your business needs. Our team of experts ensures top-notch quality and performance.

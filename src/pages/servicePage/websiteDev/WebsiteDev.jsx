@@ -139,7 +139,7 @@ const WebsiteDev = () => {
       <div className="top">
         <span className='top-title'>Website Solutions</span>
       </div>
-      <div className="middle">
+      <div className="web-dev-middle">
         <div className="left">
           <div className="service-link" style={{ backgroundColor: pathname === '/service/webdev' ? 'red' : '' }}>
             <span>Website Development</span>
@@ -174,7 +174,7 @@ const WebsiteDev = () => {
       </div>
 
       <Stack className='middle2'>
-        <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>We Are Creative Web Development Company</Typography>
+        <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} mt={{xs: 10, lg:0}} variant='h3'>We Are Creative Web Development Company</Typography>
         <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' },color: 'red', textAlign: 'center', fontWeight: 200 }} variant='h4'>Focused on Growing Brands Online</Typography>
 
         <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} mt={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>

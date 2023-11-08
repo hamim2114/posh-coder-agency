@@ -68,7 +68,7 @@ const Marketing = () => {
             <img src="/banner-one-img.png" alt="Digital Marketing" />
           </div>
         </div>
-        <Stack gap={3}>
+        <Stack gap={3} mt={{xs: 10, lg:0}}>
           <Typography variant='h4'>Digital Marketing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our digital marketing services are designed to boost your online presence and drive business growth. We specialize in creating and implementing effective marketing strategies that reach your target audience.

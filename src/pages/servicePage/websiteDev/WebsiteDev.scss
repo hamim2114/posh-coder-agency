@@ -34,14 +34,15 @@
       }
     }
   }
-  .middle {
+  .web-dev-middle {
     @include container;
     display: flex;
     gap: 40px;
     margin: 10rem auto;
-    @include mobile{
+    @include tablet{
       margin: 5rem auto;
       flex-direction: column;
+      display: none;
     }
     .left {
       background-color: $deep-gray;

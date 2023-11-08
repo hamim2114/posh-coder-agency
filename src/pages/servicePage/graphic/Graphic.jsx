@@ -64,7 +64,7 @@ const Graphic = () => {
             <img src="/banner-one-img.png" alt="Graphic Design" />
           </div>
         </div>
-        <Stack gap={3}>
+        <Stack gap={3} mt={{xs: 10, lg:0}}>
           <Typography variant='h4'>Graphic Designing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our graphic design services are tailored to bring your creative ideas to life. We specialize in creating visually stunning designs that captivate and engage your audience.

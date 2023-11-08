@@ -64,7 +64,7 @@ const Content = () => {
             <img src="/banner-one-img.png" alt="Content Writing" />
           </div>
         </div>
-        <Stack gap={3}>
+        <Stack gap={3} mt={{xs: 10, lg:0}}>
           <Typography variant='h4'>Content Writing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our content writing services are designed to help you create engaging and informative content for your business. We specialize in producing high-quality articles, blogs, and more.
