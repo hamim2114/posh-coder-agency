@@ -9,6 +9,7 @@ import Team from '../components/team/Team'
 import Testimonial from '../components/testimonial/Testimonial'
 import AskedQ from '../components/askedQ/AskedQ'
 import JoinUs from '../components/joinUs/JoinUs'
+import SomeBlog from '../components/some-blog/SomeBlog'
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
       <Team />
       <Testimonial />
       <AskedQ />
+      <SomeBlog/>
       <JoinUs />
     </div>
   )

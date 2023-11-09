@@ -1,8 +1,10 @@
+import { Stack, Typography } from '@mui/material';
 import './JoinUs.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { Slide } from 'react-awesome-reveal';
 import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
+import BlogCard from '../blogCard/BlogCard';
 
 const JoinUs = () => {
   return (

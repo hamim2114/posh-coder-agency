@@ -287,6 +287,10 @@
       }
     }
   }
+  .bottom2{
+    @include container;
+    margin-top: 10rem;
+  }
   .clients-logo {
     margin: 0 auto;
     padding: 3rem 1rem;

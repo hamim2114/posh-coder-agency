@@ -5,6 +5,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Slide } from 'react-awesome-reveal';
+import { Button, Menu, MenuItem } from '@mui/material';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -24,16 +25,83 @@ const Navbar = () => {
     };
   }, []);
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div ref={navbarRef} className="navbar">
       <Link to='/' className="left link">
         <img src="/logo.png" alt="" />
-        
+
       </Link>
       <div className={`middle ${nav && 'active'}`}>
         <Slide>
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
-          <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link>
+          {/* <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link> */}
+
+          <div>
+            <Button
+              sx={{
+                color: 'inherit',
+                fontSize: 'inherit',
+                fontWeight: 'inherit',
+                p: 0,
+                color: pathname === '/service' ? 'red' : 'inherit'
+              }}
+              id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
+              Services
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <Link className='link' to='service' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>All Services</MenuItem>
+              </Link>
+              <Link className='link' to='service/webdev' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>
+                  Website Development
+                </MenuItem>
+              </Link>
+              <Link className='link' to='service/graphic' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>
+                  Graphic Design
+                </MenuItem>
+              </Link>
+              <Link className='link' to='service/marketing' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>
+                  Online Marketing
+                </MenuItem>
+              </Link>
+              <Link className='link' to='service/content' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>
+                  Content Creation
+                </MenuItem>
+              </Link>
+              <Link className='link' to='service/appdevelop' onClick={() => setNav(false)}>
+                <MenuItem onClick={handleClose}>
+                  Softwere Development
+                </MenuItem>
+              </Link>
+            </Menu>
+          </div>
+
           <Link to='/about' style={{ color: pathname === '/about' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>About Us</Link>
           <Link to='/blog' style={{ color: pathname === '/blog' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Blog</Link>
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>

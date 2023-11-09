@@ -14,6 +14,7 @@ import Content from './pages/servicePage/content/Content';
 import Business from './pages/servicePage/business/Business';
 import AboutPage from './pages/aboutPage/AboutPage';
 import BlogPage from './pages/blog/BlogPage';
+import BlogSingle from './pages/blogSingle/BlogSingle';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         { path: 'service', element: <ServicePage /> },
         { path: 'about', element: <AboutPage /> },
         { path: 'blog', element: <BlogPage /> },
+        { path: 'blog/:id', element: <BlogSingle /> },
         { path: 'service/business', element: <Business /> },
         { path: 'service/webdev', element: <WebsiteDev /> },
         { path: 'service/graphic', element: <Graphic /> },
