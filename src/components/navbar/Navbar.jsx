@@ -5,7 +5,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Slide } from 'react-awesome-reveal';
-import { Button, Menu, MenuItem } from '@mui/material';
+import { Box, Button, Menu, MenuItem, MenuList, Typography } from '@mui/material';
+import { KeyboardArrowDown } from '@mui/icons-material';
+import styled from '@emotion/styled';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -54,6 +56,7 @@ const Navbar = () => {
                 p: 0,
                 color: pathname === '/service' ? 'red' : 'inherit'
               }}
+              endIcon={<KeyboardArrowDown />}
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
@@ -71,34 +74,39 @@ const Navbar = () => {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              <Link className='link' to='service' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>All Services</MenuItem>
-              </Link>
-              <Link className='link' to='service/webdev' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>
-                  Website Development
-                </MenuItem>
-              </Link>
-              <Link className='link' to='service/graphic' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>
-                  Graphic Design
-                </MenuItem>
-              </Link>
-              <Link className='link' to='service/marketing' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>
-                  Online Marketing
-                </MenuItem>
-              </Link>
-              <Link className='link' to='service/content' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>
-                  Content Creation
-                </MenuItem>
-              </Link>
-              <Link className='link' to='service/appdevelop' onClick={() => setNav(false)}>
-                <MenuItem onClick={handleClose}>
-                  Softwere Development
-                </MenuItem>
-              </Link>
+              <MenuList sx={{
+                bgcolor: '#17181A',
+                color: '#fff',
+              }}>
+                <Link className='link' to='service' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>All Services</MenuItem>
+                </Link>
+                <Link className='link' to='service/webdev' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>
+                    Website Development
+                  </MenuItem>
+                </Link>
+                <Link className='link' to='service/graphic' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>
+                    Graphic Design
+                  </MenuItem>
+                </Link>
+                <Link className='link' to='service/marketing' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>
+                    Online Marketing
+                  </MenuItem>
+                </Link>
+                <Link className='link' to='service/content' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>
+                    Content Creation
+                  </MenuItem>
+                </Link>
+                <Link className='link' to='service/appdevelop' onClick={() => setNav(false)}>
+                  <MenuItem onClick={handleClose}>
+                    Softwere Development
+                  </MenuItem>
+                </Link>
+              </MenuList>
             </Menu>
           </div>
 
