@@ -28,6 +28,7 @@ const Footer = () => {
             <div className="left">
               <h4>Let's start working together</h4>
               <h1><Fade cascade damping={.1} triggerOnce>poshcoderbd@gmail.com</Fade></h1>
+              <h2><Fade cascade damping={.1} triggerOnce delay={5}>Phone : 01790 862914</Fade></h2>
             </div>
             <div className="right">
               <div className="right1">
@@ -42,7 +43,7 @@ const Footer = () => {
                 <h1>Contact Us</h1>
                 <span>Bashundhara Residential Area, Dhaka, Bangladesh, 1229</span>
                 <span>Phone : +88 01790-862914</span>
-                <span>Mail :poshcoderbd@gmail.com</span>
+                <span>E-Mail : poshcoderbd@gmail.com</span>
                 <span>Working Hours : 8hrs</span>
               </div>
             </div>

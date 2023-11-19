@@ -15,6 +15,9 @@ import Business from './pages/servicePage/business/Business';
 import AboutPage from './pages/aboutPage/AboutPage';
 import BlogPage from './pages/blog/BlogPage';
 import BlogSingle from './pages/blogSingle/BlogSingle';
+import Login from './pages/loginPage/Login';
+import Register from './pages/registerPage/Register';
+import TeamPage from './pages/teamPage/TeamPage';
 
 function App() {
 
@@ -45,6 +48,7 @@ function App() {
         { path: '/', element: <HomePage /> },
         { path: 'service', element: <ServicePage /> },
         { path: 'about', element: <AboutPage /> },
+        { path: 'teams', element: <TeamPage /> },
         { path: 'blog', element: <BlogPage /> },
         { path: 'blog/:id', element: <BlogSingle /> },
         { path: 'service/business', element: <Business /> },
@@ -54,8 +58,10 @@ function App() {
         { path: 'service/appdevelop', element: <AppDevelop /> },
         { path: 'service/content', element: <Content /> },
         { path: 'contact', element: <Contact /> },
+        { path: '/login', element: <Login /> },
+        { path: '/register', element: <Register /> }
       ]
-    }
+    },
   ])
   return <RouterProvider router={router} />
 }

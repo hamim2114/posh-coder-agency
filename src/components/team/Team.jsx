@@ -1,44 +1,29 @@
 import { Fade, Slide } from 'react-awesome-reveal';
 import './Team.scss';
+import TeamCard from '../teamCard/TeamCard';
+import { Button, Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   return (
-    <div className="team">
+    <Stack className="team">
       <span className='team-title'><Fade cascade triggerOnce damping={0.1}>Our Teams</Fade> </span>
-      <div className="team-card-container">
+      <Stack direction={'row'} justifyContent={'center'} gap={5} mt={5} flexWrap={'wrap'}>
         <Slide direction='up' triggerOnce damping={0.1} cascade>
-          <div className="team-card">
-            <img src="/team-1-1.jpg" alt="" />
-            <div className="card-bottom">
-              <span>Senior Developer</span>
-              <div className='card-title'>Mike Hardson</div>
-            </div>
-          </div>
-          <div className="team-card">
-            <img src="/team-1-2.jpg" alt="" />
-            <div className="card-bottom">
-              <span>Content Writer</span>
-              <div className='card-title'>Aleesha brown</div>
-            </div>
-          </div>
-          <div className="team-card">
-            <img src="/team-1-3.jpg" alt="" />
-            <div className="card-bottom">
-              <span>Junior Developer</span>
-              <div className='card-title'>Kevin martin</div>
-            </div>
-          </div>
-          <div className="team-card">
-            <img src="/team-1-4.jpg" alt="" />
-            <div className="card-bottom">
-              <span>Senior Designer
-              </span>
-              <div className='card-title'>Sarah albert</div>
-            </div>
-          </div>
-          </Slide>
-      </div>
-    </div>
+          <TeamCard />
+          <TeamCard />
+          <TeamCard />
+        </Slide>
+      </Stack>
+      <Link to='/teams' className='link' style={{
+        marginTop: '5rem',
+        textAlign: 'center',
+        border: '1px solid gray',
+        width: '200px',
+        padding: '5px 10px',
+        alignSelf: 'center'
+      }}>All Teams</Link>
+    </Stack>
   )
 }
 

@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleClickOutside = (event) => {
     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
       setNav(false);
-        setServiceMenu(false)
+      setServiceMenu(false)
     }
   };
   useEffect(() => {
@@ -36,7 +36,7 @@ const Navbar = () => {
 
       </Link>
       <div className={`middle ${nav && 'active'}`}>
-        <Slide>
+        {/* <Slide> */}
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
           {/* <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link> */}
 
@@ -101,55 +101,25 @@ const Navbar = () => {
                 </Link>
               </Stack>
             </Collapse>
-            {/* <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-            >
-              <MenuList sx={{
-                bgcolor: '#17181A',
-                color: '#fff',
-              }}>
-                <Link className='link' to='service' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>All Services</li>
-                </Link>
-                <Link className='link' to='service/webdev' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>
-                    Website Development
-                  </li>
-                </Link>
-                <Link className='link' to='service/graphic' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>
-                    Graphic Design
-                  </li>
-                </Link>
-                <Link className='link' to='service/marketing' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>
-                    Online Marketing
-                  </li>
-                </Link>
-                <Link className='link' to='service/content' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>
-                    Content Creation
-                  </li>
-                </Link>
-                <Link className='link' to='service/appdevelop' onClick={() => setNav(false)}>
-                  <li onClick={handleClose}>
-                    Softwere Development
-                  </li>
-                </Link>
-              </MenuList>
-            </Menu> */}
           </div>
 
           <Link to='/about' style={{ color: pathname === '/about' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>About Us</Link>
+          <Link to='/teams' style={{ color: pathname === '/teams' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Teams</Link>
           <Link to='/blog' style={{ color: pathname === '/blog' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Blog</Link>
           <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
-        </Slide>
+          <Stack direction='row' gap={2}>
+            <Link to='/login' onClick={() => setNav(false)} className='link'>
+              <Button size='small' sx={{ color: 'inherit', textTransform: 'none' }} variant='outlined'>
+                Login
+              </Button>
+            </Link>
+            <Link to='/register' onClick={() => setNav(false)} className='link'>
+              <Button size='small' sx={{ textTransform: 'none' }} variant='contained'>
+                Register
+              </Button>
+            </Link>
+          </Stack>
+        {/* </Slide> */}
       </div>
       <div className="right">
         <Link to='contact' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
