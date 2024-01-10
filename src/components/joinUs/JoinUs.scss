@@ -1,13 +1,15 @@
 @import '../../global.scss';
 
 .join-us {
-  @include container;
+  // @include container;
+  max-width: 1300px;
   margin: 8rem auto;
   background-image: url('/join-bg.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  overflow: hidden;
   @include mobile {
     margin: 5rem auto;
   }
