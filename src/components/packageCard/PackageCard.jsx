@@ -2,7 +2,7 @@ import { CheckCircleOutline, DoneAll, DownloadDone } from '@mui/icons-material'
 import { Box, Button, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 import React from 'react'
 
-const WebPackages = ({ data }) => {
+const PackageCard = ({ data }) => {
 
   return (
     <Stack sx={{
@@ -27,10 +27,10 @@ const WebPackages = ({ data }) => {
 
       <Stack direction='row' gap={2} justifyContent='center'>
         <Button variant='contained' sx={{ textTransform: 'none'}}><a className='link' href="mailto: poshcoderbd@gmail.com">Order Now</a></Button>
-        <Button variant='contained' sx={{ textTransform: 'none'}}><a className='link' href="tel: 01790862914"> Call Now</a></Button>
+        <Button variant='outlined' sx={{ textTransform: 'none'}}><a className='link' href="tel: 01790862914"> Call Now</a></Button>
       </Stack>
     </Stack>
   )
 }
 
-export default WebPackages
+export default PackageCard

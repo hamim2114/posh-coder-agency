@@ -1,19 +1,19 @@
-import { Fade, Slide } from 'react-awesome-reveal';
 import './Team.scss';
 import TeamCard from '../teamCard/TeamCard';
 import { Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { FadeAnimation, SlideAnimation } from '../animations/animations';
 
 const Team = () => {
   return (
     <Stack className="team">
-      <span className='team-title'><Fade cascade triggerOnce damping={0.1}>Our Teams</Fade> </span>
-      <Stack direction={'row'} justifyContent={'center'} gap={5} mt={5} flexWrap={'wrap'}>
-        <Slide direction='up' triggerOnce damping={0.1} cascade>
+      <span className='team-title'><FadeAnimation damping={0.1} cascade={'cascade'}>Our Teams</FadeAnimation> </span>
+      <Stack direction={'row'} justifyContent={'center'} gap={2} mt={5} flexWrap={'wrap'}>
+        <SlideAnimation direction='up' damping={0.1} cascade={'cascade'}>
           <TeamCard />
           <TeamCard />
           <TeamCard />
-        </Slide>
+        </SlideAnimation>
       </Stack>
       <Link to='/teams' className='link' style={{
         marginTop: '5rem',

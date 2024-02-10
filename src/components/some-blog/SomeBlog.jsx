@@ -1,14 +1,14 @@
 import React from 'react'
 import './SomeBlog.scss'
-import { Stack, Typography } from '@mui/material'
+import { Stack } from '@mui/material'
 import BlogCard from '../blogCard/BlogCard'
 import { Link } from 'react-router-dom'
-import { Fade } from 'react-awesome-reveal';
+import { FadeAnimation } from '../animations/animations'
 
 const SomeBlog = () => {
   return (
     <Stack className="some-blog">
-        <h1 className='h1'>Some From <span><Fade cascade triggerOnce damping={.1}>Blogs</Fade> </span></h1>
+        <h1 className='h1'>Some From <span><FadeAnimation cascade={'cascade'} damping={.1}>Blogs</FadeAnimation> </span></h1>
         <Stack direction={'row'} flexWrap={'wrap'} gap={6} justifyContent={'center'} >
           <BlogCard />
           <BlogCard />

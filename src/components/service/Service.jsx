@@ -8,15 +8,18 @@ import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import { ArrowRightAlt, TrendingFlat } from '@mui/icons-material';
+import { FadeAnimation } from '../animations/animations';
 
 const Service = () => {
   return (
     <div className="service">
       <div className="top" id='service'>
-        <Fade damping={0.1} className='our-service' cascade triggerOnce>Our Services</Fade>
+        <h1 className='our-service'>
+          <FadeAnimation damping={0.1} cascade={'cascade'} >Our Services</FadeAnimation>
+        </h1>
       </div>
       <div className="bottom">
-        <Fade cascade damping={0.1} triggerOnce>
+        <FadeAnimation damping={0.1} cascade={'cascade'}>
           <div className="service-card">
             <div className="card-top">
               <span>01</span>
@@ -83,8 +86,8 @@ const Service = () => {
               <Link to='/service/graphic' className='details-btn link'>Read Details </Link>
             </div>
           </div>
-          <Link to='service' className='read-more link'>Service Details <TrendingFlat/></Link>
-        </Fade>
+          <Link to='service' className='read-more link'>Service Details <TrendingFlat /></Link>
+        </FadeAnimation>
       </div>
     </div>
   )

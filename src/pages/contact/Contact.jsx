@@ -6,13 +6,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 const Contact = () => {
   return (
     <div className="contact">
-      <div className="top">
-        <div className="left">
-          <h1><span>//</span> CONTACT US <span>//</span></h1>
-        </div>
-        <div className="right">
-          <img src="/inner-banner-bg.png" alt="" />
-        </div>
+            <div className="top">
+        <span className='top-title'>CONTACT US</span>
       </div>
       <div className="middle">
         <div className="left">

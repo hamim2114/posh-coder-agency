@@ -19,21 +19,16 @@ const ServicePage = () => {
   return (
     <div className="service-page">
       <div className="top">
-        <div className="left">
-          <h1><span>//</span> OUR SERVICES <span>//</span></h1>
-        </div>
-        <div className="right">
-          <img src="/services-1-1.jpg" alt="" />
-        </div>
+        <span className='top-title'>OUR SERVICES</span>
       </div>
       <div className="middle">
         <span className='h1'> What we’re offering <br />to our customers</span>
         <div className="service-card">
-          <Link to='/service/business' className='card-box link'>
+          {/* <Link to='/service/business' className='card-box link'>
             <BusinessCenterOutlined />
             <span>Online Business<br />Creation</span>
             <TrendingFlatSharp className='arrow' />
-          </Link>
+          </Link> */}
           <Link to='/service/webdev' className='card-box link'>
             <WebSharp />
             <span>Website Design and<br />Development</span>

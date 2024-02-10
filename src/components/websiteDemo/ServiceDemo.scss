@@ -1,0 +1,45 @@
+@import '../../index.scss';
+
+.webdemo {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover{
+    .info {
+      width: 60%;
+      transition: 1s ease-in-out;
+    }
+  }
+  img {
+    transition: 1s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &:hover{
+      transform: scale(1.2) rotate(5deg);
+      .info {
+        width: 100%;
+      }
+    }
+  }
+  .info{
+    position: absolute;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    transition: all 1s;
+    padding: 15px 10px;
+    bottom: 20px;
+    background-color: $body-bg;
+    span{
+      &:nth-child(1){
+        font-size: 15px;
+      }
+      &:nth-child(2){
+        font-size: 25px;
+      }
+    }
+  }
+}

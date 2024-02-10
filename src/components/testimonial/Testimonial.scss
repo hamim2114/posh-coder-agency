@@ -29,14 +29,15 @@
     }
     svg {
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       font-size: 2.5rem;
-      right: -15px;
+      right: 0px;
       border-radius: 50%;
       background-color: $red;
-      padding: 20px;
+      padding: 10px;
       @include mobile{
         padding: 10px;
+        bottom: 5px;
       }
     }
   }

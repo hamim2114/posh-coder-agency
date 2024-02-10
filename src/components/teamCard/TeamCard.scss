@@ -6,8 +6,8 @@
   height: 400px;
   // @include shadow-high;
   @include mobile{
-    width: 180px;
-    height: 280px;
+    width: 120px;
+    height: 150px;
   }
   img {
     width: 100%;
@@ -21,17 +21,20 @@
     background-color: $deep-gray;
     padding: 1rem 4rem 1rem 1rem;
     @include mobile {
-      padding: 1rem;
+      padding: .3rem .4rem;
     }
     span {
       font-size: 15px;
       color: $gray;
+      @include mobile {
+        font-size: .7rem;
+      }
     }
     .card-title {
       font-size: 1.7rem;
       font-weight: bold;
       @include mobile {
-        font-size: 1.2rem;
+        font-size: .9rem;
       }
     }
   }

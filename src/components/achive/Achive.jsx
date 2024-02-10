@@ -7,6 +7,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useState } from 'react';
 import VideoModal from '../videoModal/VideoModal';
 import { Slide, Zoom } from 'react-awesome-reveal';
+import { SlideAnimation, ZoomAnimation } from '../animations/animations';
 
 const Achive = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,8 +23,8 @@ const Achive = () => {
     <div className="achive">
       <div className="achive-wrapper">
         <div className="left">
-          <div className="left-container">
-            <Slide direction='up' triggerOnce>
+          <SlideAnimation direction='up'>
+            <div className="left-container">
               <div className="achive-grid">
                 <Groups2OutlinedIcon />
                 <span>20+</span>
@@ -44,14 +45,14 @@ const Achive = () => {
                 <span>30+</span>
                 <p>Unique Product</p>
               </div>
-            </Slide>
-          </div>
+            </div>
+          </SlideAnimation>
         </div>
         <div className="right">
           <div className="img">
-            <Zoom triggerOnce>
+            <ZoomAnimation>
               <img src="/laptop.jpg" alt="" />
-            </Zoom>
+            </ZoomAnimation>
             <div className="play-btn" onClick={openModal}>
               <PlayArrowIcon />
             </div>

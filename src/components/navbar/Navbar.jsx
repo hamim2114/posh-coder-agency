@@ -71,30 +71,30 @@ const Navbar = () => {
                 fontSize: '15px',
                 textTransform: 'none',
               }}>
-                <Link className='link' to='service' style={{ borderBottom: '1px solid gray', paddingBottom: '5px', paddingLeft: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service' style={{ paddingBottom: '5px', paddingLeft: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>All Services</li>
                 </Link>
-                <Link className='link' to='service/webdev' style={{ borderBottom: '1px solid gray', paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service/webdev' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Website Development
                   </li>
                 </Link>
-                <Link className='link' to='service/graphic' style={{ borderBottom: '1px solid gray', paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service/graphic' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Graphic Design
                   </li>
                 </Link>
-                <Link className='link' to='service/marketing' style={{ borderBottom: '1px solid gray', paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service/marketing' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Online Marketing
                   </li>
                 </Link>
-                <Link className='link' to='service/content' style={{ borderBottom: '1px solid gray', paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service/content' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Content Creation
                   </li>
                 </Link>
-                <Link className='link' to='service/appdevelop' style={{ borderBottom: '1px solid gray', paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                <Link className='link' to='service/appdevelop' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Softwere Development
                   </li>

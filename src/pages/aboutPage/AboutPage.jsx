@@ -31,12 +31,7 @@ const AboutPage = () => {
   return (
     <div className="about-page">
       <div className="top">
-        <div className="left">
-          <h1><span>//</span> ABOUT US <span>//</span></h1>
-        </div>
-        <div className="right">
-          <img style={{ opacity: '.9' }} src="/about-team.jpg" alt="" />
-        </div>
+        <span className='top-title'>ABOUT US</span>
       </div>
       <div className="middle">
         <Stack direction={{ xs: 'column-reverse', lg: 'row' }} p={{ xs: 2, lg: 10 }} gap={6} alignItems={'center'}>
