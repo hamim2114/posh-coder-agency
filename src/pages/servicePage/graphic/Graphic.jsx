@@ -1,7 +1,8 @@
 import './Graphic.scss';
 import {
   Stack,
-  Typography
+  Typography,
+  Container
 } from '@mui/material';
 import {
   ArrowRightAltOutlined,
@@ -13,6 +14,12 @@ import {
   WebhookSharp
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
+import { graphicCatData } from '../../../data/graphicCatData';
+import ServiceCatCard from '../../../components/serviceCategory/ServiceCatCard';
+import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard';
+import { graphicTemplateData } from '../../../data/graphicTamplateData';
+import { graphicPackageData } from '../../../data/graphicPackageData';
+import PackageCard from '../../../components/packageCard/PackageCard';
 
 const Graphic = () => {
   const { pathname } = useLocation();
@@ -28,10 +35,10 @@ const Graphic = () => {
             <span>Website Development</span>
             <ArrowRightAltOutlined />
           </Link>
-          <div className="service-link">
+          <Link to='/service/appdevelop' className="service-link link">
             <span>App Development</span>
             <ArrowRightAltOutlined />
-          </div>
+          </Link>
           <Link to='/service/marketing' className='link'>
             <div className="service-link" style={{ backgroundColor: pathname === '/service/marketing' ? 'red' : '' }}>
               <span>Digital Marketing</span>
@@ -53,6 +60,49 @@ const Graphic = () => {
           <img src="/graphic-design-image.jpg" alt="Graphic Design" />
         </div>
       </div>
+
+      <Container maxWidth='xl'>
+        <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} my={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
+          {
+            graphicCatData.map(s => (
+              <ServiceCatCard key={s} data={s} />
+            ))
+          }
+        </Stack>
+      </Container>
+
+      <Container maxWidth='xl'>
+        <Stack mb='10rem'>
+          <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} mt={{ xs: 10, lg: 0 }} variant='h3'>Our Creative Work</Typography>
+          <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, color: 'red', textAlign: 'center', fontWeight: 200, mb: 10 }} variant='h4'>Graphics Design</Typography>
+          <Stack sx={{
+            flexDirection: 'row',
+            gap: '20px',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}>
+            {
+              graphicTemplateData.map(d => (
+                <ServiceDemoCard key={d} data={d} />
+              ))
+            }
+          </Stack>
+        </Stack>
+      </Container>
+
+      <Container maxWidth='xl'>
+        <Stack mb='10rem'>
+          <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>Our Graphic Design Packages</Typography>
+          <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Stunning Design By Paying Small Budget!</Typography>
+          <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
+            {
+              graphicPackageData.map((data, i) => (
+                <PackageCard key={i} data={data} />
+              ))
+            }
+          </Stack>
+        </Stack>
+      </Container>
 
       <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">

@@ -6,6 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { Link } from 'react-router-dom';
 import { PermPhoneMsg } from '@mui/icons-material';
+import {Box} from '@mui/material'
 import { FadeAnimation, SlideAnimation } from '../animations/animations';
 
 
@@ -19,11 +20,11 @@ const Intro = () => {
       <div className="intro-container">
         <div className="text">
           <div className="heading">
-            <FadeAnimation >
               <span className='t1'><FadeAnimation damping={.1} cascade={'cascade'}>We Are</FadeAnimation></span>
-              <span className='t2'><FadeAnimation damping={.1} cascade={'cascade'}>CREATIVE BRANDING</FadeAnimation></span>
-              <span className='t3'><FadeAnimation damping={.3} cascade={'cascade'} delay={20}>AGENCY.</FadeAnimation></span>
-            </FadeAnimation>
+              <Box display={{xs: 'none',md: 'flex'}} className='t2'><FadeAnimation damping={.1} delay={100} cascade={'cascade'}>CREATIVE BRANDING</FadeAnimation></Box>
+              <Box display={{xs: 'flex',md: 'none'}} className='t2'><FadeAnimation damping={.1} delay={500} cascade={'cascade'}>CREATIVE</FadeAnimation></Box>
+              <Box display={{xs: 'flex',md: 'none'}} className='t4'><FadeAnimation damping={.1} delay={1000} cascade={'cascade'} >BRANDING</FadeAnimation></Box>
+              <div className='t3'><FadeAnimation damping={.3} cascade={'cascade'} delay={1500}>AGENCY.</FadeAnimation></div>
           </div>
           <div className="btn-txt">
             <SlideAnimation cascade direction='up'>

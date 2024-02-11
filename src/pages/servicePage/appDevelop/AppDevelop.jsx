@@ -1,7 +1,7 @@
 import './AppDevelop.scss';
 import {
   Stack,
-  Typography
+  Typography, Container
 } from '@mui/material';
 import {
   ArrowRightAltOutlined,
@@ -13,6 +13,12 @@ import {
   WebhookSharp
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
+import { appCatData } from '../../../data/appCatData';
+import ServiceCatCard from '../../../components/serviceCategory/ServiceCatCard';
+import { appTemplateData } from '../../../data/appTamplateData';
+import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard';
+import { appPackageData } from '../../../data/appPackageData';
+import PackageCard from '../../../components/packageCard/PackageCard';
 
 const AppDevelop = () => {
   const { pathname } = useLocation();
@@ -56,6 +62,49 @@ const AppDevelop = () => {
         </div>
       </div>
 
+      <Container maxWidth='xl'>
+        <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} my={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
+          {
+            appCatData.map(s => (
+              <ServiceCatCard key={s} data={s} />
+            ))
+          }
+        </Stack>
+      </Container>
+
+      <Container maxWidth='xl'>
+        <Stack mb='10rem'>
+          <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} mt={{ xs: 10, lg: 0 }} variant='h3'>Our Creative Work</Typography>
+          <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, color: 'red', textAlign: 'center', fontWeight: 200, mb: 10 }} variant='h4'>Application Tamplate</Typography>
+          <Stack sx={{
+            flexDirection: 'row',
+            gap: '20px',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}>
+            {
+              appTemplateData.map(d => (
+                <ServiceDemoCard key={d} data={d} />
+              ))
+            }
+          </Stack>
+        </Stack>
+      </Container>
+
+      <Container maxWidth='xl'>
+        <Stack mb='10rem'>
+          <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>Our App Development Packages</Typography>
+          <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Standard App By Paying Small Budget!</Typography>
+          <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
+            {
+              appPackageData.map((data, i) => (
+                <PackageCard key={i} data={data} />
+              ))
+            }
+          </Stack>
+        </Stack>
+      </Container>
+
       <Stack className='middle2' direction={{ xs: 'column-reverse', md: 'row' }} gap={12} alignItems='center'>
         <div className="card">
           <div className="left">
@@ -66,7 +115,7 @@ const AppDevelop = () => {
             <img src="/banner-one-img.png" alt="App Development" />
           </div>
         </div>
-        <Stack gap={3} mt={{xs: 10, lg:0}}>
+        <Stack gap={3} mt={{ xs: 10, lg: 0 }}>
           <Typography variant='h4'>App Development</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             We specialize in creating cutting-edge mobile and web applications tailored to your business needs. Our team of experts ensures top-notch quality and performance.

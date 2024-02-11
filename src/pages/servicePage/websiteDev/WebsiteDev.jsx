@@ -16,10 +16,11 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import PackageCard from '../../../components/packageCard/PackageCard';
 import BlogCard from '../../../components/blogCard/BlogCard';
-import ServiceDemo from '../../../components/websiteDemo/ServiceDemo';
-import { servicesData } from '../../../data/servicesData';
+import { webCatData } from '../../../data/webCatData';
 import { webPackageData } from '../../../data/webPackageData';
 import { webTemplateData } from '../../../data/webTamplateData';
+import ServiceCatCard from '../../../components/serviceCategory/ServiceCatCard';
+import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard';
 
 const WebsiteDev = () => {
 
@@ -69,32 +70,17 @@ const WebsiteDev = () => {
 
         <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} mt={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
           {
-            servicesData.map((s, i) => (
-              <Stack key={i} alignItems='center' sx={{
-                textAlign: 'center',
-                width: { xs: '160px', md: '220px' },
-                height: { xs: '160px', md: '220px' },
-                borderRadius: '50%',
-                border: '1px solid gray',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: '.5s',
-                ":hover": {
-                  bgcolor: 'gray',
-                  transform: 'scale(1.1)'
-                }
-              }}>
-                <Box sx={{ mb: 1, opacity: '.8' }}>{s.icon}</Box>
-                <Typography variant='h5' sx={{ lineHeight: '30px', fontSize: { xs: '22px', md: '28px' }, fontWeight: '200' }}>{s.title} <br /> <Typography variant='h5' sx={{ fontSize: { xs: '22px', md: '28px' }, }}>Website</Typography></Typography>
-              </Stack>
+            webCatData.map(s => (
+              <ServiceCatCard key={s} data={s} />
             ))
           }
         </Stack>
+        
       </Stack>
 
       <Stack className='website-demo'>
         <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} mt={{ xs: 10, lg: 0 }} variant='h3'>Our Creative Work</Typography>
-        <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, color: 'red', textAlign: 'center', fontWeight: 200,mb: 10 }} variant='h4'>Website Tamplate</Typography>
+        <Typography sx={{ fontSize: { xs: '2rem', md: '2.3rem' }, color: 'red', textAlign: 'center', fontWeight: 200, mb: 10 }} variant='h4'>Website Tamplate</Typography>
         <Stack sx={{
           flexDirection: 'row',
           gap: '20px',
@@ -103,7 +89,7 @@ const WebsiteDev = () => {
         }}>
           {
             webTemplateData.map(d => (
-              <ServiceDemo key={d} data={d} />
+              <ServiceDemoCard key={d} data={d} />
             ))
           }
         </Stack>

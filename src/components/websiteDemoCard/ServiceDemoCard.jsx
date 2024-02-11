@@ -1,8 +1,8 @@
-import './ServiceDemo.scss'
+import './ServiceDemoCard.scss'
 
-const ServiceDemo = ({data}) => {
+const ServiceDemoCard = ({data}) => {
   return (
-    <div className='webdemo'>
+    <div className='servicedemo'>
       <img src={data.img} alt="" />
       <div className='info'>
         <span>{data.subtitle}</span>
@@ -12,4 +12,4 @@ const ServiceDemo = ({data}) => {
   )
 }
 
-export default ServiceDemo
+export default ServiceDemoCard
