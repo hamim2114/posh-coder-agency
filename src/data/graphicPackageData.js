@@ -1,7 +1,7 @@
 export const graphicPackageData = [
   {
     name: 'Logo Design',
-    price: 'Start at Tk 20,000',
+    price: 'Start at Tk 2,000',
     info: [
       'Custom Logo Design',
       'Vector Format',
@@ -15,7 +15,7 @@ export const graphicPackageData = [
   },
   {
     name: 'Business Card Design',
-    price: 'Start at Tk 17,000',
+    price: 'Start at Tk 2,000',
     info: [
       'Custom Business Card Design',
       'Print-ready Files',
@@ -29,7 +29,7 @@ export const graphicPackageData = [
   },
   {
     name: 'Web Template Design',
-    price: 'Start at Tk 15,000',
+    price: 'Start at Tk 10,000',
     info: [
       'Custom Web Template Design',
       'Responsive Design',
@@ -43,7 +43,7 @@ export const graphicPackageData = [
   },
   {
     name: 'Application Design',
-    price: 'Start at Tk 25,000',
+    price: 'Start at Tk 10,000',
     info: [
       'Custom UI/UX Design',
       'Interactive Prototyping',
@@ -57,7 +57,7 @@ export const graphicPackageData = [
   },
   {
     name: 'Banner Design',
-    price: 'Start at Tk 20,000',
+    price: 'Start at Tk 4,000',
     info: [
       'Custom Banner Design',
       'Eye-catching Visuals',
@@ -71,7 +71,7 @@ export const graphicPackageData = [
   },
   {
     name: 'Flyer Design',
-    price: 'Start at Tk 12,000',
+    price: 'Start at Tk 3,000',
     info: [
       'Custom Flyer Design',
       'Creative Layout',

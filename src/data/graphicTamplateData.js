@@ -1,32 +1,32 @@
 export const graphicTemplateData = [
   {
-    img: '/webT1.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-logo.jpg',
+    title: 'Logo Design',
+    subtitle: 'Branding'
   },
   {
-    img: '/webT2.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-card.jpg',
+    title: 'Business Card',
+    subtitle: 'Branding'
   },
   {
-    img: '/webT3.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-web.jpg',
+    title: 'Web Design',
+    subtitle: 'Tamplate'
   },
   {
-    img: '/webT4.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-app.jpg',
+    title: 'UI/UX Design',
+    subtitle: 'App'
   },
   {
-    img: '/webT5.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-banner.jpg',
+    title: 'Banner Design',
+    subtitle: 'Marketing'
   },
   {
-    img: '/webT6.png',
-    title: 'Asus Marketing',
-    subtitle: 'Digital Agency'
+    img: '/graphicT-flayer.jpg',
+    title: 'Flayer Design',
+    subtitle: 'Branding'
   },
 ]

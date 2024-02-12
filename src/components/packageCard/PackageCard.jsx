@@ -9,8 +9,10 @@ const PackageCard = ({ data }) => {
       width: '300px',
       gap: 2,
       textAlign: 'center',
-      border: '1px solid rgb(56, 56, 56)',
+      // border: '1px solid rgb(56, 56, 56)',
+      borderRadius: '5px',
       p: 4,
+      bgcolor: '#17181a'
     }}>
       <Typography variant='h4' sx={{ fontSize: '30px' }}>{data.name}</Typography>
       <Typography variant='h5' sx={{ fontWeight: 300, color: 'red' }}>{data.price}</Typography>
