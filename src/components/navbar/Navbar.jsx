@@ -91,7 +91,7 @@ const Navbar = () => {
                 </Link>
                 <Link className='link' to='service/marketing' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
-                    Online Marketing
+                    Digital Marketing
                   </li>
                 </Link>
                 <Link className='link' to='service/content' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
