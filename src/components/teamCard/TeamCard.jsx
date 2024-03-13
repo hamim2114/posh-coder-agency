@@ -1,13 +1,15 @@
 import React from 'react'
 import './TeamCard.scss'
 
-const TeamCard = () => {
+const TeamCard = ({data}) => {
   return (
     <div className="team-card">
-      <img src="/team-1-1.jpg" alt="" />
+      <div className="team-img">
+        <img src={data?.img} alt={data?.name} />
+      </div>
       <div className="card-bottom">
-        <span>Senior Developer</span>
-        <div className='card-title'>Mike Hardson</div>
+        <span>{data?.title}</span>
+        <div className='card-name'>{data?.name}</div>
       </div>
     </div>
   )

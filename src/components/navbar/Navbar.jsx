@@ -79,6 +79,11 @@ const Navbar = () => {
                     Website Development
                   </li>
                 </Link>
+                <Link className='link' to='service/appdevelop' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
+                  <li onClick={() => setServiceMenu(!serviceMenu)}>
+                    Softwere Development
+                  </li>
+                </Link>
                 <Link className='link' to='service/graphic' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Graphic Design
@@ -92,11 +97,6 @@ const Navbar = () => {
                 <Link className='link' to='service/content' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
                   <li onClick={() => setServiceMenu(!serviceMenu)}>
                     Content Creation
-                  </li>
-                </Link>
-                <Link className='link' to='service/appdevelop' style={{ paddingBottom: '5px' }} onClick={() => setNav(false)}>
-                  <li onClick={() => setServiceMenu(!serviceMenu)}>
-                    Softwere Development
                   </li>
                 </Link>
               </Stack>

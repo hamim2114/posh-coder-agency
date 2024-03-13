@@ -6,12 +6,6 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  &:hover{
-    .info {
-      width: 60%;
-      transition: 1s ease-in-out;
-    }
-  }
   img {
     transition: 1s ease;
     width: 100%;
@@ -19,23 +13,20 @@
     object-fit: cover;
     &:hover{
       transform: scale(1.2) rotate(5deg);
-      .info {
-        width: 100%;
-      }
     }
   }
   .info{
     position: absolute;
     display: flex;
-    width: 200px;
+    width: 70%;
     flex-direction: column;
     transition: all 1s;
     padding: 15px 10px;
-    bottom: 20px;
-    background-color: $body-bg;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.747);
     span{
       &:nth-child(1){
-        font-size: 15px;
+        font-size: 14px;
       }
       &:nth-child(2){
         font-size: 25px;

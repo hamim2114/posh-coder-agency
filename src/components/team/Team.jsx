@@ -3,6 +3,7 @@ import TeamCard from '../teamCard/TeamCard';
 import { Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { FadeAnimation, SlideAnimation } from '../animations/animations';
+import { teams } from '../../data/teamData';
 
 const Team = () => {
   return (
@@ -10,9 +11,11 @@ const Team = () => {
       <span className='team-title'><FadeAnimation damping={0.1} cascade={'cascade'}>Our Teams</FadeAnimation> </span>
       <Stack direction={'row'} justifyContent={'center'} gap={2} mt={5} flexWrap={'wrap'}>
         <SlideAnimation direction='up' damping={0.1} cascade={'cascade'}>
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
+          {
+            teams.slice(0,3).map((data,i) => (
+              <TeamCard key={i} data={data}/>
+            ))
+          }
         </SlideAnimation>
       </Stack>
       <Link to='/teams' className='link' style={{

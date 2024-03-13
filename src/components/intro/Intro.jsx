@@ -24,22 +24,22 @@ const Intro = () => {
               <Box display={{xs: 'none',md: 'flex'}} className='t2'><FadeAnimation damping={.1} delay={100} cascade={'cascade'}>CREATIVE BRANDING</FadeAnimation></Box>
               <Box display={{xs: 'flex',md: 'none'}} className='t2'><FadeAnimation damping={.1} delay={500} cascade={'cascade'}>CREATIVE</FadeAnimation></Box>
               <Box display={{xs: 'flex',md: 'none'}} className='t4'><FadeAnimation damping={.1} delay={1000} cascade={'cascade'} >BRANDING</FadeAnimation></Box>
-              <div className='t3'><FadeAnimation damping={.3} cascade={'cascade'} delay={1500}>AGENCY.</FadeAnimation></div>
+              <div className='t3'><FadeAnimation damping={.3} cascade={'cascade'} delay={500}>AGENCY.</FadeAnimation></div>
           </div>
           <div className="btn-txt">
             <SlideAnimation cascade direction='up'>
-              <Link to='' className="readmore-btn link"> <PermPhoneMsg />Contact Us</Link>
+              <Link to='/contact' className="readmore-btn link"> <PermPhoneMsg />Contact Us</Link>
               <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
             </SlideAnimation>
           </div>
         </div>
         <div className="icons">
           <FadeAnimation>
-            <a to="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
+            <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
             <LinkedInIcon />
             <TwitterIcon />
-            <a className='link' to="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
-            <a className='link' to="tel: 01790862914"> <PhoneIcon /></a>
+            <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
+            <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
           </FadeAnimation>
         </div>
       </div>
