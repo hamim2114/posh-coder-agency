@@ -36,7 +36,7 @@ export const teams = [
   },
   {
     name: 'Sadman Sakib Roktim',
-    title: ' Chief Graphics Designer',
+    title: 'Chief Graphics Designer & Web Developer',
     img: '/teams/Sadman Sakib Roktim.jpg'
   },
 ]
