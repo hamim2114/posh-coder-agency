@@ -2,7 +2,7 @@ import { Fade, Slide, Zoom } from 'react-awesome-reveal';
 
 export const SlideAnimation = ({children,direction,cascade, duration}) => {
   return (
-    <Slide direction={direction} cascade={cascade}  duration={duration}>{children}</Slide>
+    <Slide direction={direction} cascade={cascade} triggerOnce duration={duration}>{children}</Slide>
   )
 }
 
