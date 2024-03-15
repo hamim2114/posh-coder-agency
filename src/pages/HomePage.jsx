@@ -10,6 +10,7 @@ import Testimonial from '../components/testimonial/Testimonial'
 import AskedQ from '../components/askedQ/AskedQ'
 import JoinUs from '../components/joinUs/JoinUs'
 import SomeBlog from '../components/some-blog/SomeBlog'
+import TrustedBy from '../components/trustedby/TrustedBy'
 
 const HomePage = () => {
   return (
@@ -25,6 +26,7 @@ const HomePage = () => {
       <AskedQ />
       <SomeBlog/>
       <JoinUs />
+      <TrustedBy/>
     </div>
   )
 }

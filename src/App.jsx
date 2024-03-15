@@ -18,6 +18,8 @@ import BlogSingle from './pages/blogSingle/BlogSingle';
 import Login from './pages/loginPage/Login';
 import Register from './pages/registerPage/Register';
 import TeamPage from './pages/teamPage/TeamPage';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
 

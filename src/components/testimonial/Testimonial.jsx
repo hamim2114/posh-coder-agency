@@ -1,12 +1,7 @@
 import './Testimonial.scss';
-import GradeIcon from '@mui/icons-material/Grade';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import { useRef } from 'react';
 import Slider from 'react-slick'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { testimonialData } from '../../data/testimonialData';
-import { Fade } from 'react-awesome-reveal';
 import { FadeAnimation } from '../animations/animations';
 
 const Testimonial = () => {

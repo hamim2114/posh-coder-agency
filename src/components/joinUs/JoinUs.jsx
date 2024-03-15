@@ -1,4 +1,3 @@
-import { Stack, Typography } from '@mui/material';
 import './JoinUs.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { Link } from 'react-router-dom';
@@ -23,18 +22,6 @@ const JoinUs = () => {
               </Link>
             </SlideAnimation>
           </div>
-        </div>
-      </div>
-      <div className="client-logo">
-        {/* <h3>Trusted By</h3> */}
-        <div className="client-logo-container">
-          <SlideAnimation direction='up'>
-            <img src="/Client-Logo-02.svg" alt="" />
-            <img src="/Client-Logo-03.svg" alt="" />
-            <img src="/Client-Logo-04.svg" alt="" />
-            <img src="/Client-Logo-05.svg" alt="" />
-            <img src="/Client-Logo-03.svg" alt="" />
-          </SlideAnimation>
         </div>
       </div>
     </>
