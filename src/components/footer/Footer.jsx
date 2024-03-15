@@ -6,6 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { Fade, Slide } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
+import { Instagram } from '@mui/icons-material';
 
 const Footer = () => {
   return (
@@ -18,8 +19,8 @@ const Footer = () => {
             </div>
             <div className="icons">
               <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
-              <LinkedInIcon />
-            <TwitterIcon />
+              <a href="https://www.linkedin.com/company/posh-coder/" target='blank' className='link'><LinkedInIcon /></a>
+              <a href="https://www.instagram.com/poshcoderbd" target='blank' className='link'><Instagram /></a>
               <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
               <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
             </div>

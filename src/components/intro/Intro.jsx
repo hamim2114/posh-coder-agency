@@ -5,7 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { Link } from 'react-router-dom';
-import { PermPhoneMsg } from '@mui/icons-material';
+import { Instagram, PermPhoneMsg } from '@mui/icons-material';
 import {Box} from '@mui/material'
 import { FadeAnimation, SlideAnimation } from '../animations/animations';
 
@@ -36,8 +36,8 @@ const Intro = () => {
         <div className="icons">
           <FadeAnimation>
             <a href="https://www.facebook.com/poshcoderbd" target='blank' className='link'><FacebookIcon /></a>
-            <LinkedInIcon />
-            <TwitterIcon />
+            <a href="https://www.linkedin.com/company/posh-coder/" target='blank' className='link'><LinkedInIcon /></a>
+            <a href="https://www.instagram.com/poshcoderbd" target='blank' className='link'><Instagram /></a>
             <a className='link' href="mailto: poshcoderbd@gmail.com"><EmailIcon /></a>
             <a className='link' href="tel: 01790862914"> <PhoneIcon /></a>
           </FadeAnimation>
