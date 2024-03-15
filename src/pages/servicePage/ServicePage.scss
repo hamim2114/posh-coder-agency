@@ -268,21 +268,10 @@
       font-size: 2.5rem;
       opacity: .5;
     }
-    &-container {
-      display: flex;
-      gap: 100px;
-      align-items: center;
-      justify-content: space-between;
-      @include tablet {
-      gap: 50px;
-      flex-direction: column;
-      }
-      img {
-        width: 200px;
-        @include mobile {
-          width: 100px;
-  
-        }
+    img {
+      width: 250px;
+      @include mobile {
+        width: 150px;
       }
     }
   }

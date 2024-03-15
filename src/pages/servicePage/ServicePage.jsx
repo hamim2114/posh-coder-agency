@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Slide, Zoom } from 'react-awesome-reveal';
 import VideoModal from '../../components/videoModal/VideoModal';
 import { useState } from 'react';
+import Marquee from "react-fast-marquee";
+import { trustedby } from '../../data/trustedByData';
 
 const ServicePage = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -95,13 +97,11 @@ const ServicePage = () => {
       </div>
       <div className="clients-logo">
         <h3>Trusted By</h3>
-        <div className="client-logo-container">
-          <img src="/Client-Logo-02.svg" alt="" />
-          <img src="/Client-Logo-03.svg" alt="" />
-          <img src="/Client-Logo-04.svg" alt="" />
-          <img src="/Client-Logo-05.svg" alt="" />
-          <img src="/Client-Logo-03.svg" alt="" />
-        </div>
+        <Marquee autoFill gradient gradientColor={[0,0,0]}>
+          {trustedby.map((data, i) => (
+            <img style={{marginRight: '30px'}} key={i} src={data.img} alt="" />
+          ))}
+        </Marquee>
       </div>
     </div>
   )
