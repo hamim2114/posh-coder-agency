@@ -18,7 +18,7 @@ const PackageCard = ({ data }) => {
       <Typography variant='h5' sx={{ fontWeight: 300, color: 'red' }}>{data.price}</Typography>
       <Box>
         {
-          data?.info.map((d, i) => (
+          data?.details?.map((d, i) => (
             <Stack key={i} direction='row' gap={2} mb={1}>
               <DoneAll sx={{ color: 'red' }}/>
               <Typography>{d}</Typography>

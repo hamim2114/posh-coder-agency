@@ -3,10 +3,11 @@ import './ServiceDemoCard.scss'
 const ServiceDemoCard = ({data}) => {
   return (
     <div className='servicedemo'>
-      <img src={data.img} alt="" />
+      <img src={data.imgUrl} alt="" />
       <div className='info'>
-        <span>{data.subtitle}</span>
-        <span>{data.title}</span>
+        <span>{data.name}</span>
+        <span>{data.company}</span>
+        {data.link && <a href={data.link} target='blank'>Link</a>}
       </div>
     </div>
   )

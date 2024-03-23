@@ -21,8 +21,20 @@ import { webPackageData } from '../../../data/webPackageData';
 import { webTemplateData } from '../../../data/webTamplateData';
 import ServiceCatCard from '../../../components/serviceCategory/ServiceCatCard';
 import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard';
+import { axiosReq } from '../../../utils/axiosReq';
+import { useQuery } from '@tanstack/react-query';
+import LoadingBar from '../../../components/loadingBar/LoadingBar';
 
 const WebsiteDev = () => {
+
+  const { isLoading: webPackageLoading, error: webpackageErr, data: allWebpackage } = useQuery({
+    queryKey: ['webpackage'],
+    queryFn: () => axiosReq.get('/webpackage/getall').then(res => res.data)
+  });
+  const { isLoading: webTamplateLoading, error: webTamplateErr, data: allWebTamplate } = useQuery({
+    queryKey: ['webtamplate'],
+    queryFn: () => axiosReq.get('/webtamplate/getall').then(res => res.data)
+  });
 
   const { pathname } = useLocation()
   return (
@@ -70,12 +82,12 @@ const WebsiteDev = () => {
 
         <Stack direction={'row'} justifyContent={{ xs: 'space-around', md: 'space-between' }} mt={{ xs: 10, md: 15 }} flexWrap='wrap' gap={2}>
           {
-            webCatData.map(s => (
-              <ServiceCatCard key={s} data={s} />
+            webCatData.map((s, i) => (
+              <ServiceCatCard key={i} data={s} />
             ))
           }
         </Stack>
-        
+
       </Stack>
 
       <Stack className='website-demo'>
@@ -88,9 +100,11 @@ const WebsiteDev = () => {
           justifyContent: 'center',
         }}>
           {
-            webTemplateData.map(d => (
-              <ServiceDemoCard key={d} data={d} />
-            ))
+            webTamplateLoading ? <LoadingBar /> : webTamplateErr ? 'Something went wrong!' : (
+              allWebTamplate.map((d, i) => (
+                <ServiceDemoCard key={i} data={d} />
+              ))
+            )
           }
         </Stack>
       </Stack>
@@ -100,9 +114,11 @@ const WebsiteDev = () => {
         <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Standard Website By Paying Small Budget!</Typography>
         <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
           {
-            webPackageData.map((data, i) => (
-              <PackageCard key={i} data={data} />
-            ))
+            webPackageLoading ? <LoadingBar /> : webpackageErr ? 'Something went wrong!' : (
+              allWebpackage.map((data, i) => (
+                <PackageCard key={i} data={data} />
+              ))
+            )
           }
         </Stack>
       </Stack>

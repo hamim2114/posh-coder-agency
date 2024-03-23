@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
 
-  const navbarRef = useRef(null);
+    const navbarRef = useRef(null);
   const handleClickOutside = (event) => {
     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
       setNav(false);
