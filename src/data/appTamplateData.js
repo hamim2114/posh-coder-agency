@@ -1,32 +1,32 @@
 export const appTemplateData = [
   {
-    img: '/appT (1).png',
-    title: 'Appify Solutions',
-    subtitle: 'Mobile App Development'
+    imgUrl: '/appT (1).png',
+    company: 'Appify Solutions',
+    name: 'Mobile App Development'
   },
   {
-    img: '/appT (2).png',
-    title: 'Innovate App Labs',
-    subtitle: 'Innovative Mobile Solutions'
+    imgUrl: '/appT (2).png',
+    company: 'Innovate App Labs',
+    name: 'Innovative Mobile Solutions'
   },
   {
-    img: '/appT (3).png',
-    title: 'Digital Dream Apps',
-    subtitle: 'Turning Ideas into Apps'
+    imgUrl: '/appT (3).png',
+    company: 'Digital Dream Apps',
+    name: 'Turning Ideas into Apps'
   },
   {
-    img: '/appT (4).png',
-    title: 'CodeCraft Technologies',
-    subtitle: 'Crafting Future-ready Apps'
+    imgUrl: '/appT (4).png',
+    company: 'CodeCraft Technologies',
+    name: 'Crafting Future-ready Apps'
   },
   {
-    img: '/appT (5).png',
-    title: 'MobileTech Innovations',
-    subtitle: 'Leading the Mobile Revolution'
+    imgUrl: '/appT (5).png',
+    company: 'MobileTech Innovations',
+    name: 'Leading the Mobile Revolution'
   },
   {
-    img: '/appT (6).png',
-    title: 'AppGenius Solutions',
-    subtitle: 'Unlocking App Potential'
+    imgUrl: '/appT (6).png',
+    company: 'AppGenius Solutions',
+    name: 'Unlocking App Potential'
   },
 ];

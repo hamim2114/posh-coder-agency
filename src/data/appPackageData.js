@@ -2,7 +2,7 @@ export const appPackageData = [
   {
     name: 'Company App',
     price: 'Start at Tk 20,000',
-    info: [
+    details: [
       'Custom UI Design',
       'User Authentication',
       'Push Notifications',
@@ -16,7 +16,7 @@ export const appPackageData = [
   {
     name: 'E-commerce App',
     price: 'Start at Tk 17,000',
-    info: [
+    details: [
       'Product Catalog',
       'Shopping Cart',
       'Payment Gateway Integration',
@@ -30,7 +30,7 @@ export const appPackageData = [
   {
     name: 'News App',
     price: 'Start at Tk 15,000',
-    info: [
+    details: [
       'News Feeds',
       'Categories & Tags',
       'Offline Reading',
@@ -44,7 +44,7 @@ export const appPackageData = [
   {
     name: 'Blogging App',
     price: 'Start at Tk 15,000',
-    info: [
+    details: [
       'Blog Posts Management',
       'Comments Section',
       'Social Media Sharing',
@@ -58,7 +58,7 @@ export const appPackageData = [
   {
     name: 'Educational App',
     price: 'Start at Tk 20,000',
-    info: [
+    details: [
       'Course Management',
       'Student Profiles',
       'Assessment Tools',
@@ -72,7 +72,7 @@ export const appPackageData = [
   {
     name: 'Portfolio App',
     price: 'Start at Tk 12,000',
-    info: [
+    details: [
       'Portfolio Showcase',
       'Client Testimonials',
       'Project Galleries',
