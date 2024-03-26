@@ -1,29 +1,48 @@
 import React from 'react'
 import './BlogSingle.scss'
-import { Stack, Typography } from '@mui/material'
+import { Container, Stack, Typography } from '@mui/material'
+import { useParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query';
+import { axiosReq } from '../../utils/axiosReq';
+import LoadingBar from '../../components/loadingBar/LoadingBar';
+import Loading from '../../components/loading/Loading';
+import parse from 'html-react-parser'
+import { Person2 } from '@mui/icons-material';
+
 
 const BlogSingle = () => {
+  const { id } = useParams();
+  const { isLoading, error, data: blog } = useQuery({
+    queryKey: ['singleblog'],
+    queryFn: () => axiosReq.get(`/blog/single/${id}`).then(res => res.data)
+  });
+  console.log(blog)
   return (
-    <div className="blog-single">
-      <Stack gap={2}>
-        <Typography variant='h4' mb={4}>ডোমেইন এবং হোস্টিং কেনার আগে অবশ্যই মনে রাখবেন</Typography>
-        <Typography variant='h5'>ডোমেইন এবং হোস্টিং কেনার আগে যে সব বিষয় অবশ্যই খেয়াল রাখবেন</Typography>
-        <Typography variant='body'>ব্যবসায়িক বা ব্যক্তিগত প্রয়োজনে ওয়েবসাইট তৈরী করতে হয়। আর ওয়েবসাইট তৈরী করতে হলে আপনাকে ডোমেইন এবং হোস্টিং কিনতে হবে। বাংলাদেশসহ পৃথিবীর সকল দেশে হাজার হাজার ডোমেইন এবং হোস্টিং প্রভাইডার কোম্পানী আছে যারা মাসিক বা বাৎসরিক টাকার বিনিময়ে আপনাকে ডোমেইন এবং হোস্টিং সার্ভিস দিয়ে থাকে। এত্তো এত্তো প্রভাইডারের মেধ্যে সবাই সমান ভালো সাভিস প্রদান করে না। কারো হোস্টিং ভালো তো কাস্টোমার সার্ভিস খারাপ। আবার কারো কাস্টোমার সার্ভিস ভালো তো হোস্টিং খারাপ। আবার কারো হোস্টিং এবং কাস্টমার সার্ভিস দুটোই খারাপ। তাই হুট করে কারো কাছ থেকে ডোমেইন এবং হোস্টিং কেনার আগে আপনাকে কিছু বিষয় খেয়াল রাখতে হবে। </Typography>
-        <Typography variant='h5' mt={6}>ডোমেইন কেনার আগে যা যা খেয়াল রাখতে হবে:</Typography>
-        <Typography>১) কোন ধরনের ওয়েবসাইট করতে চাচ্ছেন সেটা আগে ভালোকরে পরিস্কার করে প্লান করবেন এবং ডোমেইন নেম কি নিবেন সেটা নিয়ে ভালো করে চিন্তা করবেন।</Typography>
-        <Typography>২) সাধারনত ব্যবসা বা ব্যক্তিগত ওয়েবসাইটের জন্য .com ডোমেইন ই ভালো। তবে অপনার নেটওয়ার্কিং বিজনেস হলে .net নিতে পারেন। আবার আপনার প্রতিষ্ঠান নন-প্রফিটেবল হলে .org নিতে পারেন।</Typography>
-        <Typography>৩) ডোমেইনটি যত ছোট করা যায় চেষ্টা করতে হবে। এতে আপনার ভিজিটররা আপনার ওয়েবসাইটের ঠিকানা খুব সহজে মনে রাখতে পারবেন। সুন্দর ওয়েবসাইট নেম একটি ভালো সম্পদ। একটি ডোমেইন অনলাইন ব্যবসার জন্য সবচেয়ে বড় অ্যাসেট। </Typography>
-        <Typography>৪) ডোমেইন নেম ইউনিক নেয়ার চেস্টা করতে হবে যেন অন্য বড় কোন ব্রান্ডের সাথে গুলিয়ে না যায়।</Typography>
-        <img style={{width: '70%', height: '400px', objectFit: 'cover'}} src="/blog-post-2.jpg" alt="" />
-        <Typography variant='h5' mt={6}>ডোমেইন কোথা থেকে রেজিস্ট্রেশন করবেন:</Typography>
-        <Typography>১) আপনি একজন বাংলাদেশী হিসেবে, বাংলাদেশি প্রভাইডারের কাছ থেকে ডোমেইন নেয়া ভালো, কারন আপনি বিদেশি কোম্পানীর চেয়ে ভালো সার্ভিস পাবেন এরকম অনেক প্রতিষ্ঠানই এখন বাংলাদেশে আছে। তাছাড়া বিদেশি কোম্পানীর কাছে ডোমেইন নিতে আপনাকে ডলারে পেমেন্ট পরিশোধ করতে হবে। যেখানে বাংলাদেশি প্রভাইডারের কাছ থেকে নিলে আপনি টাকায় পেমেন্ট করতে পারবেন।</Typography>
-        <Typography>২) ডোমেইনের ক্ষেত্রে বাংলাদেশি এবং বিদেশী কোম্পনীর কোন ডিফারেন্স নেই। বিদেশী কোম্পানী আপনাকে যেখান থেকে ডোমেইন রেজিস্ট্রেশন করিয়ে দিবে, বালাদেশী কোম্পানী সেখান থেকেই রেজিস্ট্রেশন করিয়ে দিবে।</Typography>
-        <Typography>৩) বাংলাদেশী প্রভাইডারের কাছে ডোমেইন নিলে একটি কথা তাকে আগে জিজ্ঞাসা করতে হবে, সে কি আপনাকে ডোমেইনের ফুল কন্ট্রোল প্যনেল দিবে? আপনি কি যেকোনো সময় আপনার সার্ভিসটি অন্য কোম্পানিতে ট্রান্সফার করতে পারবেন? ফুল কন্ট্রোল প্যানেল না দিলে আপনি তার কাছ থেকে ডোমেইন কিনবেন না।</Typography>
-        <Typography>৪) ডোমেইন হোস্টিং এর সাথে রিলেটেড। তাই হোস্টিং যে কোম্পানী থেকে নিবেন, সেখান থেকেই ডোমেইন নেয়া বেটার। তাতে আপনি ডোমেইন এবং হোস্টিং সার্ভিস একই সাথে পাবেন। কোনো সমস্যা হলেও তারা ভালো ভাবে সেটি দেখতে পারবেন। </Typography>
-        <Typography>৫) লোভনীয় অফারে ডোমেইন কিনতে হলে আগে ভালো করে অফার সম্পর্কে পরিস্কার ধারনা নিন। অফারে সস্তায় নিতে গিয়ে আবার প্রোভাইডার এর কাছে ধরা না খান। তার কাছে আটকে না পড়েন। </Typography>
-        <Typography>৬) সাধারনত একটি ডোমেইনের মূল্য ৮০০-১২০০ টাকা হয়ে থাকে। এই প্রাইসের নিচে আপনাকে কেউ ডোমেইন অফার করলে আগে ভালো করে জিজ্ঞাসা করুন তার কি কি কন্ডিশন আছে। সার্ভিস তার কাছে আটকে না পড়েন। </Typography>
-      </Stack>
-    </div>
+    <Container sx={{mt: 10}}>
+      {
+        isLoading ? <><LoadingBar /> <Loading /></> : error ? 'Something went wrong!' :
+          <Stack gap={1.5} sx={{
+            bgcolor: '#17181a',
+            py: 3, px: { xs: 2.5, md: 5 }, borderRadius: '10px'
+          }}>
+
+            <Typography variant='h5' sx={{ fontSize: '22px' }}>{blog?.title}</Typography>
+            <Stack direction='row' gap={2} mb={6}>
+              <Stack direction='row' gap={1} alignItems='center'>
+                <Person2 />
+                <Typography>Admin</Typography>
+              </Stack>
+              <Typography sx={{
+                fontSize: '12px',
+                bgcolor: 'gray',
+                p: '3px 10px',
+                borderRadius: '5px'
+              }}>{blog?.category}</Typography>
+            </Stack>
+            <Typography variant='body2'>{blog && parse(blog.body)}</Typography>
+          </Stack>
+      }
+    </Container>
   )
 }
 

@@ -4,22 +4,30 @@ import { Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { FadeAnimation, SlideAnimation } from '../animations/animations';
 import { teams } from '../../data/teamData';
+import { useQuery } from '@tanstack/react-query';
+import { axiosReq } from '../../utils/axiosReq';
+import Loading from '../loading/Loading';
 
 const Team = () => {
+  const { isLoading, error, data: teams } = useQuery({
+    queryKey: ['team'],
+    queryFn: () => axiosReq.get('/team/allTeams').then(res => res.data)
+  });
   return (
     <Stack className="team">
       <span className='team-title'><FadeAnimation damping={0.1} cascade={'cascade'}>Our Teams</FadeAnimation> </span>
-      <Stack direction={'row'} justifyContent={'center'} gap={2} mt={5} flexWrap={'wrap'}>
+      <Stack direction={'row'} justifyContent={'center'} gap={4} mt={5} flexWrap={'wrap'}>
         <SlideAnimation direction='up' damping={0.1} cascade={'cascade'}>
           {
-            teams.slice(0,3).map((data,i) => (
-              <TeamCard key={i} data={data}/>
+            isLoading ? <Loading />: error ? 'Something went wrong!' :
+            teams.slice(0,3).map((data) => (
+              <TeamCard key={data._id} data={data}/>
             ))
           }
         </SlideAnimation>
       </Stack>
       <Link to='/teams' className='link' style={{
-        marginTop: '5rem',
+        marginTop: '2rem',
         textAlign: 'center',
         border: '1px solid gray',
         width: '200px',

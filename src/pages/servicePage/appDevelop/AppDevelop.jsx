@@ -12,15 +12,27 @@ import {
   EngineeringSharp,
   WebhookSharp
 } from '@mui/icons-material';
+import { useQuery } from '@tanstack/react-query';
 import { Link, useLocation } from 'react-router-dom';
 import { appCatData } from '../../../data/appCatData';
 import ServiceCatCard from '../../../components/serviceCategory/ServiceCatCard';
-import { appTemplateData } from '../../../data/appTamplateData';
 import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard';
-import { appPackageData } from '../../../data/appPackageData';
 import PackageCard from '../../../components/packageCard/PackageCard';
+import { axiosReq } from '../../../utils/axiosReq';
+import LoadingBar from '../../../components/loadingBar/LoadingBar';
+import Loading from '../../../components/loading/Loading';
 
 const AppDevelop = () => {
+
+  const { isLoading: appPackageLoading, error: apppackageErr, data: allApppackage } = useQuery({
+    queryKey: ['apppackage'],
+    queryFn: () => axiosReq.get('/apppackage/getall').then(res => res.data)
+  });
+  const { isLoading: appTemplateLoading, error: appTemplateErr, data: allAppTemplate } = useQuery({
+    queryKey: ['apptemplate'],
+    queryFn: () => axiosReq.get('/apptemplate/getall').then(res => res.data)
+  });
+
   const { pathname } = useLocation();
 
   return (
@@ -83,7 +95,8 @@ const AppDevelop = () => {
             justifyContent: 'center',
           }}>
             {
-              appTemplateData.map(d => (
+              appTemplateLoading ? <><LoadingBar /> <Loading/></> : appTemplateErr ? 'Something went wrong!' :
+              allAppTemplate.map(d => (
                 <ServiceDemoCard key={d} data={d} />
               ))
             }
@@ -97,7 +110,8 @@ const AppDevelop = () => {
           <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Standard App By Paying Small Budget!</Typography>
           <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
             {
-              appPackageData.map((data, i) => (
+              appTemplateLoading ? <><LoadingBar /> <Loading/></> : appTemplateErr ? 'Something went wrong!' :
+              allApppackage?.map((data, i) => (
                 <PackageCard key={i} data={data} />
               ))
             }

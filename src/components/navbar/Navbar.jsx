@@ -5,9 +5,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Slide } from 'react-awesome-reveal';
-import { Box, Button, Collapse, Menu, MenuList, Stack, Typography } from '@mui/material';
+import { Button, Collapse, Stack } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
-import styled from '@emotion/styled';
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
 
-    const navbarRef = useRef(null);
+  const navbarRef = useRef(null);
   const handleClickOutside = (event) => {
     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
       setNav(false);
@@ -30,13 +30,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div ref={navbarRef} className="navbar">
-      <Link to='/' className="left link">
-        <img src="/logo.png" alt="" />
+      <div ref={navbarRef} className="navbar">
+        <Link to='/' className="left link">
+          <img src="/logo.png" alt="" />
 
-      </Link>
-      <div className={`middle ${nav && 'active'}`}>
-        {/* <Slide> */}
+        </Link>
+        <div className={`middle ${nav && 'active'}`}>
+          {/* <Slide> */}
           <Link to='/' style={{ color: pathname === '/' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Home</Link>
           {/* <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link> */}
 
@@ -119,14 +119,14 @@ const Navbar = () => {
               </Button>
             </Link>
           </Stack>
-        {/* </Slide> */}
+          {/* </Slide> */}
+        </div>
+        <div className="right">
+          <Link to='contact' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
+        </div>
+        <div className="nav-btn" onClick={() => setNav(p => !p)}><SegmentIcon /></div>
+        <div className={`nav-btn-x ${nav && 'active'}`} onClick={() => setNav(p => !p)}><Slide><ArrowBackIosIcon /></Slide></div>
       </div>
-      <div className="right">
-        <Link to='contact' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
-      </div>
-      <div className="nav-btn" onClick={() => setNav(p => !p)}><SegmentIcon /></div>
-      <div className={`nav-btn-x ${nav && 'active'}`} onClick={() => setNav(p => !p)}><Slide><ArrowBackIosIcon /></Slide></div>
-    </div>
   )
 }
 

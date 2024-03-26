@@ -6,7 +6,7 @@ const ServiceDemoCard = ({data}) => {
       <img src={data.imgUrl} alt="" />
       <div className='info'>
         <span>{data.name}</span>
-        <span>{data.company}</span>
+        <span>{data?.company || data?.category}</span>
         {data.link && <a href={data.link} target='blank'>Link</a>}
       </div>
     </div>

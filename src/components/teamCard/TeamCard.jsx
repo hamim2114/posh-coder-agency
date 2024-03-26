@@ -5,7 +5,7 @@ const TeamCard = ({data}) => {
   return (
     <div className="team-card">
       <div className="team-img">
-        <img src={data?.img} alt={data?.name} />
+        <img src={data?.imgUrl} alt={data?.name} />
       </div>
       <div className="card-bottom">
         <span>{data?.title}</span>

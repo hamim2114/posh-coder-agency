@@ -20,8 +20,23 @@ import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard
 import { graphicTemplateData } from '../../../data/graphicTamplateData';
 import { graphicPackageData } from '../../../data/graphicPackageData';
 import PackageCard from '../../../components/packageCard/PackageCard';
+import { axiosReq } from '../../../utils/axiosReq';
+import { useQuery } from '@tanstack/react-query';
+import LoadingBar from '../../../components/loadingBar/LoadingBar';
+import Loading from '../../../components/loading/Loading';
 
 const Graphic = () => {
+
+  const { isLoading: graphicPackageLoading, error: graphicpackageErr, data: allGraphicpackage } = useQuery({
+    queryKey: ['graphicpackage'],
+    queryFn: () => axiosReq.get('/graphicpackage/getall').then(res => res.data)
+  });
+  const { isLoading: graphicTemplateLoading, error: graphicTemplateErr, data: allGraphicTemplate } = useQuery({
+    queryKey: ['graphictemplate'],
+    queryFn: () => axiosReq.get('/graphictemplate/getall').then(res => res.data)
+  });
+
+
   const { pathname } = useLocation();
 
   return (
@@ -82,7 +97,8 @@ const Graphic = () => {
             justifyContent: 'center',
           }}>
             {
-              graphicTemplateData.map(d => (
+              graphicTemplateLoading ? <><LoadingBar /> <Loading/></> : graphicTemplateErr ? 'Something went wrong!' :
+              allGraphicTemplate.map(d => (
                 <ServiceDemoCard key={d} data={d} />
               ))
             }
@@ -96,7 +112,8 @@ const Graphic = () => {
           <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Stunning Design By Paying Small Budget!</Typography>
           <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
             {
-              graphicPackageData.map((data, i) => (
+              graphicPackageLoading ? <><LoadingBar /> <Loading/></> : graphicpackageErr ? 'Something went wrong!' :
+              allGraphicpackage.map((data, i) => (
                 <PackageCard key={i} data={data} />
               ))
             }

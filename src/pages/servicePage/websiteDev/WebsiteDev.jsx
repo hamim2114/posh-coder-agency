@@ -24,6 +24,7 @@ import ServiceDemoCard from '../../../components/websiteDemoCard/ServiceDemoCard
 import { axiosReq } from '../../../utils/axiosReq';
 import { useQuery } from '@tanstack/react-query';
 import LoadingBar from '../../../components/loadingBar/LoadingBar';
+import Loading from '../../../components/loading/Loading';
 
 const WebsiteDev = () => {
 
@@ -33,7 +34,7 @@ const WebsiteDev = () => {
   });
   const { isLoading: webTamplateLoading, error: webTamplateErr, data: allWebTamplate } = useQuery({
     queryKey: ['webtamplate'],
-    queryFn: () => axiosReq.get('/webtamplate/getall').then(res => res.data)
+    queryFn: () => axiosReq.get('/webtemplate/getall').then(res => res.data)
   });
 
   const { pathname } = useLocation()
@@ -100,7 +101,7 @@ const WebsiteDev = () => {
           justifyContent: 'center',
         }}>
           {
-            webTamplateLoading ? <LoadingBar /> : webTamplateErr ? 'Something went wrong!' : (
+            webTamplateLoading ? <><LoadingBar /> <Loading/></> : webTamplateErr ? 'Something went wrong!' : (
               allWebTamplate.map((d, i) => (
                 <ServiceDemoCard key={i} data={d} />
               ))
@@ -114,7 +115,7 @@ const WebsiteDev = () => {
         <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Standard Website By Paying Small Budget!</Typography>
         <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
           {
-            webPackageLoading ? <LoadingBar /> : webpackageErr ? 'Something went wrong!' : (
+            webPackageLoading ? <><LoadingBar /> <Loading/></> : webpackageErr ? 'Something went wrong!' : (
               allWebpackage.map((data, i) => (
                 <PackageCard key={i} data={data} />
               ))
