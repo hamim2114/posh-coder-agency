@@ -5,13 +5,13 @@ import parse from 'html-react-parser'
 import { Link } from 'react-router-dom'
 
 const BlogCard = ({ data }) => {
-  const formattedDate = new Date(data.createdAt).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  // const formattedDate = new Date(data.createdAt).toLocaleDateString('en-GB', {
+  //   day: 'numeric',
+  //   month: 'long',
+  //   year: 'numeric',
+  // });
   return (
-    <Link to={`/blog/${data._id}`} className='link'>
+    <Link to={`/blog/${data?._id}`} className='link'>
       <Stack gap={1.5} sx={{
         // width: '100%',
         cursor: 'pointer',
@@ -19,7 +19,7 @@ const BlogCard = ({ data }) => {
         py: 3, px: { xs: 2.5, md: 5 }, borderRadius: '10px'
       }}>
 
-        <Typography variant='h5' sx={{ fontSize: '22px' }}>{data.title}</Typography>
+        <Typography variant='h5' sx={{ fontSize: '22px' }}>{data?.title}</Typography>
         <Stack direction='row' gap={2} alignItems='center'>
           <Stack direction='row' gap={1} alignItems='center'>
             <Person2 />
@@ -30,11 +30,11 @@ const BlogCard = ({ data }) => {
             bgcolor: 'gray',
             p: '3px 10px',
             borderRadius: '5px'
-          }}>{data.category}</Typography>
+          }}>{data?.category}</Typography>
           {/* <Typography sx={{fontSize:'13px'}}>{formattedDate}</Typography> */}
         </Stack>
         <Stack>
-          <Typography variant='body2'>{parse(data.body.substring(0, 400))} <span style={{
+          <Typography variant='body2'>{data?.body && parse(data?.body.substring(0, 400))} <span style={{
             color: 'lightblue'
           }}>Read More</span>
           </Typography>
