@@ -131,14 +131,14 @@ export default function DLayout(props) {
         </Link>
       </Toolbar>
       <Stack sx={{ mt: 5 }}>
-        {/* <ListBtn
+        <ListBtn
           onClick={handleDrawerClose}
           notification={''}
           link={'/dashboard'}
           icon={<SpaceDashboardOutlined sx={{ color: '#fff' }} fontSize='small' />}
           text='Dashboard'
           selected={pathname === '/dashboard'}
-        /> */}
+        />
         <ListBtn
           onClick={() => setServiceExpand(!serviceExpand)}
           icon={<ArticleOutlined sx={{ color: '#fff' }} fontSize='small' />}

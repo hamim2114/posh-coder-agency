@@ -33,6 +33,7 @@ import AppDev from './pages/dashboard/services/AppDev';
 import GraphicDesign from './pages/dashboard/services/GraphicDesign';
 import DigitalMarketing from './pages/dashboard/services/DigitalMarketing';
 import ContentCreation from './pages/dashboard/services/ContentCreation';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
   // const user = false
@@ -89,6 +90,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path='/dashboard' element={user ? <DLayout /> : <Navigate to='/login' />}>
+          <Route index element={<Dashboard />} />
           <Route path='my-order' element={<MyOrder />} />
           <Route path='web-dev' element={<WebDev />} />
           <Route path='app-dev' element={<AppDev />} />
