@@ -1,3 +1,4 @@
+import React from 'react';
 import './Navbar.scss';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import SegmentIcon from '@mui/icons-material/Segment';
@@ -7,12 +8,22 @@ import { Link, useLocation } from 'react-router-dom';
 import { Slide } from 'react-awesome-reveal';
 import { Button, Collapse, Stack } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
+import { useUserInfo } from '../../hook/useUserInfo';
+import { axiosReq } from '../../utils/axiosReq';
+import { useQuery } from '@tanstack/react-query';
 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [serviceMenu, setServiceMenu] = useState(false)
 
+  const { user } = useUserInfo()
+
+  // const { data: user } = useQuery({
+  //   queryKey: ['me'],
+  //   queryFn: () => axiosReq.get('/auth/me').then(res => res.data),
+  //   networkMode:'online'
+  // });
   const { pathname } = useLocation();
 
   const navbarRef = useRef(null);
@@ -22,6 +33,7 @@ const Navbar = () => {
       setServiceMenu(false)
     }
   };
+  
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
     return () => {
@@ -31,7 +43,7 @@ const Navbar = () => {
 
   return (
     <div ref={navbarRef} className="navbar"
-      // style={{ transform: 'TranslateY(-100px)' }}
+    // style={{ transform: 'TranslateY(-100px)' }}
     >
       <Link to='/' className="left link">
         <img src="/logo.png" alt="" />
@@ -109,18 +121,25 @@ const Navbar = () => {
         <Link to='/teams' style={{ color: pathname === '/teams' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Teams</Link>
         <Link to='/blog' style={{ color: pathname === '/blog' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Blog</Link>
         <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
-        <Stack direction='row' gap={2}>
-          <Link to='/login' onClick={() => setNav(false)} className='link'>
-            <Button size='small' sx={{ color: 'inherit', textTransform: 'none' }} variant='outlined'>
-              Login
+        {user ?
+          <Link to='/dashboard' onClick={() => setNav(false)} className='link'>
+            <Button size='small' sx={{ color: 'inherit', textTransform: 'none' }} variant='contained'>
+              Dashboard
             </Button>
-          </Link>
-          <Link to='/register' onClick={() => setNav(false)} className='link'>
-            <Button size='small' sx={{ textTransform: 'none' }} variant='contained'>
-              Register
-            </Button>
-          </Link>
-        </Stack>
+          </Link> :
+          <Stack direction='row' gap={2}>
+            <Link to='/login' onClick={() => setNav(false)} className='link'>
+              <Button size='small' sx={{ color: 'inherit', textTransform: 'none' }} variant='outlined'>
+                Login
+              </Button>
+            </Link>
+            <Link to='/register' onClick={() => setNav(false)} className='link'>
+              <Button size='small' sx={{ textTransform: 'none' }} variant='contained'>
+                Register
+              </Button>
+            </Link>
+          </Stack>
+        }
         {/* </Slide> */}
       </div>
       <div className="right">

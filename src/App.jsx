@@ -1,7 +1,8 @@
+import React from 'react';
 import './App.scss'
 import Navbar from './components/navbar/Navbar'
 import { useEffect } from 'react';
-import { Outlet, RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
@@ -20,8 +21,29 @@ import Register from './pages/registerPage/Register';
 import TeamPage from './pages/teamPage/TeamPage';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Box } from '@mui/material';
+import NotFound from './pages/NotFound/NotFound';
+import VerifyEmail from './pages/verifyEmail/VerifyEmail';
+import DLayout from './pages/dashboard/DLayout';
+import { axiosReq } from './utils/axiosReq';
+import { useQuery } from '@tanstack/react-query';
+import MyOrder from './pages/dashboard/myOrder/MyOrder';
+import WebDev from './pages/dashboard/services/WebDev';
+import AppDev from './pages/dashboard/services/AppDev';
+import GraphicDesign from './pages/dashboard/services/GraphicDesign';
+import DigitalMarketing from './pages/dashboard/services/DigitalMarketing';
+import ContentCreation from './pages/dashboard/services/ContentCreation';
 
 function App() {
+  // const user = false
+  // const {user} = useUserInfo()
+
+  const { data: user } = useQuery({
+    queryKey: ['me'],
+    queryFn: () => axiosReq.get('/auth/me').then(res => res.data),
+    // retry: false,
+    // refetchOnWindowFocus: false,
+  });
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -42,30 +64,41 @@ function App() {
     )
   }
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Layout />,
-      children: [
-        { path: '/', element: <HomePage /> },
-        { path: 'service', element: <ServicePage /> },
-        { path: 'about', element: <AboutPage /> },
-        { path: 'teams', element: <TeamPage /> },
-        { path: 'blog', element: <BlogPage /> },
-        { path: 'blog/:id', element: <BlogSingle /> },
-        { path: 'service/business', element: <Business /> },
-        { path: 'service/webdev', element: <WebsiteDev /> },
-        { path: 'service/graphic', element: <Graphic /> },
-        { path: 'service/marketing', element: <Marketing /> },
-        { path: 'service/appdevelop', element: <AppDevelop /> },
-        { path: 'service/content', element: <Content /> },
-        { path: 'contact', element: <Contact /> },
-        { path: '/login', element: <Login /> },
-        { path: '/register', element: <Register /> }
-      ]
-    },
-  ])
-  return <RouterProvider router={router} />
+
+  return (
+    <Box>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="login" element={user ? <Navigate to='/dashboard' /> : <Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="verify-email" element={<VerifyEmail />} />
+          <Route path="service" element={<ServicePage />} />
+          <Route path="service/business" element={<Business />} />
+          <Route path="service/webdev" element={<WebsiteDev />} />
+          <Route path="service/graphic" element={<Graphic />} />
+          <Route path="service/marketing" element={<Marketing />} />
+          <Route path="service/appdevelop" element={<AppDevelop />} />
+          <Route path="service/content" element={<Content />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="teams" element={<TeamPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="blog/:id" element={<BlogSingle />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        <Route path='/dashboard' element={user ? <DLayout /> : <Navigate to='/login' />}>
+          <Route path='my-order' element={<MyOrder />} />
+          <Route path='web-dev' element={<WebDev />} />
+          <Route path='app-dev' element={<AppDev />} />
+          <Route path='graphic-design' element={<GraphicDesign />} />
+          <Route path='digital-marketing' element={<DigitalMarketing />} />
+          <Route path='content-creation' element={<ContentCreation />} />
+        </Route>
+      </Routes>
+    </Box>
+  )
 }
 
 export default App
