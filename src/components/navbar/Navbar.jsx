@@ -143,7 +143,7 @@ const Navbar = () => {
         {/* </Slide> */}
       </div>
       <div className="right">
-        <Link to='contact' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
+        <Link to='/register' className={`btn link ${nav && 'active'}`}> Start Project <Slide><TrendingFlatIcon /></Slide></Link>
       </div>
       <div className="nav-btn" onClick={() => setNav(p => !p)}><SegmentIcon /></div>
       <div className={`nav-btn-x ${nav && 'active'}`} onClick={() => setNav(p => !p)}><Slide><ArrowBackIosIcon /></Slide></div>

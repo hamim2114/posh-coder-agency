@@ -1,3 +1,4 @@
+import React from 'react';
 import './Intro.scss';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -5,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { Link } from 'react-router-dom';
-import { Instagram, PermPhoneMsg } from '@mui/icons-material';
+import { Instagram, PermPhoneMsg, WhatsApp } from '@mui/icons-material';
 import {Box} from '@mui/material'
 import { FadeAnimation, SlideAnimation } from '../animations/animations';
 
@@ -28,7 +29,7 @@ const Intro = () => {
           </div>
           <div className="btn-txt">
             <SlideAnimation cascade direction='up'>
-              <Link to='/contact' className="readmore-btn link"> <PermPhoneMsg />Contact Us</Link>
+              <a href='https://wa.me/+8801790862914' target='blank' className="readmore-btn link"> <WhatsApp />Contact Us</a>
               <p>We can help you channel your potential implementing your idea. We take care of all your needs, crafting specific and targeted solutions.</p>
             </SlideAnimation>
           </div>
