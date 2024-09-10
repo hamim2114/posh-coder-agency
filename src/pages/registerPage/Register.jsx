@@ -19,6 +19,7 @@ const style = {
     backgroundPosition: 'center',
   },
   inputContainer: {
+    maxWidth: '270px',
     p: '2rem',
     border: '.5px solid gray',
     minHeight: '300px',
@@ -36,6 +37,7 @@ const style = {
 }
 
 const Register = () => {
+  const [verificationMailSendMsg, setVerificationMailSendMsg] = useState('')
   const [payload, setPayload] = useState({
     username: '',
     email: '',
@@ -53,8 +55,16 @@ const Register = () => {
     onSuccess: (res) => {
       setPayload({})
       queryClient.invalidateQueries(['register']);
+      setVerificationMailSendMsg(res.data)
       toast.success(res.data);
-      navigate('/login')
+      setPayload({
+        username: '',
+        email: '',
+        phone: '',
+        password: '',
+        rePassword: ''
+      })
+      // navigate('/login')
 
     },
     onError: (err) => {
@@ -101,18 +111,24 @@ const Register = () => {
     });
   };
   return (
-    <Box sx={style.main}>
-      <Stack sx={style.inputContainer} justifyContent={'center'} alignContent={'center'} gap={2}>
-        <Typography variant='h4'>Register</Typography>
-        <input onChange={inputChange} name='username' style={style.input} placeholder='User Name' />
-        <input onChange={inputChange} name='email' style={style.input} placeholder='Email' />
-        <input onChange={inputChange} name='phone' type='number' style={style.input} placeholder='Phone' />
-        <input onChange={inputChange} name='password' style={style.input} placeholder='Password' />
-        <input onChange={inputChange} name='rePassword' style={style.input} placeholder='Repeat Password' />
-        <CButton isLoading={regMutation.isPending} onClick={handleRegister} variant='contained'>Register</CButton>
-        <span>Already have an Account? <Link to='/login' style={{ color: '#1669C4' }}>Login</Link> here.</span>
-      </Stack>
-    </Box>
+    <>
+      <Box sx={style.main}>
+        <Stack sx={style.inputContainer} justifyContent={'center'} alignContent={'center'} gap={2}>
+          <Typography variant='h4'>Register</Typography>
+          <input value={payload.username} onChange={inputChange} name='username' style={style.input} placeholder='User Name' />
+          <input value={payload.email} onChange={inputChange} name='email' style={style.input} placeholder='Email' />
+          <input value={payload.phone} onChange={inputChange} name='phone' type='number' style={style.input} placeholder='Phone' />
+          <input value={payload.password} onChange={inputChange} name='password' style={style.input} placeholder='Password' />
+          <input value={payload.rePassword} onChange={inputChange} name='rePassword' style={style.input} placeholder='Repeat Password' />
+          <CButton isLoading={regMutation.isPending} onClick={handleRegister} variant='contained'>Register</CButton>
+          {
+            verificationMailSendMsg &&
+            <Typography sx={{ color: 'lightgreen', fontSize: '14px' }}>{verificationMailSendMsg}</Typography>
+          }
+          <span>Already have an Account? <Link to='/login' style={{ color: '#1669C4' }}>Login</Link> here.</span>
+        </Stack>
+      </Box>
+    </>
   )
 }
 
