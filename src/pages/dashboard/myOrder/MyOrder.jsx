@@ -167,7 +167,7 @@ const MyOrder = () => {
         return (
           <Stack direction='row' sx={{ height: '100%' }} alignItems='center'>
             <IconButton
-              // disabled={params.row.status === 'cancelled' || params.row.status === 'delivered'}
+              disabled={params.row.status !== 'placed'}
               sx={{
                 bgcolor: 'light.main',
                 borderRadius: '5px',
@@ -177,6 +177,7 @@ const MyOrder = () => {
               <EditOutlined fontSize='small' />
             </IconButton>
             <IconButton
+              disabled={params.row.status !== 'placed'}
               sx={{
                 bgcolor: 'light.main',
                 borderRadius: '5px',
