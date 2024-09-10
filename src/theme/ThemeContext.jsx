@@ -7,24 +7,24 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { globalTheme } from './globalTheme';
 
 export const ColorModeContext = createContext({
-  toggleColorMode: () => {},
+  toggleColorMode: () => { },
 });
 
 const ThemeContext = ({ children }) => {
   const [mode, setMode] = useState('dark');
 
   const colorMode = useMemo(() => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),[]);
+    toggleColorMode: () => {
+      setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+    },
+  }), []);
 
   const theme = useMemo(() => globalTheme(mode), [mode]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-      <CssBaseline />
+        <CssBaseline />
         {children}
       </ThemeProvider>
     </ColorModeContext.Provider>

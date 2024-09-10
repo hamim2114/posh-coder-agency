@@ -1,35 +1,56 @@
 import { CheckCircleOutline, DoneAll, DownloadDone } from '@mui/icons-material'
 import { Box, Button, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
+import { useAuth } from '../../context/AuthProvider'
+import { Link } from 'react-router-dom'
+import CDialog from '../../common/CDialog'
+import OrderPlace from '../../common/OrderPlace'
 
-const PackageCard = ({ data }) => {
+const PackageCard = ({ data, dashboard }) => {
+  const [dialogOpen, setDialogOpen] = useState(false)
+
+  const { user } = useAuth()
 
   return (
     <Stack sx={{
-      width: '300px',
+      width: { xs: '100%', md: '350px' },
       gap: 2,
       textAlign: 'center',
-      // border: '1px solid rgb(56, 56, 56)',
+      boxShadow: dashboard ? 3 : 0,
       borderRadius: '5px',
       p: 4,
-      bgcolor: '#17181a'
-    }}>
-      <Typography variant='h4' sx={{ fontSize: '30px' }}>{data.name}</Typography>
-      <Typography variant='h5' sx={{ fontWeight: 300, color: 'red' }}>{data.price}</Typography>
+      color: dashboard ? 'gray' : '#fff',
+      bgcolor: dashboard ? '#fff' : '#17181a'
+    }} justifyContent='space-between' >
       <Box>
-        {
-          data?.details?.map((d, i) => (
-            <Stack key={i} direction='row' gap={2} mb={1}>
-              <DoneAll sx={{ color: 'red' }}/>
-              <Typography>{d}</Typography>
-            </Stack>
-          ))
-        }
+        <Typography variant='h4' sx={{ fontSize: '30px', mb: 1.5 }}>{data.name}</Typography>
+        <Typography variant='h5' sx={{ fontWeight: 300, color: 'red', mb: 1.5 }}>{data.price}</Typography>
+        <Box>
+          {
+            data?.details?.map((d, i) => (
+              <Stack key={i} direction='row' gap={2} mb={1}>
+                <DoneAll sx={{ color: 'red' }} />
+                <Typography>{d}</Typography>
+              </Stack>
+            ))
+          }
+        </Box>
       </Box>
 
+      {/* order place  */}
+      <CDialog openDialog={dialogOpen}>
+        <OrderPlace data={data} closeDialog={() => setDialogOpen(false)} />
+      </CDialog>
+
       <Stack direction='row' gap={2} justifyContent='center'>
-        <Button variant='contained' sx={{ textTransform: 'none'}}><a className='link' href="mailto: poshcoderbd@gmail.com">Order Now</a></Button>
-        <Button variant='outlined' sx={{ textTransform: 'none'}}><a className='link' href="tel: 01790862914"> Call Now</a></Button>
+        {
+          user ?
+            <Button onClick={() => setDialogOpen(true)} variant='contained' fullWidth sx={{ textTransform: 'none' }}>Place Order</Button>
+            :
+            <Link style={{ width: '100%' }} to='/register'>
+              <Button variant='contained' fullWidth sx={{ textTransform: 'none' }}>Order Now</Button>
+            </Link>
+        }
       </Stack>
     </Stack>
   )

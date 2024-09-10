@@ -10,7 +10,7 @@ export const useUserInfo = () => {
         // refetchOnWindowFocus: false,
     });
     const userData = {
-        user: data,
+        userInfo: data,
         error: error?.response?.data
     }
     

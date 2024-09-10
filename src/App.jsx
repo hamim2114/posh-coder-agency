@@ -34,17 +34,11 @@ import GraphicDesign from './pages/dashboard/services/GraphicDesign';
 import DigitalMarketing from './pages/dashboard/services/DigitalMarketing';
 import ContentCreation from './pages/dashboard/services/ContentCreation';
 import Dashboard from './pages/dashboard/Dashboard';
+import { useAuth } from './context/AuthProvider';
 
 function App() {
-  // const user = false
-  // const {user} = useUserInfo()
 
-  const { data: user } = useQuery({
-    queryKey: ['me'],
-    queryFn: () => axiosReq.get('/auth/me').then(res => res.data),
-    // retry: false,
-    // refetchOnWindowFocus: false,
-  });
+  const { user } = useAuth()
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();

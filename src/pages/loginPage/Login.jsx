@@ -6,6 +6,7 @@ import { axiosReq } from '../../utils/axiosReq';
 import toast from 'react-hot-toast';
 import CButton from '../../common/CButton';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { useAuth } from '../../context/AuthProvider';
 
 const style = {
   container: {
@@ -43,18 +44,17 @@ const Login = () => {
     password: '',
   });
 
+  const { setUser } = useAuth()
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const navigate = useNavigate()
 
-  const queryClient = useQueryClient();
-
   const loginMutation = useMutation({
     mutationFn: (input) => axiosReq.post('/auth/login', input),
     onSuccess: (res) => {
-      navigate('/dashboard')
-      queryClient.invalidateQueries(['me']);
-      toast.success(res.data);
+      setUser(res.data)
+      toast.success('Login Success');
 
     },
     onError: (err) => {

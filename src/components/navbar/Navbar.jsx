@@ -11,13 +11,14 @@ import { KeyboardArrowDown } from '@mui/icons-material';
 import { useUserInfo } from '../../hook/useUserInfo';
 import { axiosReq } from '../../utils/axiosReq';
 import { useQuery } from '@tanstack/react-query';
+import { useAuth } from '../../context/AuthProvider';
 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [serviceMenu, setServiceMenu] = useState(false)
 
-  const { user } = useUserInfo()
+  const { user } = useAuth()
 
   // const { data: user } = useQuery({
   //   queryKey: ['me'],
@@ -33,7 +34,7 @@ const Navbar = () => {
       setServiceMenu(false)
     }
   };
-  
+
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
     return () => {

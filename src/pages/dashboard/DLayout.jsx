@@ -23,6 +23,7 @@ import { ArticleOutlined, FiberManualRecord, KeyboardArrowRight, Logout, SellOut
 import { axiosReq } from '../../utils/axiosReq';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { useAuth } from '../../context/AuthProvider';
 
 const drawerWidth = 240;
 
@@ -34,10 +35,10 @@ const ListBtn = ({ style, text, icon, link, selected, onClick, expandIcon, expan
         display: 'inline-flex',
         whiteSpace: 'nowrap',
         justifyContent: 'space-between',
-        padding: '8px 12px',
+        padding: '15px 12px',
         overflow: 'hidden',
-        color: selected ? 'gray' : '#95A2B0',
-        bgcolor: selected ? 'primary.main' : '',
+        color: selected ? 'dark' : '#95A2B0',
+        bgcolor: selected ? '#fff' : '',
         ...style,
         position: 'relative',
         cursor: 'pointer',
@@ -47,11 +48,11 @@ const ListBtn = ({ style, text, icon, link, selected, onClick, expandIcon, expan
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {subItem ?
-            <FiberManualRecord sx={{ fontSize: '13px' }} /> :
+            <FiberManualRecord sx={{ fontSize: '13px', }} /> :
             icon
           }
           <Typography sx={{
-            color: '#fff',
+            color: selected ? 'dark' : '#fff',
             fontSize: '15px',
             fontWeight: 400, ml: 1
           }}>{text}</Typography>
@@ -71,27 +72,24 @@ export default function DLayout(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [userMenuOpen, setUsermenuOpen] = useState(false)
-  const [serviceExpand, setServiceExpand] = useState(false)
+  const [serviceExpand, setServiceExpand] = useState(true)
 
-  const { user } = useUserInfo();
+  const { user, setUser } = useAuth();
 
   const { pathname } = useLocation()
-  const navigate = useNavigate()
-
-  const queryClient = useQueryClient();
+  const { userInfo } = useUserInfo()
 
   const logoutMutation = useMutation({
     mutationFn: () => axiosReq.post('/auth/logout'),
     onSuccess: (res) => {
-      queryClient.invalidateQueries(['me']);
-      queryClient.resetQueries({ queryKey: ['me'], exact: true })
       toast.success(res.data);
-      navigate('/')
+      localStorage.removeItem('user')
     }
   });
 
   function handleLogout() {
     logoutMutation.mutate()
+    setUser(null)
   }
 
   const handleDrawerClose = () => {
@@ -108,7 +106,7 @@ export default function DLayout(props) {
       setMobileOpen(!mobileOpen);
     }
   };
-  
+
   const drawer = (
     <Box sx={{
       display: 'flex',
@@ -116,7 +114,7 @@ export default function DLayout(props) {
       flexDirection: 'column',
       // justifyContent: 'center',
       // alignItems: 'center',
-      bgcolor: '#17181A'
+      bgcolor: 'primary.main'
     }}>
       <Toolbar sx={{
         display: 'flex',
@@ -135,13 +133,13 @@ export default function DLayout(props) {
           onClick={handleDrawerClose}
           notification={''}
           link={'/dashboard'}
-          icon={<SpaceDashboardOutlined sx={{ color: '#fff' }} fontSize='small' />}
+          icon={<SpaceDashboardOutlined fontSize='small' />}
           text='Dashboard'
           selected={pathname === '/dashboard'}
         />
         <ListBtn
           onClick={() => setServiceExpand(!serviceExpand)}
-          icon={<ArticleOutlined sx={{ color: '#fff' }} fontSize='small' />}
+          icon={<ArticleOutlined fontSize='small' />}
           expandIcon
           expand={serviceExpand}
           text='Services'
@@ -189,7 +187,7 @@ export default function DLayout(props) {
           onClick={handleDrawerClose}
           notification={''}
           link={'/dashboard/my-order'}
-          icon={<SellOutlined sx={{ color: '#fff' }} fontSize='small' />}
+          icon={<SellOutlined fontSize='small' />}
           text='My Orders'
           selected={pathname === '/dashboard/my-order'}
         />
@@ -209,7 +207,7 @@ export default function DLayout(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
           boxShadow: 'none',
-          bgcolor: '#020b0d',
+          bgcolor: '#fff',
           borderBottom: '1px solid darkgray'
         }}
       >
@@ -218,7 +216,7 @@ export default function DLayout(props) {
           justifyContent: 'space-between'
         }}>
           <IconButton
-            color="inherit"
+            color="light"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -238,7 +236,15 @@ export default function DLayout(props) {
                 aria-expanded={open ? 'true' : undefined}
               >
                 <Avatar src='' sx={{ width: 32, height: 32 }} />
-                <Typography sx={{ fontSize: '16px', fontWeight: 600, ml: 1, color: 'gray' }}>{user?.username}</Typography>
+                <Box ml={1}>
+                  <Typography sx={{ fontSize: '16px', fontWeight: 600, ml: 1, }}>{userInfo?.username}</Typography>
+                  <Typography sx={{
+                    fontSize: '12px',
+                    px: 1, color: '#fff',
+                    bgcolor: userInfo?.isVerified ? 'green' : 'gray',
+                    borderRadius: '50px',
+                  }}>{userInfo?.isVerified ? 'Verified' : 'UnVerified'}</Typography>
+                </Box>
               </IconButton>
 
               <Collapse sx={{
@@ -253,8 +259,8 @@ export default function DLayout(props) {
               }} in={userMenuOpen}>
                 <Stack sx={{ width: '100%' }} alignItems='center'>
                   <Avatar src='' sx={{ width: '100px', height: '100px', mb: 2 }} />
-                  <Typography sx={{ fontSize: '20px', textAlign: 'center' }}>{user?.username}</Typography>
-                  <Typography sx={{ textAlign: 'center', fontSize: '14px' }}>{user?.email}</Typography>
+                  <Typography sx={{ fontSize: '20px', textAlign: 'center' }}>{userInfo?.username}</Typography>
+                  <Typography sx={{ textAlign: 'center', fontSize: '14px' }}>{userInfo?.email}</Typography>
                   {/* <Typography sx={{ textAlign: 'center', fontSize: '14px', mb: 2 }}>{user?.phone}</Typography> */}
                   {/* <MenuItem onClick={() => setUsermenuOpen(false)}>
                       <ListItemIcon>
@@ -318,7 +324,7 @@ export default function DLayout(props) {
       >
         <Toolbar />
         <Divider sx={{ borderBottom: '1px solid darkgray' }} />
-        <Box sx={{ p: 4 }}>
+        <Box sx={{ p: 4, minHeight: '100vh', bgcolor: '#E8E9EB' }}>
           <Outlet />
         </Box>
       </Box>

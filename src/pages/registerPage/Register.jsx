@@ -21,7 +21,7 @@ const style = {
   inputContainer: {
     p: '2rem',
     border: '.5px solid gray',
-    maxHeight: '300px',
+    minHeight: '300px',
     backdropFilter: 'blur(10px)',
     borderRadius: '5px'
   },
@@ -39,6 +39,7 @@ const Register = () => {
   const [payload, setPayload] = useState({
     username: '',
     email: '',
+    phone: '',
     password: '',
     rePassword: ''
   });
@@ -54,7 +55,7 @@ const Register = () => {
       queryClient.invalidateQueries(['register']);
       toast.success(res.data);
       navigate('/login')
-      
+
     },
     onError: (err) => {
       console.log(err)
@@ -76,6 +77,10 @@ const Register = () => {
       toast.error('Email Required!');
       return;
     }
+    if (!payload.phone) {
+      toast.error('Phone Required!');
+      return;
+    }
     if (!payload.password) {
       toast.error('Password Required!');
       return;
@@ -91,6 +96,7 @@ const Register = () => {
     regMutation.mutate({
       username: payload.username,
       email: payload.email,
+      phone: payload.phone,
       password: payload.password
     });
   };
@@ -100,6 +106,7 @@ const Register = () => {
         <Typography variant='h4'>Register</Typography>
         <input onChange={inputChange} name='username' style={style.input} placeholder='User Name' />
         <input onChange={inputChange} name='email' style={style.input} placeholder='Email' />
+        <input onChange={inputChange} name='phone' type='number' style={style.input} placeholder='Phone' />
         <input onChange={inputChange} name='password' style={style.input} placeholder='Password' />
         <input onChange={inputChange} name='rePassword' style={style.input} placeholder='Repeat Password' />
         <CButton isLoading={regMutation.isPending} onClick={handleRegister} variant='contained'>Register</CButton>

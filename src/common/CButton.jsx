@@ -1,15 +1,16 @@
 import React from 'react'
 import { Button, CircularProgress } from '@mui/material';
 
-const CButton = ({ variant, onClick, children, isLoading }) => {
+const CButton = ({ variant, onClick, children, isLoading, style, props }) => {
   return (
     <Button
-      loading
+      {...props}
       variant={variant}
       onClick={onClick}
       disabled={isLoading}
       sx={{
-        textTransform: 'none'
+        textTransform: 'none',
+        ...style
       }}
     >
       {isLoading ? <CircularProgress sx={{ color: '#fff' }} size={24} /> : children}

@@ -40,3 +40,8 @@ img {
   text-decoration: none;
   color: inherit;
 }
+
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}

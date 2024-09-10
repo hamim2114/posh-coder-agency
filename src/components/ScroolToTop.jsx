@@ -29,13 +29,12 @@ export default function ScrollToTop() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-//scroll-to-top classes: fixed, bottom:0, right:0
+  //scroll-to-top classes: fixed, bottom:0, right:0
   return (
     <Box sx={{
       position: 'fixed',
-      bottom: '100px',
       zIndex: 99999,
-      right: 70,bottom: 70, display: {xs: 'none', lg: 'block'}
+      right: 70, bottom: 70, display: { xs: 'none', lg: 'block' }
     }}>
       {isVisible && (
         <div onClick={scrollToTop}>
@@ -45,7 +44,7 @@ export default function ScrollToTop() {
               bgcolor: 'lightblue'
             }
           }}>
-            <PanToolAlt fontSize="large"/>
+            <PanToolAlt fontSize="large" />
           </IconButton>
         </div>
       )}

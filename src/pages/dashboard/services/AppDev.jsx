@@ -12,13 +12,17 @@ const AppDev = () => {
         queryFn: () => axiosReq.get('/apppackage/getall').then(res => res.data)
     });
     return (
-        <Stack mb='10rem'>
+        <Stack sx={{
+            bgcolor: '#fff',
+            p: 3, borderRadius: '16px',
+            minHeight: '100vh'
+        }} mb='10rem'>
             <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.2rem' }, textAlign: 'center' }} mb={2} variant='h3'>Our App Development Packages</Typography>
             <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
                 {
                     appPackageLoading ? <><LoadingBar /> <Loading /></> : apppackageErr ? 'Something went wrong!' :
                         allApppackage?.map((data, i) => (
-                            <PackageCard key={i} data={data} />
+                            <PackageCard dashboard key={i} data={data} />
                         ))
                 }
             </Stack>
