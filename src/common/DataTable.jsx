@@ -7,9 +7,9 @@ import { DataGrid } from '@mui/x-data-grid'
 const DataTable = ({ loading, rows, getRowId, rowHeight, columns, getRowHeight, columnVisibilityModel, checkboxSelection, onRowSelectionModelChange }) => {
   return (
     <Box
-      maxWidth='1800px'
+      maxWidth={{ xs: '90vw' }}
       sx={{
-        width: '100%',
+        // width: '100%',
       }}
     >
       <DataGrid

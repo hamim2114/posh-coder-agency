@@ -333,7 +333,7 @@ export default function DLayout(props) {
       >
         <Toolbar />
         <Divider sx={{ borderBottom: '1px solid darkgray' }} />
-        <Box sx={{ p: 4, minHeight: '100vh', bgcolor: '#E8E9EB' }}>
+        <Box sx={{ p: { xs: 1, md: 3 }, minHeight: '100vh', bgcolor: '#E8E9EB' }}>
           <Outlet />
         </Box>
       </Box>

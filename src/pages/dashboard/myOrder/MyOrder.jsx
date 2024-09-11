@@ -194,7 +194,8 @@ const MyOrder = () => {
   return (
     <Box sx={{
       bgcolor: '#fff',
-      p: 3, borderRadius: '16px',
+      p: { xs: 1, md: 3 },
+      borderRadius: '16px',
       minHeight: '100vh'
     }} maxWidth='xl'>
       <Stack sx={{ mb: 2 }} direction='row' alignItems='center'>

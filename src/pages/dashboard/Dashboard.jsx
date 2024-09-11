@@ -98,7 +98,7 @@ const Dashboard = () => {
                     <Grid item xs={12} md={4}>
                         <Card>
                             <CardContent>
-                                <Typography variant='h6'>Projects Completed</Typography>
+                                <Typography variant='h6'>Completed Order</Typography>
                                 <Typography variant='h4'>
                                     {
                                         userInfo?.orders?.filter(item => item.status === 'delivered').length
