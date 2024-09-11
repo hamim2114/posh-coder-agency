@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './Content.scss';
 import {
   Stack,
@@ -64,7 +65,7 @@ const Content = () => {
             <img src="/banner-one-img.png" alt="Content Writing" />
           </div>
         </div>
-        <Stack gap={3} mt={{xs: 10, lg:0}}>
+        <Stack gap={3} mt={{ xs: 10, lg: 0 }}>
           <Typography variant='h4'>Content Writing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our content writing services are designed to help you create engaging and informative content for your business. We specialize in producing high-quality articles, blogs, and more.
@@ -73,7 +74,7 @@ const Content = () => {
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             We understand the power of words and use them to convey your message effectively to your target audience. Let us enhance your online presence with our content.
           </Typography>
-          <Typography variant='h4' mt={6}>Why Choose Us?</Typography>
+          <Typography variant='h4' >Why Choose Us?</Typography>
           <Stack direction={{ xm: 'column', md: 'row' }} gap={3} justifyContent='space-between'>
             <Stack direction='row' alignItems='center' gap={2}>
               <AutoAwesomeOutlined sx={{
@@ -99,6 +100,27 @@ const Content = () => {
               }} fontSize='large' />
               <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely Delivery</Typography>
             </Stack>
+          </Stack>
+          <Typography variant="h5" mt={3} fontWeight="bold">
+            What We Offer:
+          </Typography>
+
+          <Stack direction="column" gap={2} sx={{ color: '#C7C7C7', lineHeight: 1.7 }}>
+            <Typography variant="body1">
+              - **SEO-Optimized Articles**: Boost your search engine rankings with expertly crafted, keyword-rich content.
+            </Typography>
+            <Typography variant="body1">
+              - **Blog Writing**: Regular blog posts to engage and inform your audience.
+            </Typography>
+            <Typography variant="body1">
+              - **Copywriting**: Persuasive and engaging marketing content tailored to your business needs.
+            </Typography>
+            <Typography variant="body1">
+              - **Product Descriptions**: Highlight your products with well-written descriptions that drive conversions.
+            </Typography>
+            <Typography variant="body1">
+              - **Social Media Content**: Short, engaging content to enhance your presence on platforms like Instagram, Facebook, and Twitter.
+            </Typography>
           </Stack>
         </Stack>
       </Stack>

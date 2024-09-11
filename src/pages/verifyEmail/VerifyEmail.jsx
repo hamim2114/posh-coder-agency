@@ -28,7 +28,6 @@ const VerifyEmail = () => {
         setLoading(false);
         navigate('/login');
       } catch (error) {
-        console.log('verify err:', error)
         setMessage(error.response.data || 'Verification failed.');
         toast.error(error.response.data || 'Verification failed.');
         setLoading(false);

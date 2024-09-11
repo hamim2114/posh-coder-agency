@@ -42,8 +42,8 @@ const OrderPlace = ({ closeDialog, data }) => {
 
   useEffect(() => {
     setPayload({
-      phone: userInfo.phone,
-      orderName: data.name,
+      phone: userInfo?.phone,
+      orderName: data?.name,
       status: 'placed'
     })
   }, [userInfo, data])
@@ -60,8 +60,15 @@ const OrderPlace = ({ closeDialog, data }) => {
           <Close />
         </IconButton>
       </Stack>
-      <Typography variant='h5' mb={2}><b>Category: </b>{data?.name}</Typography>
+      {
+        data &&
+        <Typography variant='h5' mb={2}><b>Category: </b>{data?.name}</Typography>
+      }
       <Stack gap={2}>
+        {
+          !data &&
+          <TextField name='orderName' value={payload.orderName} onChange={handlePayload} label='Category' />
+        }
         <TextField name='name' value={payload.name} onChange={handlePayload} label='Your Name' />
         <TextField name='phone' type='number' value={payload.phone} onChange={handlePayload} label='Phone Number' />
         <TextField name='desc' value={payload.desc} onChange={handlePayload} label='Describe about your Order' multiline rows={6} />

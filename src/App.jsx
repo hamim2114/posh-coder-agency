@@ -35,6 +35,7 @@ import DigitalMarketing from './pages/dashboard/services/DigitalMarketing';
 import ContentCreation from './pages/dashboard/services/ContentCreation';
 import Dashboard from './pages/dashboard/Dashboard';
 import { useAuth } from './context/AuthProvider';
+import ContactUs from './pages/dashboard/contactUs/ContactUs';
 
 function App() {
 
@@ -91,6 +92,7 @@ function App() {
           <Route path='graphic-design' element={<GraphicDesign />} />
           <Route path='digital-marketing' element={<DigitalMarketing />} />
           <Route path='content-creation' element={<ContentCreation />} />
+          <Route path='contact-us' element={<ContactUs />} />
         </Route>
       </Routes>
     </Box>

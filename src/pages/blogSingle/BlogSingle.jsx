@@ -16,9 +16,8 @@ const BlogSingle = () => {
     queryKey: ['singleblog'],
     queryFn: () => axiosReq.get(`/blog/single/${id}`).then(res => res.data)
   });
-  console.log(blog)
   return (
-    <Container sx={{mt: 10}}>
+    <Container sx={{ mt: 10 }}>
       {
         isLoading ? <><LoadingBar /> <Loading /></> : error ? 'Something went wrong!' :
           <Stack gap={1.5} sx={{

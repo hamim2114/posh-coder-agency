@@ -48,8 +48,6 @@ const Login = () => {
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const navigate = useNavigate()
-
   const loginMutation = useMutation({
     mutationFn: (input) => axiosReq.post('/auth/login', input),
     onSuccess: (res) => {

@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
 import { useUserInfo } from '../../hook/useUserInfo';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Avatar, ClickAwayListener, Collapse, MenuItem, Stack } from '@mui/material';
-import { ArticleOutlined, FiberManualRecord, KeyboardArrowRight, Logout, SellOutlined, SpaceDashboardOutlined } from '@mui/icons-material';
+import { ArticleOutlined, ContactSupportOutlined, FiberManualRecord, KeyboardArrowRight, Logout, SellOutlined, SpaceDashboardOutlined } from '@mui/icons-material';
 import { axiosReq } from '../../utils/axiosReq';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
@@ -191,6 +191,14 @@ export default function DLayout(props) {
           text='My Orders'
           selected={pathname === '/dashboard/my-order'}
         />
+        <ListBtn
+          onClick={handleDrawerClose}
+          notification={''}
+          link={'/dashboard/contact-us'}
+          icon={<ContactSupportOutlined fontSize='small' />}
+          text='Contact Us'
+          selected={pathname === '/dashboard/contact-us'}
+        />
       </Stack>
     </Box>
   );
@@ -253,7 +261,8 @@ export default function DLayout(props) {
                 right: 0,
                 minWidth: '250px',
                 pt: 2,
-                bgcolor: '#17181A',
+                bgcolor: '#fff',
+                color: 'gray',
                 boxShadow: 3,
                 borderRadius: '8px'
               }} in={userMenuOpen}>

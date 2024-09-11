@@ -13,7 +13,7 @@ const WebDev = () => {
     });
 
     return (
-        <Stack sx={{
+        <Stack maxWidth='xl' sx={{
             bgcolor: '#fff',
             p: 3, borderRadius: '16px',
             minHeight: '100vh'

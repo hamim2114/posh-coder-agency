@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './Marketing.scss';
 import {
   Stack,
@@ -68,7 +69,7 @@ const Marketing = () => {
             <img src="/banner-one-img.png" alt="Digital Marketing" />
           </div>
         </div>
-        <Stack gap={3} mt={{xs: 10, lg:0}}>
+        <Stack gap={3} mt={{ xs: 10, lg: 0 }}>
           <Typography variant='h4'>Digital Marketing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our digital marketing services are designed to boost your online presence and drive business growth. We specialize in creating and implementing effective marketing strategies that reach your target audience.
@@ -77,7 +78,7 @@ const Marketing = () => {
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             We use the latest digital marketing techniques to help you achieve your business goals. Our team is dedicated to delivering results and maximizing your return on investment.
           </Typography>
-          <Typography variant='h4' mt={6}>Why Choose Us?</Typography>
+          <Typography variant='h4' mt={2}>Why Choose Us?</Typography>
           <Stack direction={{ xm: 'column', md: 'row' }} gap={3} justifyContent='space-between'>
             <Stack direction='row' alignItems='center' gap={2}>
               <AutoAwesomeOutlined sx={{
@@ -102,6 +103,29 @@ const Marketing = () => {
                 borderRadius: '50%'
               }} fontSize='large' />
               <Typography variant='h6' sx={{ color: 'rgb(199, 199, 199)' }}>Timely <br /> Campaigns</Typography>
+            </Stack>
+          </Stack>
+          <Stack sx={{ color: '#fff' }}>
+            <Typography variant="h5" my={2} fontWeight="bold">
+              What We Offer:
+            </Typography>
+
+            <Stack direction="column" gap={2} sx={{ lineHeight: 1.7, color: '#C0C7C7' }}>
+              <Typography variant="body1">
+                - **Search Engine Optimization (SEO)**: Improve your website’s visibility and rank higher in search results.
+              </Typography>
+              <Typography variant="body1">
+                - **Social Media Management**: Engage with your audience across all platforms with curated content.
+              </Typography>
+              <Typography variant="body1">
+                - **Pay-Per-Click Advertising (PPC)**: Drive targeted traffic to your website with high-conversion ads.
+              </Typography>
+              <Typography variant="body1">
+                - **Email Marketing**: Craft personalized email campaigns that nurture leads and boost sales.
+              </Typography>
+              <Typography variant="body1">
+                - **Content Marketing**: Build authority in your industry with value-driven content that resonates with your audience.
+              </Typography>
             </Stack>
           </Stack>
         </Stack>

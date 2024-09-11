@@ -12,7 +12,7 @@ const AppDev = () => {
         queryFn: () => axiosReq.get('/apppackage/getall').then(res => res.data)
     });
     return (
-        <Stack sx={{
+        <Stack maxWidth='xl' sx={{
             bgcolor: '#fff',
             p: 3, borderRadius: '16px',
             minHeight: '100vh'

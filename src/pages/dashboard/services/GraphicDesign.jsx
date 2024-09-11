@@ -12,7 +12,7 @@ const GraphicDesign = () => {
 		queryFn: () => axiosReq.get('/graphicpackage/getall').then(res => res.data)
 	});
 	return (
-		<Stack sx={{
+		<Stack maxWidth='xl' sx={{
 			bgcolor: '#fff',
 			p: 3, borderRadius: '16px',
 			minHeight: '100vh'

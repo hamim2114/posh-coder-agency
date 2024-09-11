@@ -22,7 +22,6 @@ const UpdateOrder = ({ data, closeDialog }) => {
   const mutation = useMutation({
     mutationFn: (input) => axiosReq.put(`/order/edit/${data._id}`, input),
     onSuccess: (res) => {
-      console.log(res)
       queryClient.invalidateQueries(['order']);
       closeDialog(true);
       toast.success(res.data.message);

@@ -68,7 +68,6 @@ const Register = () => {
 
     },
     onError: (err) => {
-      console.log(err)
       const errorMsg = err.response && err.response.data ? err.response.data : 'Registration failed';
       toast.error(errorMsg);
     }
