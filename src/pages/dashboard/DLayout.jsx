@@ -38,7 +38,7 @@ const ListBtn = ({ style, text, icon, link, selected, onClick, expandIcon, expan
         padding: '15px 12px',
         overflow: 'hidden',
         color: selected ? 'dark' : '#95A2B0',
-        bgcolor: selected ? '#fff' : '',
+        bgcolor: selected ? '#E8E9EB' : '',
         ...style,
         position: 'relative',
         cursor: 'pointer',

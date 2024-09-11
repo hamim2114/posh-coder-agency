@@ -2,6 +2,21 @@ import { Stack, Typography, Button, Grid, Card, CardContent } from '@mui/materia
 import { Box } from '@mui/system';
 import React from 'react';
 import { useUserInfo } from '../../hook/useUserInfo';
+import { CancelOutlined, CheckCircleOutline, PendingActions } from '@mui/icons-material';
+
+const cardStyles = (bgColor, textColor) => ({
+    bgcolor: bgColor,
+    color: '#fff',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    borderRadius: '12px',
+});
+
+// Define icon styles
+const iconStyles = (color) => ({
+    fontSize: '40px',
+    color: '#fff',
+    mr: 2,
+});
 
 const Dashboard = () => {
     const { userInfo } = useUserInfo();
@@ -26,8 +41,69 @@ const Dashboard = () => {
                 </Box>
             </Stack>
 
+            {/* Progress Overview Section */}
+            <Box>
+                <Typography variant="h5" mb={2}>
+                    Your Progress
+                </Typography>
+                <Grid container spacing={3}>
+                    {/* Completed Order Card */}
+                    <Grid item xs={12} md={4}>
+                        <Card sx={cardStyles('green', 'success.dark')}>
+                            <CardContent>
+                                <Stack direction="row" alignItems="center">
+                                    <CheckCircleOutline sx={iconStyles('green')} />
+                                    <Box>
+                                        <Typography variant="h6">Completed Orders</Typography>
+                                        <Typography variant="h4">
+                                            {userInfo?.orders?.filter((item) => item.status === 'delivered').length}
+                                        </Typography>
+                                    </Box>
+                                </Stack>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+
+                    {/* Pending Order Card */}
+                    <Grid item xs={12} md={4}>
+                        <Card sx={cardStyles('warning.light', 'warning.dark')}>
+                            <CardContent>
+                                <Stack direction="row" alignItems="center">
+                                    <PendingActions sx={iconStyles('orange')} />
+                                    <Box>
+                                        <Typography variant="h6">Pending Orders</Typography>
+                                        <Typography variant="h4">
+                                            {userInfo?.orders?.filter((item) =>
+                                                ['placed', 'confirmed', 'processing'].includes(item.status)
+                                            ).length}
+                                        </Typography>
+                                    </Box>
+                                </Stack>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+
+                    {/* Cancelled Order Card */}
+                    <Grid item xs={12} md={4}>
+                        <Card sx={cardStyles('error.light', 'error.dark')}>
+                            <CardContent>
+                                <Stack direction="row" alignItems="center">
+                                    <CancelOutlined sx={iconStyles('red')} />
+                                    <Box>
+                                        <Typography variant="h6">Cancelled Orders</Typography>
+                                        <Typography variant="h4">
+                                            {userInfo?.orders?.filter((item) => item.status === 'cancelled').length}
+                                        </Typography>
+                                    </Box>
+                                </Stack>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Box>
+
             {/* Daily Inspiration Section */}
-            <Box mb={4}>
+            <Box mt={4}>
                 <Typography variant='h5' mb={2}>
                     Daily Inspiration
                 </Typography>
@@ -89,50 +165,7 @@ const Dashboard = () => {
                 </Stack>
             </Box> */}
 
-            {/* Progress Overview Section */}
-            <Box>
-                <Typography variant='h5' mb={2}>
-                    Your Progress
-                </Typography>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant='h6'>Completed Order</Typography>
-                                <Typography variant='h4'>
-                                    {
-                                        userInfo?.orders?.filter(item => item.status === 'delivered').length
-                                    }
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant='h6'>Pending Order</Typography>
-                                <Typography variant='h4'>
-                                    {
-                                        userInfo?.orders?.filter(item => (item.status === 'placed') || (item.status === 'confirmed') || (item.status === 'processing')).length
-                                    }
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant='h6'>Cancelled Order</Typography>
-                                <Typography variant='h4'>
-                                    {
-                                        userInfo?.orders?.filter(item => item.status === 'cancelled').length
-                                    }
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Box>
+
         </Box>
     );
 };

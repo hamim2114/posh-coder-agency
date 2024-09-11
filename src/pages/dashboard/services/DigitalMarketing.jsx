@@ -8,7 +8,11 @@ const DigitalMarketing = () => {
   const [dialogOpen, setDialogOpen] = useState(false)
 
   return (
-    <Stack maxWidth='xl' sx={{ height: '100vh', bgcolor: '#f5f5f5', p: 4, borderRadius: '16px' }} gap={3} mt={{ xs: 10, lg: 0 }}>
+    <Stack maxWidth='xl' sx={{
+      bgcolor: '#fff',
+      p: 3, borderRadius: '16px',
+      minHeight: '100vh'
+    }} gap={3} mt={{ xs: 10, lg: 0 }}>
       <Typography mb={1} variant="h3" fontWeight="bold" color="primary">
         Digital Marketing Solutions
       </Typography>
