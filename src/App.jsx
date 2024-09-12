@@ -39,7 +39,7 @@ import ContactUs from './pages/dashboard/contactUs/ContactUs';
 
 function App() {
 
-  const { user } = useAuth()
+  const { token } = useAuth()
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -67,8 +67,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="login" element={user ? <Navigate to='/dashboard' /> : <Login />} />
-          <Route path="register" element={user ? <Navigate to='/dashboard' /> : <Register />} />
+          <Route path="login" element={token ? <Navigate to='/dashboard' /> : <Login />} />
+          <Route path="register" element={token ? <Navigate to='/dashboard' /> : <Register />} />
           <Route path="verify-email" element={<VerifyEmail />} />
           <Route path="service" element={<ServicePage />} />
           <Route path="service/business" element={<Business />} />
@@ -84,7 +84,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path='/dashboard' element={user ? <DLayout /> : <Navigate to='/login' />}>
+        <Route path='/dashboard' element={token ? <DLayout /> : <Navigate to='/login' />}>
           <Route index element={<Dashboard />} />
           <Route path='my-order' element={<MyOrder />} />
           <Route path='web-dev' element={<WebDev />} />

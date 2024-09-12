@@ -1,25 +1,25 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import Cookies from 'js-cookie'
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => {
-    const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null;
-  });
+  const [token, setToken] = useState(Cookies.get('poshcoder'));
+
+  const tokenn = Cookies.get('poshcoder')
 
   useEffect(() => {
-    if (user) {
-      localStorage.setItem('user', JSON.stringify(user));
+    if (token) {
+      Cookies.set('poshcoder', token);
     } else {
-      localStorage.removeItem('user');
+      Cookies.remove('poshcoder');
     }
-  }, [user]);
+  }, [token]);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ token, setToken }}>
       {children}
     </AuthContext.Provider>
   );

@@ -44,15 +44,16 @@ const Login = () => {
     password: '',
   });
 
-  const { setUser } = useAuth()
+  const { setToken } = useAuth()
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const loginMutation = useMutation({
     mutationFn: (input) => axiosReq.post('/auth/login', input),
     onSuccess: (res) => {
-      setUser(res.data)
-      toast.success('Login Success');
+      console.log(res)
+      setToken(res.data.jwt)
+      toast.success(res.data.message);
 
     },
     onError: (err) => {
