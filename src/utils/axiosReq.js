@@ -1,8 +1,7 @@
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
-const token = Cookies.get('poshcoder');
-
+const token = localStorage.getItem('poshcoder');
 
 const baseURL = window.location.hostname === 'localhost' 
   ? 'http://localhost:5000/api' 

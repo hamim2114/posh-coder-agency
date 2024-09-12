@@ -6,13 +6,13 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(Cookies.get('poshcoder'));
+  const [token, setToken] = useState(localStorage.getItem('poshcoder'));
 
   useEffect(() => {
     if (token) {
-      Cookies.set('poshcoder', token);
+      localStorage.setItem('poshcoder', token);
     } else {
-      Cookies.remove('poshcoder');
+      localStorage.removeItem('poshcoder');
     }
   }, [token]);
 

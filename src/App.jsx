@@ -39,7 +39,7 @@ import ContactUs from './pages/dashboard/contactUs/ContactUs';
 
 function App() {
 
-  const { token } = useAuth()
+  const token = localStorage.getItem('poshcoder')
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();

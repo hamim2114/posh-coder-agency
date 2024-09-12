@@ -76,6 +76,8 @@ export default function DLayout(props) {
 
   const { user, setToken } = useAuth();
 
+  const navigate = useNavigate()
+
   const { pathname } = useLocation()
   const { userInfo } = useUserInfo()
 
@@ -84,13 +86,15 @@ export default function DLayout(props) {
     mutationFn: () => axiosReq.post('/auth/logout'),
     onSuccess: (res) => {
       toast.success(res.data);
-      localStorage.removeItem('user')
+      localStorage.removeItem('poshcoder')
     }
   });
 
   function handleLogout() {
     // logoutMutation.mutate()
-    setToken(null)
+    // setToken(null)
+    localStorage.removeItem('poshcoder')
+    window.location.href = '/'
   }
 
   const handleDrawerClose = () => {
