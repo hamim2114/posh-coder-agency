@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import Cookies from 'js-cookie'
+import { useUserInfo } from '../hook/useUserInfo';
 
 const AuthContext = createContext();
 
@@ -15,6 +16,7 @@ const AuthProvider = ({ children }) => {
       localStorage.removeItem('poshcoder');
     }
   }, [token]);
+
 
   return (
     <AuthContext.Provider value={{ token, setToken }}>
