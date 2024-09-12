@@ -48,7 +48,7 @@ function App() {
     }, [pathname]);
     return null;
   };
-
+  console.log(token)
   const Layout = () => {
     return (
       <div>

@@ -10,9 +10,9 @@ const baseURL = window.location.hostname === 'localhost'
 export const axiosReq = axios.create({
   baseURL: baseURL,
   withCredentials: true,
-  // headers: {
-  //   Authorization: token,
-  // },
+  headers: {
+    Authorization: token,
+  },
 });
 
 // axiosReq.interceptors.request.use(
