@@ -17,7 +17,7 @@ const TrustedBy = () => {
       <h1>Trusted <span><FadeAnimation cascade='cascade' damping={.1}>By</FadeAnimation> </span></h1>
       <Marquee autoFill gradient gradientColor={[0, 0, 0]}>
         {
-          isLoading ? <Loading />: error ? 'Something went wrong!' :
+          isLoading ? <Loading /> : error ? 'Something went wrong!' :
             data.map((d) => (
               <img style={{ marginRight: '30px' }} key={d._id} src={d.imgUrl} alt="" />
             ))

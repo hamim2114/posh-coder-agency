@@ -19,10 +19,10 @@ const Team = () => {
       <Stack direction={'row'} justifyContent={'center'} gap={4} mt={5} flexWrap={'wrap'}>
         <SlideAnimation direction='up' damping={0.1} cascade={'cascade'}>
           {
-            isLoading ? <Loading />: error ? 'Something went wrong!' :
-            teams.slice(0,3).map((data) => (
-              <TeamCard key={data._id} data={data}/>
-            ))
+            isLoading ? <Loading /> : error ? 'Something went wrong!' :
+              teams.slice(0, 3).map((data) => (
+                <TeamCard key={data._id} data={data} />
+              ))
           }
         </SlideAnimation>
       </Stack>

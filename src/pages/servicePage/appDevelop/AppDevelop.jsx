@@ -95,10 +95,10 @@ const AppDevelop = () => {
             justifyContent: 'center',
           }}>
             {
-              appTemplateLoading ? <><LoadingBar /> <Loading/></> : appTemplateErr ? 'Something went wrong!' :
-              allAppTemplate.map(d => (
-                <ServiceDemoCard key={d} data={d} />
-              ))
+              appTemplateLoading ? <><LoadingBar /> <Loading /></> : appTemplateErr ? 'Something went wrong!' :
+                allAppTemplate.map(d => (
+                  <ServiceDemoCard key={d} data={d} />
+                ))
             }
           </Stack>
         </Stack>
@@ -110,10 +110,10 @@ const AppDevelop = () => {
           <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Standard App By Paying Small Budget!</Typography>
           <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
             {
-              appPackageLoading ? <><LoadingBar /> <Loading/></> : apppackageErr ? 'Something went wrong!' :
-              allApppackage?.map((data, i) => (
-                <PackageCard key={i} data={data} />
-              ))
+              appPackageLoading ? <><LoadingBar /> <Loading /></> : apppackageErr ? 'Something went wrong!' :
+                allApppackage?.map((data, i) => (
+                  <PackageCard key={i} data={data} />
+                ))
             }
           </Stack>
         </Stack>

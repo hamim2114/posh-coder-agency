@@ -20,10 +20,10 @@ const TeamPage = () => {
       </div>
       <Stack direction={'row'} flexWrap={'wrap'} gap={6} justifyContent={'center'} className="middle">
         {
-          isLoading ? <><LoadingBar /> <Loading/></> : error ? 'Something went wrong!' : 
-          teams.map((data,i) => (
-            <TeamCard data={data} key={data._id} />
-          ))
+          isLoading ? <><LoadingBar /> <Loading /></> : error ? 'Something went wrong!' :
+            teams.map((data, i) => (
+              <TeamCard data={data} key={data._id} />
+            ))
         }
       </Stack>
     </div>

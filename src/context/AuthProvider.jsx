@@ -8,8 +8,6 @@ export const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(Cookies.get('poshcoder'));
 
-  const tokenn = Cookies.get('poshcoder')
-
   useEffect(() => {
     if (token) {
       Cookies.set('poshcoder', token);

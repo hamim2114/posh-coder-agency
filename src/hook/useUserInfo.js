@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { axiosReq } from '../utils/axiosReq';
-import { useEffect } from 'react';
 
 export const useUserInfo = () => {
     const { data, error,refetch } = useQuery({

@@ -97,10 +97,10 @@ const Graphic = () => {
             justifyContent: 'center',
           }}>
             {
-              graphicTemplateLoading ? <><LoadingBar /> <Loading/></> : graphicTemplateErr ? 'Something went wrong!' :
-              allGraphicTemplate.map(d => (
-                <ServiceDemoCard key={d} data={d} />
-              ))
+              graphicTemplateLoading ? <><LoadingBar /> <Loading /></> : graphicTemplateErr ? 'Something went wrong!' :
+                allGraphicTemplate.map(d => (
+                  <ServiceDemoCard key={d} data={d} />
+                ))
             }
           </Stack>
         </Stack>
@@ -112,10 +112,10 @@ const Graphic = () => {
           <Typography sx={{ fontSize: { xs: '1.7rem', md: '2rem' }, textAlign: 'center', fontWeight: 200, color: 'red' }} variant='h4'>Get Stunning Design By Paying Small Budget!</Typography>
           <Stack direction={'row'} flexWrap={'wrap'} justifyContent={'center'} gap={{ xs: 5, md: 10 }} mt={10}>
             {
-              graphicPackageLoading ? <><LoadingBar /> <Loading/></> : graphicpackageErr ? 'Something went wrong!' :
-              allGraphicpackage.map((data, i) => (
-                <PackageCard key={i} data={data} />
-              ))
+              graphicPackageLoading ? <><LoadingBar /> <Loading /></> : graphicpackageErr ? 'Something went wrong!' :
+                allGraphicpackage.map((data, i) => (
+                  <PackageCard key={i} data={data} />
+                ))
             }
           </Stack>
         </Stack>
@@ -131,7 +131,7 @@ const Graphic = () => {
             <img src="/banner-one-img.png" alt="Graphic Design" />
           </div>
         </div>
-        <Stack gap={3} mt={{xs: 10, lg:0}}>
+        <Stack gap={3} mt={{ xs: 10, lg: 0 }}>
           <Typography variant='h4'>Graphic Designing</Typography>
           <Typography variant='body' sx={{ color: 'rgb(199, 199, 199)', fontWeight: '300' }}>
             Our graphic design services are tailored to bring your creative ideas to life. We specialize in creating visually stunning designs that captivate and engage your audience.

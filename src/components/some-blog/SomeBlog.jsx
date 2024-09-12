@@ -16,10 +16,10 @@ const SomeBlog = () => {
   return (
     <Container className="some-blog">
       <h1 className='h1'>Some From <span><FadeAnimation cascade={'cascade'} damping={.1}>Blogs</FadeAnimation> </span></h1>
-      <Stack mb={7} gap={{xs:3,md:6}} justifyContent={'center'} >
+      <Stack mb={7} gap={{ xs: 3, md: 6 }} justifyContent={'center'} >
         {
           isLoading ? <Loading /> : error ? 'Something went wrong!' :
-            allBlog.slice(0,3).map(item => (
+            allBlog.slice(0, 3).map(item => (
               <BlogCard key={item._id} data={item} />
             ))
         }

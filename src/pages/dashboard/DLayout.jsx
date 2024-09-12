@@ -20,10 +20,10 @@ import { useUserInfo } from '../../hook/useUserInfo';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Avatar, ClickAwayListener, Collapse, MenuItem, Stack } from '@mui/material';
 import { ArticleOutlined, ContactSupportOutlined, FiberManualRecord, KeyboardArrowRight, Logout, SellOutlined, SpaceDashboardOutlined } from '@mui/icons-material';
-import { axiosReq } from '../../utils/axiosReq';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/AuthProvider';
+import { axiosReq } from '../../utils/axiosReq';
 
 const drawerWidth = 240;
 
@@ -74,10 +74,11 @@ export default function DLayout(props) {
   const [userMenuOpen, setUsermenuOpen] = useState(false)
   const [serviceExpand, setServiceExpand] = useState(true)
 
-  const { user, setUser } = useAuth();
+  const { user, setToken } = useAuth();
 
   const { pathname } = useLocation()
   const { userInfo } = useUserInfo()
+
 
   const logoutMutation = useMutation({
     mutationFn: () => axiosReq.post('/auth/logout'),
@@ -88,8 +89,8 @@ export default function DLayout(props) {
   });
 
   function handleLogout() {
-    logoutMutation.mutate()
-    setUser(null)
+    // logoutMutation.mutate()
+    setToken(null)
   }
 
   const handleDrawerClose = () => {
