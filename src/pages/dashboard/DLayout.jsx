@@ -92,9 +92,9 @@ export default function DLayout(props) {
 
   function handleLogout() {
     // logoutMutation.mutate()
-    // setToken(null)
-    localStorage.removeItem('poshcoder')
-    window.location.href = '/'
+    setToken(null)
+    // localStorage.removeItem('poshcoder')
+    // window.location.href = '/'
   }
 
   const handleDrawerClose = () => {

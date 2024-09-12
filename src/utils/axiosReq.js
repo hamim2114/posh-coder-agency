@@ -14,3 +14,16 @@ export const axiosReq = axios.create({
     Authorization: token,
   },
 });
+
+// axiosReq.interceptors.request.use(
+//     (config) => {
+//         const token = localStorage.getItem('poshcoder');
+//         if (token) {
+//             config.headers['Authorization'] = token; // Append token to Authorization header
+//         }
+//         return config;
+//     },
+//     (error) => {
+//         return Promise.reject(error);
+//     }
+// );
