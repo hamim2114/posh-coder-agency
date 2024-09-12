@@ -93,8 +93,6 @@ export default function DLayout(props) {
   function handleLogout() {
     // logoutMutation.mutate()
     setToken(null)
-    // localStorage.removeItem('poshcoder')
-    // window.location.href = '/'
   }
 
   const handleDrawerClose = () => {
@@ -251,12 +249,15 @@ export default function DLayout(props) {
                 <Avatar src='' sx={{ width: 32, height: 32 }} />
                 <Box ml={1}>
                   <Typography sx={{ fontSize: '16px', fontWeight: 600, ml: 1, }}>{userInfo?.username}</Typography>
-                  <Typography sx={{
-                    fontSize: '12px',
-                    px: 1, color: '#fff',
-                    bgcolor: userInfo?.isVerified ? 'green' : 'gray',
-                    borderRadius: '50px',
-                  }}>{userInfo?.isVerified ? 'Verified' : 'UnVerified'}</Typography>
+                  {
+                    userInfo &&
+                    <Typography sx={{
+                      fontSize: '12px',
+                      px: 1, color: '#fff',
+                      bgcolor: userInfo?.isVerified ? 'green' : 'gray',
+                      borderRadius: '50px',
+                    }}>{userInfo?.isVerified ? 'Verified' : 'UnVerified'}</Typography>
+                  }
                 </Box>
               </IconButton>
 

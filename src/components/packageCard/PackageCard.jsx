@@ -9,7 +9,7 @@ import OrderPlace from '../../common/OrderPlace'
 const PackageCard = ({ data, dashboard }) => {
   const [dialogOpen, setDialogOpen] = useState(false)
 
-  const { user } = useAuth()
+  const { token } = useAuth()
 
   return (
     <Stack sx={{
@@ -44,7 +44,7 @@ const PackageCard = ({ data, dashboard }) => {
 
       <Stack direction='row' gap={2} justifyContent='center'>
         {
-          user ?
+          token ?
             <Button onClick={() => setDialogOpen(true)} variant='contained' fullWidth sx={{ textTransform: 'none' }}>Place Order</Button>
             :
             <Link style={{ width: '100%' }} to='/register'>

@@ -7,6 +7,7 @@ import { Close } from '@mui/icons-material';
 import { axiosReq } from '../../../utils/axiosReq';
 import CButton from '../../../common/CButton';
 import { useUserInfo } from '../../../hook/useUserInfo';
+import { useAuth } from '../../../context/AuthProvider';
 
 const UpdateOrder = ({ data, closeDialog }) => {
   const [payload, setPayload] = useState({
@@ -18,9 +19,12 @@ const UpdateOrder = ({ data, closeDialog }) => {
   })
 
   const { userInfo } = useUserInfo()
+  const { token } = useAuth()
+
   const queryClient = useQueryClient();
+
   const mutation = useMutation({
-    mutationFn: (input) => axiosReq.put(`/order/edit/${data._id}`, input),
+    mutationFn: (input) => axiosReq.put(`/order/edit/${data._id}`, input, { headers: { Authorization: token } }),
     onSuccess: (res) => {
       queryClient.invalidateQueries(['order']);
       closeDialog(true);

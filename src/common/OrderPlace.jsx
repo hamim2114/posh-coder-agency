@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { axiosReq } from '../utils/axiosReq'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthProvider'
 
 const OrderPlace = ({ closeDialog, data }) => {
   const [payload, setPayload] = useState({
@@ -17,12 +18,13 @@ const OrderPlace = ({ closeDialog, data }) => {
     desc: '',
   })
   const { userInfo } = useUserInfo()
+  const { token } = useAuth()
   const navigate = useNavigate()
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: (input) => axiosReq.post('/order/create', payload),
+    mutationFn: (input) => axiosReq.post('/order/create', input, { headers: { Authorization: token } }),
     onSuccess: (res) => {
       queryClient.invalidateQueries(['order']);
       closeDialog(true);
@@ -42,9 +44,10 @@ const OrderPlace = ({ closeDialog, data }) => {
 
   useEffect(() => {
     setPayload({
-      phone: userInfo?.phone,
-      orderName: data?.name,
-      status: 'placed'
+      name: '',
+      phone: userInfo?.phone ?? '',
+      orderName: data?.name ?? '',
+      status: 'placed',
     })
   }, [userInfo, data])
 

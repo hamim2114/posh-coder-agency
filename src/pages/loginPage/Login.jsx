@@ -54,7 +54,6 @@ const Login = () => {
       console.log(res)
       setToken(res.data.jwt)
       toast.success(res.data.message);
-      // window.location.href = '/dashboard'
 
     },
     onError: (err) => {

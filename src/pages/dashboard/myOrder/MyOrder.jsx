@@ -14,6 +14,8 @@ import CButton from '../../../common/CButton';
 import ErrorMsg from '../../../common/ErrorMsg';
 import DataTable from '../../../common/DataTable';
 import { useUserInfo } from '../../../hook/useUserInfo';
+import { useAuth } from '../../../context/AuthProvider';
+import Cookies from 'js-cookie'
 
 const MyOrder = () => {
   const [orderUpdateData, setOrderUpdateData] = useState({})
@@ -39,17 +41,18 @@ const MyOrder = () => {
   };
 
   const { userInfo } = useUserInfo()
+  const { token } = useAuth()
 
   const queryClient = useQueryClient();
 
   const { isLoading, error, data: orders } = useQuery({
+    enabled: !!token && !!userInfo?._id,
     queryKey: ['userOrders'],
-    queryFn: () => axiosReq.get(`/order/userOrder/${userInfo?._id}`).then(res => res.data),
-    // enabled: !!userInfo?._id, // Only run this query if userData is available
+    queryFn: () => axiosReq.get(`/order/userOrder/${userInfo?._id}`, { headers: { Authorization: token } }).then(res => res.data),
   });
 
   const deleteMutation = useMutation({
-    mutationFn: (id) => axiosReq.delete(`/order/delete/${deleteOrderId}`),
+    mutationFn: (id) => axiosReq.delete(`/order/delete/${deleteOrderId}`, { headers: { Authorization: token } }),
     onSuccess: (res) => {
       queryClient.invalidateQueries(['order']);
       toast.success(res.data.message)

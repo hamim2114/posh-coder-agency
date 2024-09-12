@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { axiosReq } from '../utils/axiosReq';
 import { useAuth } from '../context/AuthProvider';
+import { axiosReq } from '../utils/axiosReq';
 
 export const useUserInfo = () => {
+    const {setToken} = useAuth()
     const {token} = useAuth()
     const { data, error,refetch } = useQuery({
         queryKey: ['me'],
@@ -10,6 +11,9 @@ export const useUserInfo = () => {
         // retry: false,
         // refetchOnWindowFocus: false,
     });
+    if(error?.response?.data === 'unauthenticated'){
+        setToken(null)
+    }
     const userData = {
         userInfo: data,
         error: error?.response?.data
