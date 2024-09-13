@@ -18,7 +18,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [serviceMenu, setServiceMenu] = useState(false)
 
-  const { user } = useAuth()
+  const { token } = useAuth()
 
   // const { data: user } = useQuery({
   //   queryKey: ['me'],
@@ -58,7 +58,6 @@ const Navbar = () => {
         <div style={{ position: 'relative' }}>
           <Button
             sx={{
-              color: 'inherit',
               fontSize: 'inherit',
               fontWeight: 'inherit',
               p: 0,
@@ -122,7 +121,7 @@ const Navbar = () => {
         <Link to='/teams' style={{ color: pathname === '/teams' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Teams</Link>
         <Link to='/blog' style={{ color: pathname === '/blog' ? 'red' : '' }} className='link' onClick={() => setNav(false)}>Blog</Link>
         <Link to='/contact' style={{ color: pathname === '/contact' ? 'red' : '' }} onClick={() => setNav(false)} className='link'>Contact Us</Link>
-        {user ?
+        {token ?
           <Link to='/dashboard' onClick={() => setNav(false)} className='link'>
             <Button size='small' sx={{ color: 'inherit', textTransform: 'none' }} variant='contained'>
               Dashboard
